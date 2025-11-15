@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxb8xe0q53gpd"]
+[gd_scene load_steps=3 format=3 uid="uid://ok0x1eeibl48"]
 
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="1_t87xa"]
+[ext_resource type="PackedScene" uid="uid://ccc2adpreni52" path="res://cenas/sombra.tscn" id="2_lbg61"]
 
 [node name="Teste" type="Node2D"]
 position = Vector2(604, 308)
 
 [node name="player" parent="." instance=ExtResource("1_t87xa")]
+position = Vector2(-35, -317)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lbg61")]
+position = Vector2(-474, -244)

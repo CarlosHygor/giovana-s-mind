@@ -1,12 +1,141 @@
-[gd_scene load_steps=5 format=3 uid="uid://dks882yywnm7n"]
+[gd_scene load_steps=18 format=3 uid="uid://dks882yywnm7n"]
 
 [ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
-[ext_resource type="PackedScene" path="res://cenas/bullet.tscn" id="3_kthid"]
-[ext_resource type="Texture2D" uid="uid://bmnqwuxdcgihy" path="res://recursos/sprites/geovanaFrente/geovana  andar - frente1.png" id="3_xojfc"]
+[ext_resource type="Texture2D" uid="uid://b0sn0rvccqtt4" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul1.png" id="3_15dsx"]
+[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="3_kthid"]
+[ext_resource type="Texture2D" uid="uid://2sec1or3dg70" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul2.png" id="4_8v4ht"]
+[ext_resource type="Texture2D" uid="uid://bg63wuajja21k" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas andando 2.png" id="5_ym2kn"]
+[ext_resource type="Texture2D" uid="uid://b833ondnkhnfc" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso roxo.png" id="6_s1iqd"]
+[ext_resource type="Texture2D" uid="uid://cb08k1y83mhrw" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas andando.png" id="6_vtxll"]
+[ext_resource type="Texture2D" uid="uid://cvkw1kwpsyfpl" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso azul1.png" id="7_s1iqd"]
+[ext_resource type="Texture2D" uid="uid://c7d8vc1q6i67u" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso azul2.png" id="8_6ptbh"]
+[ext_resource type="Texture2D" uid="uid://ckttpbfq4bvry" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso roxo2.png" id="8_uk4ck"]
+[ext_resource type="Texture2D" uid="uid://dqjqfi0j6roar" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente - urso azul.png" id="9_uk4ck"]
+[ext_resource type="Texture2D" uid="uid://dww28kecxpe5r" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente - urso roxo.png" id="10_gonb2"]
+[ext_resource type="Texture2D" uid="uid://b1qt0v62656a8" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png" id="11_j4uu1"]
+[ext_resource type="Texture2D" uid="uid://bwtr1lfmqlhq8" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso azul.png" id="12_86n0t"]
+[ext_resource type="Texture2D" uid="uid://ov23eccajc77" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png" id="13_1vaqx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0s3u6"]
-custom_solver_bias = 1.0
-radius = 63.007935
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogt8j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_15dsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uk4ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8v4ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uk4ck")
+}],
+"loop": true,
+"name": &"andar_baixo_azul",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s1iqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gonb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uk4ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gonb2")
+}],
+"loop": true,
+"name": &"andar_baixo_roxo",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ym2kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j4uu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vtxll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j4uu1")
+}],
+"loop": true,
+"name": &"andar_cima",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_s1iqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_86n0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ptbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_86n0t")
+}],
+"loop": true,
+"name": &"andar_direita_azul",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_uk4ck")
+}],
+"loop": false,
+"name": &"parada_baixo_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_gonb2")
+}],
+"loop": false,
+"name": &"parada_baixo_roxo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_j4uu1")
+}],
+"loop": false,
+"name": &"parada_cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_86n0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_86n0t")
+}],
+"loop": false,
+"name": &"parada_direita_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1vaqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1vaqx")
+}],
+"loop": false,
+"name": &"parada_direita_roxo",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
+radius = 78.0
+height = 310.0
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -14,14 +143,19 @@ slide_on_ceiling = false
 script = ExtResource("1_unwft")
 bullet_scene = ExtResource("3_kthid")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0s3u6")
-
 [node name="Body" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Body"]
+[node name="SpriteAnimado" type="AnimatedSprite2D" parent="Body"]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("3_xojfc")
+sprite_frames = SubResource("SpriteFrames_ogt8j")
+animation = &"parada_baixo_azul"
 
 [node name="Muzzle" type="Node2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_kthid")
+
+[connection signal="animation_finished" from="Body/SpriteAnimado" to="." method="_on_sprite_2d_animation_finished"]
