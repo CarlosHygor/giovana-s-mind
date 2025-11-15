@@ -3,7 +3,40 @@ extends CharacterBody2D
 @export var move_speed: float = 200.0
 @export var bullet_scene: PackedScene
 @export var fire_rate: float = 0.15
+
 var can_shoot := true
+
+# VIDA
+var max_hearts: int = 3
+var current_hearts: int = max_hearts
+var is_dead: bool = false
+
+
+func take_damage() -> void:
+	if is_dead:
+		return
+
+	current_hearts -= 1
+
+	if current_hearts <= 0:
+		current_hearts = 0
+		die()
+
+
+func heal() -> void:
+	if is_dead:
+		return
+
+	current_hearts += 1
+
+	if current_hearts > max_hearts:
+		current_hearts = max_hearts
+
+
+func die() -> void:
+	is_dead = true
+	print("Player morreu!")
+	# Você pode adicionar animação, game over, etc.
 
 
 func _physics_process(delta: float) -> void:
@@ -23,15 +56,11 @@ func _physics_process(delta: float) -> void:
 	velocity = input_vector * move_speed
 	move_and_slide()
 
-
-	# TIRO (SETAS)
+	# TIRO (SETAS — SEM ROTAÇÃO DO PLAYER)
 	var shoot_dir = get_shoot_direction()
 
-	if shoot_dir != Vector2.ZERO:
-		$Body.rotation = shoot_dir.angle() # ← ROTACIONA SOMENTE O BODY
-
-		if can_shoot:
-			shoot(shoot_dir)
+	if shoot_dir != Vector2.ZERO and can_shoot:
+		shoot(shoot_dir)
 
 
 func get_shoot_direction() -> Vector2:
@@ -53,7 +82,11 @@ func shoot(direction: Vector2):
 	can_shoot = false
 	
 	var bullet = bullet_scene.instantiate()
-	bullet.position = $Body/Muzzle.global_position
+
+	# 🔥 Bala nasce no centro do player
+	bullet.global_position = global_position
+	
+	# Direção do tiro
 	bullet.direction = direction
 	
 	get_tree().current_scene.add_child(bullet)
