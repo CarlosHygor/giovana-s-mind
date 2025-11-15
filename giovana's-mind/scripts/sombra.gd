@@ -14,7 +14,6 @@ extends CharacterBody2D
 @export var anim_andar_cima: String = "andar_cima"
 @export var anim_andar_baixo: String = "andar_baixo"
 @export var anim_andar_esquerda: String = "andar_esquerda"
-@export var anim_andar_direita: String = "andar_direita"
 
 # --- REFERÊNCIAS INTERNAS (Nós da Cena) ---
 # Lembre-se de renomear os nós na cena para bater com os nomes abaixo!
@@ -80,16 +79,26 @@ func perseguir_jogador(direcao: Vector2):
 	# Define a velocidade de perseguição
 	velocity = direcao * velocidade
 	
-	# --- NOVA LÓGICA: ESCOLHE A ANIMAÇÃO DE 4 DIREÇÕES ---
 	# Verifica qual eixo (X ou Y) tem o movimento mais forte
 	if abs(direcao.x) > abs(direcao.y):
 		# Movimento horizontal é dominante
-		if direcao.x > 0:
-			sprite_animado.play(anim_andar_direita)
+		
+		# Toca a animação de andar para a direita, não importa a direção
+		sprite_animado.play(anim_andar_esquerda) 
+		
+		# Agora, decidimos se vamos flipar o sprite
+		if direcao.x < 0:
+			# Movendo para a direita: sem flip
+			sprite_animado.flip_h = false 
 		else:
-			sprite_animado.play(anim_andar_esquerda)
+			# Movendo para a esquerda: com flip
+			sprite_animado.flip_h = true  
+			
 	else:
 		# Movimento vertical é dominante
+		# IMPORTANTE: Reseta o flip se estava andando para a esquerda antes
+		sprite_animado.flip_h = false 
+		
 		if direcao.y > 0:
 			sprite_animado.play(anim_andar_baixo)
 		else:

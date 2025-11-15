@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc4f6nybm2b1e"
-path="res://.godot/imported/geovana  side3.png-486e59417e252088667d3e1577601758.ctex"
+uid="uid://b0sn0rvccqtt4"
+path="res://.godot/imported/geovana frente andando - urso azul1.png-8be0eb9c9847edf40a8b6165af598141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/geovanaLado/geovana  side3.png"
-dest_files=["res://.godot/imported/geovana  side3.png-486e59417e252088667d3e1577601758.ctex"]
+source_file="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul1.png"
+dest_files=["res://.godot/imported/geovana frente andando - urso azul1.png-8be0eb9c9847edf40a8b6165af598141.ctex"]
 
 [params]
 

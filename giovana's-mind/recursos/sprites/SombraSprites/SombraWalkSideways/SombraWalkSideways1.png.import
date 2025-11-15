@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qt0v62656a8"
-path="res://.godot/imported/geovana costas-1.png-8660e625ad01bf460ae0bce3cad4a902.ctex"
+uid="uid://btg4ba42rsbal"
+path="res://.godot/imported/SombraWalkSideways1.png-d40f820314feb91f4f09b1889c23023a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png"
-dest_files=["res://.godot/imported/geovana costas-1.png-8660e625ad01bf460ae0bce3cad4a902.ctex"]
+source_file="res://recursos/sprites/SombraSprites/SombraWalkSideways/SombraWalkSideways1.png"
+dest_files=["res://.godot/imported/SombraWalkSideways1.png-d40f820314feb91f4f09b1889c23023a.ctex"]
 
 [params]
 

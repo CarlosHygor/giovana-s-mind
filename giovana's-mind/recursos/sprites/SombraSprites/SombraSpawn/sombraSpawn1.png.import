@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnkq6vr8gqvu1"
-path="res://.godot/imported/geovana  side2.png-b433a06ad0f11413234848bcb9c457d0.ctex"
+uid="uid://dcw7r5nts02sf"
+path="res://.godot/imported/sombraSpawn1.png-9036508a2b46c815f44c0d5c99edb0dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/geovanaLado/geovana  side2.png"
-dest_files=["res://.godot/imported/geovana  side2.png-b433a06ad0f11413234848bcb9c457d0.ctex"]
+source_file="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn1.png"
+dest_files=["res://.godot/imported/sombraSpawn1.png-9036508a2b46c815f44c0d5c99edb0dc.ctex"]
 
 [params]
 

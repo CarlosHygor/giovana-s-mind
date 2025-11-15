@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qt0v62656a8"
-path="res://.godot/imported/geovana costas-1.png-8660e625ad01bf460ae0bce3cad4a902.ctex"
+uid="uid://ov23eccajc77"
+path="res://.godot/imported/geovana lado - urso roxo.png-771b1e33a55b667a96d0db086b6ce069.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png"
-dest_files=["res://.godot/imported/geovana costas-1.png-8660e625ad01bf460ae0bce3cad4a902.ctex"]
+source_file="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png"
+dest_files=["res://.godot/imported/geovana lado - urso roxo.png-771b1e33a55b667a96d0db086b6ce069.ctex"]
 
 [params]
 

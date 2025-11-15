@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u8wm8ivcaxr7"
-path="res://.godot/imported/geovana  andar -frente2.png-a24b250a404f1e94d328d76aa126f3f3.ctex"
+uid="uid://i4rgrmipdbjs"
+path="res://.godot/imported/SombraWalkUp2.png-d86b07273674cdf5e6f99f90b7df43eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/geovanaFrente/geovana  andar -frente2.png"
-dest_files=["res://.godot/imported/geovana  andar -frente2.png-a24b250a404f1e94d328d76aa126f3f3.ctex"]
+source_file="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp2.png"
+dest_files=["res://.godot/imported/SombraWalkUp2.png-d86b07273674cdf5e6f99f90b7df43eb.ctex"]
 
 [params]
 
