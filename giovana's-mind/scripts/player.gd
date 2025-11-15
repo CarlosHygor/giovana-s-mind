@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed: float = 200.0
 @export var bullet_scene: PackedScene
-@export var fire_rate: float = 0.15
+@export var fire_rate: float = 0.4
 
 var can_shoot := true
 

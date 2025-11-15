@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dks882yywnm7n"]
 
 [ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
-[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="3_kthid"]
+[ext_resource type="PackedScene" path="res://cenas/bullet.tscn" id="3_kthid"]
 [ext_resource type="Texture2D" uid="uid://bmnqwuxdcgihy" path="res://recursos/sprites/geovanaFrente/geovana  andar - frente1.png" id="3_xojfc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s3u6"]
@@ -20,6 +20,8 @@ shape = SubResource("CircleShape2D_0s3u6")
 [node name="Body" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture_filter = 1
+texture_repeat = 1
 texture = ExtResource("3_xojfc")
 
 [node name="Muzzle" type="Node2D" parent="Body"]
