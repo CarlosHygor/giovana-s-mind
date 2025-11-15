@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8et8e67030g8"
-path="res://.godot/imported/geovana  side.png-2ddbc7e2640681519b5bab302c85ba11.ctex"
+path="res://.godot/imported/geovana  side.png-8291a1d33959f21afb3b6798c8efdecb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/geovanaLado/geovana  side.png"
-dest_files=["res://.godot/imported/geovana  side.png-2ddbc7e2640681519b5bab302c85ba11.ctex"]
+source_file="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana  side.png"
+dest_files=["res://.godot/imported/geovana  side.png-8291a1d33959f21afb3b6798c8efdecb.ctex"]
 
 [params]
 
