@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var vida_maxima: int = 10 
 @export var velocidade: float = 100.0 
 @export var dano_ataque: int = 5            
-@export var alcance_ataque: float = 30.0        
 @export var tempo_recarga_ataque: float = 1.0 
 
 # --- NOMES DAS ANIMAÇÕES (Ajuste no Inspector) ---
@@ -28,6 +27,7 @@ var vida_atual: int = vida_maxima
 var esta_perseguindo: bool = false
 var esta_atacando: bool = false 
 var esta_morto: bool = false
+var jogador_na_area_ataque: bool = false
 
 
 func _ready():
@@ -56,17 +56,16 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 		
-	# 1. Calcula a distância e direção até o jogador
-	var direcao_vetor: Vector2 = jogador.global_position - global_position
-	var distancia_do_jogador: float = direcao_vetor.length()
-	var direcao_normalizada: Vector2 = direcao_vetor.normalized()
+	# 1. Calcula a direção (ainda precisamos dela para perseguir)
+	var direcao_normalizada: Vector2 = (jogador.global_position - global_position).normalized()
 
-	# 2. Lógica de Ataque ou Perseguição
-	if distancia_do_jogador <= alcance_ataque and timer_recarga_ataque.is_stopped():
-		# Está no alcance E o cooldown acabou -> Ataca
+	# 2. LÓGICA DE ATAQUE ATUALIZADA
+	# Verifica se o jogador está na área E se o timer de recarga parou
+	if jogador_na_area_ataque and timer_recarga_ataque.is_stopped():
+		# Ataca!
 		atacar()
 	else:
-		# Fora do alcance ou em cooldown -> Persegue
+		# Se não, persegue o jogador
 		perseguir_jogador(direcao_normalizada)
 	
 	# 3. Aplica o movimento
@@ -115,12 +114,15 @@ func atacar():
 
 
 func aplicar_dano_no_jogador():
-	# Esta função simula o dano instantâneo.
+	# Esta função aplica o dano no jogador.
+	
+	# Verifica se o jogador ainda existe na cena
 	if is_instance_valid(jogador):
-		# NOTA: O jogador precisa ter uma função "receber_dano(dano)"
-		# jogador.receber_dano(dano_ataque)
-		print("ATACOU O JOGADOR!") # Placeholder para teste
-		pass 
+		
+		# Chama a função "take_damage" DO JOGADOR,
+		# passando o dano do inimigo (dano_ataque)
+		jogador.take_damage(dano_ataque)
+		print("dano")
 
 
 # Função pública para o jogador ou projéteis chamarem
@@ -173,3 +175,18 @@ func ao_terminar_recarga_ataque():
 	# Chamado quando o Timer de Cooldown termina
 	# Apenas permite que a lógica de ataque em _physics_process funcione de novo
 	pass
+
+
+func _on_area_ataque_body_entered(body):
+	# Chamado quando um corpo FÍSICO (como o Player) entra na área
+	
+	# Verifica se o corpo que entrou é o jogador (pelo grupo "player")
+	if body.is_in_group("player"):
+		jogador_na_area_ataque = true
+
+
+func _on_area_ataque_body_exited(body):
+	# Chamado quando um corpo FÍSICO (como o Player) sai da área
+	
+	if body.is_in_group("player"):
+		jogador_na_area_ataque = false
