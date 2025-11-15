@@ -1,28 +1,28 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccc2adpreni52"]
+[gd_scene load_steps=28 format=3 uid="uid://ccc2adpreni52"]
 
 [ext_resource type="Script" uid="uid://7fyshnd5o1hc" path="res://scripts/sombra.gd" id="1_0j110"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn8.png" id="1_u32v7"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn1.png" id="2_6v2fp"]
-[ext_resource type="Texture2D" uid="uid://o2vwuutrjg18" path="res://recursos/sprites/SombraWalkDown2/SombraWalk2.png" id="2_xsrvg"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk2.png" id="2_xsrvg"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn2.png" id="3_nkfog"]
-[ext_resource type="Texture2D" uid="uid://dalhqpppurxtw" path="res://recursos/sprites/SombraWalkDown2/SombraWalk3.png" id="3_r0krf"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk3.png" id="3_r0krf"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn3.png" id="4_pu0k2"]
-[ext_resource type="Texture2D" uid="uid://dkdib65dmlwiq" path="res://recursos/sprites/SombraWalkDown2/SombraWalk4.png" id="4_wom5s"]
-[ext_resource type="Texture2D" uid="uid://qtjgkge2kggv" path="res://recursos/sprites/SombraWalkDown2/SombraWalk5.png" id="5_fiqi5"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk4.png" id="4_wom5s"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk5.png" id="5_fiqi5"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn4.png" id="5_vr7dg"]
-[ext_resource type="Texture2D" uid="uid://c5uacwwvyye8i" path="res://recursos/sprites/SombraWalkDown2/SombraWalk6.png" id="6_0fttm"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk6.png" id="6_0fttm"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn5.png" id="6_ge44d"]
-[ext_resource type="Texture2D" uid="uid://hkqsmi1o2scv" path="res://recursos/sprites/SombraWalkDown2/SombraWalk7.png" id="7_6mdia"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk7.png" id="7_6mdia"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn6.png" id="7_ch7km"]
 [ext_resource type="Texture2D" path="res://recursos/sprites/sombra/sombraSpawn7.png" id="8_6bv58"]
-[ext_resource type="Texture2D" uid="uid://bxam8du2lfjl5" path="res://recursos/sprites/SombraWalkDown2/SombraWalk8.png" id="8_fud47"]
-[ext_resource type="Texture2D" uid="uid://b7tbim131m8ad" path="res://recursos/sprites/SombraWalkDown2/SombraWalk9.png" id="9_8xot5"]
-[ext_resource type="Texture2D" uid="uid://dxjycvk2oimgh" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways1.png" id="12_fud47"]
-[ext_resource type="Texture2D" uid="uid://bb8djlflbgvfy" path="res://recursos/sprites/SombraSpawn/sombraSpawn1.png" id="12_r0krf"]
-[ext_resource type="Texture2D" uid="uid://b7n28man5fr8p" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways2.png" id="13_8xot5"]
-[ext_resource type="Texture2D" uid="uid://n1trj54p6iwu" path="res://recursos/sprites/SombraSpawn/sombraSpawn7.png" id="13_wom5s"]
-[ext_resource type="Texture2D" uid="uid://cpnhgwiesq0h8" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways3.png" id="14_dkp2g"]
-[ext_resource type="Texture2D" uid="uid://srif8puflqir" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways4.png" id="15_22sd5"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk8.png" id="8_fud47"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkDown2/SombraWalk9.png" id="9_8xot5"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways1.png" id="12_fud47"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraSpawn/sombraSpawn1.png" id="12_r0krf"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways2.png" id="13_8xot5"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraSpawn/sombraSpawn7.png" id="13_wom5s"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways3.png" id="14_dkp2g"]
+[ext_resource type="Texture2D" path="res://recursos/sprites/SombraWalkSideways/SombraWalkSideways4.png" id="15_22sd5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5qid6"]
 animations = [{
@@ -139,6 +139,9 @@ height = 276.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsrvg"]
 radius = 224.0357
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fud47"]
+size = Vector2(152, 282)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_0j110")
 dano_ataque = 2
@@ -160,9 +163,16 @@ one_shot = true
 [node name="AreaAtaque" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
+visible = false
 position = Vector2(1, 22)
 shape = SubResource("CircleShape2D_xsrvg")
 metadata/_edit_lock_ = true
+
+[node name="AreaHitbox" type="Area2D" parent="." groups=["inimigo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
+position = Vector2(9, 23)
+shape = SubResource("RectangleShape2D_fud47")
 
 [connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_animado_animation_finished"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

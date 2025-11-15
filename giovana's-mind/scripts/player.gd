@@ -161,6 +161,9 @@ func shoot(direction: Vector2):
 	bullet.global_position = global_position
 	bullet.direction = direction
 	
+	# Passa a cor da arma atual para a variável "cor_arma" da bala
+	bullet.cor_arma = estado_arma 
+	
 	get_tree().current_scene.add_child(bullet)
 
 	await get_tree().create_timer(fire_rate).timeout

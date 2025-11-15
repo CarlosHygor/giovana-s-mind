@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://bwtr1lfmqlhq8" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso azul.png" id="12_86n0t"]
 [ext_resource type="Texture2D" uid="uid://ov23eccajc77" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png" id="13_1vaqx"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
+radius = 78.0
+height = 310.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ogt8j"]
 animations = [{
 "frames": [{
@@ -133,29 +137,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
-radius = 78.0
-height = 310.0
-
 [node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 slide_on_ceiling = false
 script = ExtResource("1_unwft")
 bullet_scene = ExtResource("3_kthid")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_kthid")
+
 [node name="Body" type="Node2D" parent="."]
+
+[node name="Muzzle" type="Node2D" parent="Body"]
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="Body"]
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_ogt8j")
 animation = &"parada_baixo_azul"
-
-[node name="Muzzle" type="Node2D" parent="Body"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_kthid")
 
 [connection signal="animation_finished" from="Body/SpriteAnimado" to="." method="_on_sprite_2d_animation_finished"]

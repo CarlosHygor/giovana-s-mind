@@ -1,19 +1,95 @@
-[gd_scene load_steps=4 format=3 uid="uid://qfskedtb8h77"]
+[gd_scene load_steps=13 format=3 uid="uid://qfskedtb8h77"]
 
 [ext_resource type="Script" uid="uid://dphabdydrhxvp" path="res://scripts/bullet.gd" id="1_u5170"]
-[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_5iash"]
+[ext_resource type="Texture2D" uid="uid://c2e1i5xubqtfr" path="res://recursos/sprites/disparoGiovana/disparo azul f1.png" id="2_5ve1n"]
+[ext_resource type="Texture2D" uid="uid://cq5qiqbntt2n5" path="res://recursos/sprites/disparoGiovana/disparo azul f2.png" id="3_odle7"]
+[ext_resource type="Texture2D" uid="uid://bthfw5wd81nlf" path="res://recursos/sprites/disparoGiovana/disparo azul f3.png" id="4_phyqm"]
+[ext_resource type="Texture2D" uid="uid://ylih0k542t1f" path="res://recursos/sprites/disparoGiovana/disparo rosa f1.png" id="5_3i2dk"]
+[ext_resource type="Texture2D" uid="uid://bup4fx855hk60" path="res://recursos/sprites/disparoGiovana/disparo azul f4.png" id="5_erk3i"]
+[ext_resource type="Texture2D" uid="uid://o3xny8juei02" path="res://recursos/sprites/disparoGiovana/disparo rosa f2.png" id="6_0ohw2"]
+[ext_resource type="Texture2D" uid="uid://c5wqr3cus42ic" path="res://recursos/sprites/disparoGiovana/disparo azul f5.png" id="6_3i2dk"]
+[ext_resource type="Texture2D" uid="uid://bnorkobhtpkg7" path="res://recursos/sprites/disparoGiovana/disparo azul f6.png" id="7_0ohw2"]
+[ext_resource type="Texture2D" uid="uid://c7ba4yjgoborw" path="res://recursos/sprites/disparoGiovana/disparo rosa f3.png" id="7_4se21"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4se21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_erk3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3i2dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ohw2")
+}],
+"loop": false,
+"name": &"acertou_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3i2dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0ohw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4se21")
+}],
+"loop": false,
+"name": &"acertou_roxo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ve1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_odle7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_phyqm")
+}],
+"loop": false,
+"name": &"disparo_azul",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_phyqm")
+}],
+"loop": true,
+"name": &"normal_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4se21")
+}],
+"loop": true,
+"name": &"normal_roxo",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tah1u"]
+radius = 30.016663
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_u5170")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.9073486e-06, 1)
-scale = Vector2(0.15625, 0.15624999)
-texture = ExtResource("2_5iash")
+[node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.3160156, 0.31093746)
+sprite_frames = SubResource("SpriteFrames_4se21")
+animation = &"normal_roxo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_tah1u")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_animado_animation_finished"]
