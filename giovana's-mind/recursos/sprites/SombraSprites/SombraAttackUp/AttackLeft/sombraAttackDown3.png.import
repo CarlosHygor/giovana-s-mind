@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl7bmasx534ll"
-path="res://.godot/imported/sombraSpawn5.png-ea6243021b9192d4b7f6615399344383.ctex"
+uid="uid://cnl1sbbsbqf2s"
+path="res://.godot/imported/sombraAttackDown3.png-499663db2e51db5ea345da1d21182630.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn5.png"
-dest_files=["res://.godot/imported/sombraSpawn5.png-ea6243021b9192d4b7f6615399344383.ctex"]
+source_file="res://recursos/sprites/SombraSprites/SombraAttackUp/AttackLeft/sombraAttackDown3.png"
+dest_files=["res://.godot/imported/sombraAttackDown3.png-499663db2e51db5ea345da1d21182630.ctex"]
 
 [params]
 

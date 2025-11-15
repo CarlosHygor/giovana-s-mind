@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://7yokka8cwafp"]
+
+[ext_resource type="Script" path="res://scripts/DamageOverlay.gd" id="1_35mxy"]
+
+[sub_resource type="Animation" id="Animation_mrv5r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cr8c1"]
+resource_name = "damage_fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rrh4"]
+_data = {
+&"RESET": SubResource("Animation_mrv5r"),
+&"damage_fade": SubResource("Animation_cr8c1")
+}
+
+[node name="DamageIndicator" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -800.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(394, 300)
+color = Color(1, 0, 0, 0.5019608)
+script = ExtResource("1_35mxy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1rrh4")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

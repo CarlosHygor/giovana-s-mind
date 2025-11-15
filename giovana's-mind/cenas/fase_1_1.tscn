@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddi0ugv6h2wxn"]
+[gd_scene load_steps=5 format=4 uid="uid://d58ouxr2h5df"]
 
-[ext_resource type="Script" path="res://scripts/contador.gd" id="1_e8ng2"]
+[ext_resource type="Script" uid="uid://evqree8peahw" path="res://scripts/contador.gd" id="1_e8ng2"]
 [ext_resource type="TileSet" uid="uid://b78l2ail5cdx3" path="res://recursos/assets/tile set Base.tres" id="2_e8ng2"]
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="3_4drvd"]
-[ext_resource type="AudioStream" uid="uid://ile4ug7dm2gu" path="res://recursos/sounds/power-hub-ost-337760.mp3" id="4_4drvd"]
+[ext_resource type="PackedScene" uid="uid://ccc2adpreni52" path="res://cenas/sombra.tscn" id="4_4drvd"]
 
 [node name="Fase 1-1" type="Node2D"]
 
@@ -23,6 +23,5 @@ position = Vector2(417, 660)
 move_speed = 400.0
 fire_rate = 0.5
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_4drvd")
-autoplay = true
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_4drvd")]
+position = Vector2(1038, 669)

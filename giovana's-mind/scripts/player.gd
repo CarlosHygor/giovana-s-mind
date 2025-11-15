@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @export var fire_rate: float = 0.4
 
+@onready var damage_indicator = get_tree().get_root().find_child("DamageIndicator", true, false)
+
 var can_shoot := true
 
 # --- ESTADO DA ANIMAÇÃO ---
@@ -26,6 +28,8 @@ var is_dead: bool = false
 
 # ---------- VIDA ----------
 func take_damage(amount: int = 1) -> void:
+	if damage_indicator:
+		damage_indicator.play_damage_effect()
 	if is_dead:
 		return
 

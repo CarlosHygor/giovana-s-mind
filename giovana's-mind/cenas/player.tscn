@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://b0sn0rvccqtt4" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul1.png" id="3_15dsx"]
-[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="3_kthid"]
+[ext_resource type="PackedScene" path="res://cenas/bullet.tscn" id="3_kthid"]
 [ext_resource type="Texture2D" uid="uid://2sec1or3dg70" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul2.png" id="4_8v4ht"]
 [ext_resource type="Texture2D" uid="uid://bg63wuajja21k" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas andando 2.png" id="5_ym2kn"]
 [ext_resource type="Texture2D" uid="uid://b833ondnkhnfc" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso roxo.png" id="6_s1iqd"]
@@ -137,6 +137,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
+radius = 69.0
+height = 310.0
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 slide_on_ceiling = false
@@ -156,6 +160,18 @@ shape = SubResource("CapsuleShape2D_kthid")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_ogt8j")
-animation = &"parada_baixo_azul"
+animation = &"andar_direita_azul"
+frame_progress = 0.2050213
+
+[node name="Muzzle" type="Node2D" parent="Body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_kthid")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
 
 [connection signal="animation_finished" from="Body/SpriteAnimado" to="." method="_on_sprite_2d_animation_finished"]
