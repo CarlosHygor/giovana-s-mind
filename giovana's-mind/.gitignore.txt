@@ -1,0 +1,22 @@
+# Arquivos e pastas do Godot
+# (O mais importante é este primeiro!)
+.godot/
+
+# Se estiver usando C# (Mono), descomente a linha abaixo:
+# .mono/
+
+# Configurações de exportação que podem conter chaves privadas
+# É melhor versionar o 'export_presets.cfg' se você não tiver
+# chaves privadas e quiser que todos usem as mesmas configurações.
+# Se for o caso, apague a linha abaixo.
+export_presets.cfg
+
+# Arquivos de tradução gerados
+*.translation
+
+# Backups do editor
+*.editor_backup
+
+# Configurações de editor específicas do usuário (opcional, mas recomendado)
+.editor/
+.vscode/
