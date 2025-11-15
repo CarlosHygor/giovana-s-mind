@@ -6,41 +6,49 @@ extends CharacterBody2D
 
 var can_shoot := true
 
-# VIDA
-var max_hearts: int = 3
-var current_hearts: int = max_hearts
+# ❤️ VIDA FRACIONADA (¼ = 1 unidade)
+var hearts: int = 3                # quantidade de corações
+var max_health: int = hearts * 4   # 4 unidades = 1 coração
+var current_health: int = max_health
 var is_dead: bool = false
 
 
-func take_damage() -> void:
+# ---------- VIDA ----------
+func take_damage(amount: int = 1) -> void:
 	if is_dead:
 		return
 
-	current_hearts -= 1
+	current_health -= amount
 
-	if current_hearts <= 0:
-		current_hearts = 0
+	if current_health < 0:
+		current_health = 0
+
+	print("Vida:", current_health, "/", max_health)
+
+	if current_health == 0:
 		die()
 
 
-func heal() -> void:
+func heal(amount: int = 1) -> void:
 	if is_dead:
 		return
 
-	current_hearts += 1
+	current_health += amount
 
-	if current_hearts > max_hearts:
-		current_hearts = max_hearts
+	if current_health > max_health:
+		current_health = max_health
+
+	print("Vida:", current_health, "/", max_health)
 
 
 func die() -> void:
 	is_dead = true
 	print("Player morreu!")
-	# Você pode adicionar animação, game over, etc.
+	# Aqui você pode adicionar animação, game over, etc.
 
 
+# ---------- MOVIMENTO ----------
 func _physics_process(delta: float) -> void:
-	# MOVIMENTO
 	var input_vector = Vector2.ZERO
 
 	if Input.is_action_pressed("move_up"):
@@ -56,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	velocity = input_vector * move_speed
 	move_and_slide()
 
-	# TIRO (SETAS — SEM ROTAÇÃO DO PLAYER)
+	# ---------- TIRO ----------
 	var shoot_dir = get_shoot_direction()
 
 	if shoot_dir != Vector2.ZERO and can_shoot:
@@ -82,11 +90,7 @@ func shoot(direction: Vector2):
 	can_shoot = false
 	
 	var bullet = bullet_scene.instantiate()
-
-	# 🔥 Bala nasce no centro do player
 	bullet.global_position = global_position
-	
-	# Direção do tiro
 	bullet.direction = direction
 	
 	get_tree().current_scene.add_child(bullet)
