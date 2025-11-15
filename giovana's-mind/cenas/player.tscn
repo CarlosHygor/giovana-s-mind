@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dks882yywnm7n"]
+[gd_scene load_steps=5 format=3 uid="uid://dks882yywnm7n"]
 
 [ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="1_8or6t"]
+[ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
+[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="3_kthid"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s3u6"]
-radius = 86.977005
+custom_solver_bias = 1.0
+radius = 63.007935
 
-[node name="player" type="CharacterBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8or6t")
+[node name="player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_unwft")
+bullet_scene = ExtResource("3_kthid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0s3u6")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("1_8or6t")
+
+[node name="Muzzle" type="Node2D" parent="Body"]
