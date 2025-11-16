@@ -1,6 +1,12 @@
 extends Node2D
 
+var enemy_count = 0
 signal player_entered_door(direction)
+
+func _ready() -> void:
+	enemy_count = $Enemies.get_child_count()
+	if enemy_count > 0:
+		lock_all_doors()
 
 func setup_doors(neighbors: Dictionary):
 	if neighbors.north:
@@ -43,3 +49,9 @@ func _on_door_east_player_triggered() -> void:
 
 func _on_door_west_player_triggered() -> void:
 	player_entered_door.emit(Vector2i.LEFT)
+
+func _on_enemies_child_exiting_tree(node: Node) -> void:
+	enemy_count -= 1
+	if enemy_count <= 0:
+		print("sala limpa")
+		unlock_all_doors()
