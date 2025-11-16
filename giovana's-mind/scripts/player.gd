@@ -34,7 +34,7 @@ var estado_arma: String = "azul"
 @export var roxo_speed: float = 450.0 # Mesma velocidade
 @export var roxo_range: float = 350.0 # Alcance curto
 @export var roxo_fire_rate: float = 1.2 # Cooldown maior
-@export var roxo_scale: Vector2 = Vector2(1.5, 1.5) # 50% maior
+@export var roxo_scale: Vector2 = Vector2(1, 1) # 50% maior
 
 # Guarda a última direção para a animação "parado"
 var direcao_parado: String = "_baixo" # Começa olhando para baixo

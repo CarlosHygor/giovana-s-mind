@@ -297,6 +297,8 @@ radius = 91.0
 height = 287.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_0j110")
 dano_ataque = 2
 
@@ -315,14 +317,15 @@ wait_time = 0.75
 one_shot = true
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
-visible = false
 position = Vector2(1, 22)
 shape = SubResource("CircleShape2D_xsrvg")
 metadata/_edit_lock_ = true
 
 [node name="AreaHitbox" type="Area2D" parent="." groups=["inimigo"]]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]

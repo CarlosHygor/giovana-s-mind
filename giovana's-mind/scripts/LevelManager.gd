@@ -2,21 +2,40 @@ extends Node
 
 const NUM_ROOMS = 10
 
-var room_scene_map ={
-	RoomType.START : preload("res://cenas/room.tscn"),
+var current_floor = 1
+
+var floor_1_scenes = {
+	RoomType.START : preload("res://cenas/Room.tscn"),
+	RoomType.NORMAL: preload("res://cenas/roomTeste.tscn"),
+	RoomType.BOSS: preload("res://cenas/boss_room.tscn")
+}
+
+var floor_2_scenes = {
+	RoomType.START : preload("res://cenas/Room.tscn"),
 	RoomType.NORMAL: preload("res://cenas/roomTeste.tscn")
 }
+
+var current_room_scene_map = {}
+
 var map_grid = {}
 var current_room_coord = Vector2i.ZERO
 var current_room_node: Node2D = null
 
 enum  RoomType {START,NORMAL,BOSS,TRESAURE,SHOP}
 
+class RoomData:
+	var type : RoomType = RoomType.NORMAL
+	var is_cleared : bool = false
+
 func generate_floor():
 	map_grid.clear()
 	var walker_pos = Vector2i.ZERO
 	
-	map_grid[walker_pos] = RoomType.START
+	var start_room_data = RoomData.new()
+	start_room_data.type = RoomType.START
+	start_room_data.is_cleared = true
+	map_grid[walker_pos] = start_room_data
+	
 	var directions = [Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]
 	
 
@@ -25,24 +44,32 @@ func generate_floor():
 		walker_pos += new_dir
 		while map_grid.has(walker_pos):
 			walker_pos += directions.pick_random()
-		map_grid[walker_pos] = RoomType.NORMAL
+		var new_room_data = RoomData.new()
+		new_room_data.type = RoomType.NORMAL
+		map_grid[walker_pos] = new_room_data
 	
-	map_grid[walker_pos] = RoomType.BOSS
+	var boss_room_data = map_grid[walker_pos]
+	boss_room_data.type = RoomType.BOSS
 	print("Mapa gerado:",map_grid)
 
 func start_floor():
+	current_room_scene_map = floor_1_scenes
 	generate_floor()
 	current_room_coord = Vector2i.ZERO
 	load_room(current_room_coord)
+
 
 func load_room(coord:Vector2i):
 	if current_room_node != null:
 		current_room_node.queue_free()
 	
-	var room_type = map_grid.get(coord ,RoomType.NORMAL)
-	var scene_to_load = room_scene_map.get(room_type, room_scene_map[RoomType.NORMAL])
+	var room_data = map_grid.get(coord,RoomData.new())
+	var room_type = room_data.type
 	
-	current_room_node =scene_to_load.instantiate()
+	var scene_to_load = current_room_scene_map.get(room_type,current_room_scene_map[RoomType.NORMAL])
+	
+	current_room_node = scene_to_load.instantiate()
+	current_room_node.set_cleared_state(room_data.is_cleared)
 	
 	var neighbors = {
 		"north": map_grid.has(coord + Vector2i.UP),
@@ -69,7 +96,23 @@ func _on_player_entered_door(direction: Vector2i):
 	
 	player.global_position = spawn_marker.global_position
 
-
+func go_to_next_floor():
+	current_floor += 1
+	
+	match current_floor:
+		1:
+			current_room_scene_map = floor_1_scenes
+		2:
+			current_room_scene_map = floor_2_scenes
+	
+	generate_floor()
+	current_room_coord = Vector2i.ZERO
+	load_room(current_room_coord)
+	var player = get_tree().get_first_node_in_group("player")
+	if player and current_room_node:
+		var spawn_marker = current_room_node.get_node("SpawnPoint_South")
+		player.global_position = spawn_marker.global_position
+	
 func get_opposite_direction_name(dir: Vector2i):
 	if dir == Vector2i.UP:
 		return "South"
@@ -78,4 +121,4 @@ func get_opposite_direction_name(dir: Vector2i):
 	if dir == Vector2i.LEFT:
 		return "East"
 	if dir == Vector2i.RIGHT:
-		return "South"
+		return "West"

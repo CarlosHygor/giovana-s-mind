@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://t8qdmgd824st"]
 
-[ext_resource type="Script" uid="uid://c0qgcnbmhtqqm" path="res://cenas/Door.gd" id="1_t126w"]
+[ext_resource type="Script" uid="uid://c0qgcnbmhtqqm" path="res://scripts/Door.gd" id="1_t126w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sprnh"]
 size = Vector2(130, 30)
@@ -19,7 +19,7 @@ script = ExtResource("1_t126w")
 shape = SubResource("RectangleShape2D_sprnh")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
-collision_layer = 5
+collision_layer = 4
 collision_mask = 0
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="Blocker"]

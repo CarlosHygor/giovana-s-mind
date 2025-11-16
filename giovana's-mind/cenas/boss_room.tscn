@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1k23jj5u47vt"]
+
+[ext_resource type="PackedScene" uid="uid://d3v8iwe2y4s03" path="res://cenas/Room.tscn" id="1_l2nfx"]
+
+[sub_resource type="GDScript" id="GDScript_da65f"]
+script/source = "extends \"res://scripts/Room.gd\"
+
+const EXIT_SCENE = preload(\"res://cenas/exit.tscn\")
+
+@onready var exit_spawn_position = $ExitSpawnPosition
+
+func _ready() -> void:
+	if is_cleared:
+		enemy_count = 0
+		for enemy in enemies_node.get_children():
+			enemy.queue_free()
+	else:
+		enemy_count = enemies_node.get_child_count()
+		if enemy_count > 0:
+			lock_all_doors()
+		else:
+			is_cleared = true
+			unlock_all_doors()
+
+func set_cleared_state(cleared_status:bool):
+	self.is_cleared = cleared_status
+
+func setup_doors(neighbors: Dictionary):
+	if neighbors.north:
+		$Doors/DoorNorth.open_door()
+	else:
+		$Doors/DoorNorth.hide_door()
+	
+	if neighbors.south:
+		$Doors/DoorSouth.open_door()
+	else:
+		$Doors/DoorSouth.hide_door()
+	
+	if  neighbors.east:
+		$Doors/DoorEast.open_door()
+	else:
+		$Doors/DoorEast.hide_door()
+	
+	if neighbors.west:
+		$Doors/DoorWest.open_door()
+	else:
+		$Doors/DoorWest.hide_door()
+
+func lock_all_doors():
+	for Door in $Doors.get_children():
+		if Door.is_visible:
+			Door.close_door()
+
+func unlock_all_doors():
+	super.unlock_all_doors()
+	if get_tree().get_nodes_in_group(\"exit\").size() == 0:
+		var exit = EXIT_SCENE.instantiate()
+		exit.global_position = exit_spawn_position.global_position
+		exit.add_to_group(\"exit\")
+		add_child(exit)
+	
+func _on_door_north_player_triggered() -> void:
+	player_entered_door.emit(Vector2i.UP)
+
+func _on_door_south_player_triggered() -> void:
+	player_entered_door.emit(Vector2i.DOWN)
+
+func _on_door_east_player_triggered() -> void:
+	player_entered_door.emit(Vector2i.RIGHT)
+
+func _on_door_west_player_triggered() -> void:
+	player_entered_door.emit(Vector2i.LEFT)
+
+func _on_enemies_child_exiting_tree(node: Node) -> void:
+	enemy_count -= 1
+	if enemy_count <= 0:
+		print(\"sala limpa\")
+		unlock_all_doors()
+		is_cleared = true
+		room_cleared.emit
+"
+
+[node name="BossRoom" instance=ExtResource("1_l2nfx")]
+script = SubResource("GDScript_da65f")
+
+[node name="ExitSpawnPosition" type="Marker2D" parent="." index="7"]
+position = Vector2(678, 396)
