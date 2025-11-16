@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8qe2x7s1xx45"]
+
+[ext_resource type="Script" uid="uid://424ajou34taa" path="res://scripts/hud.gd" id="1_kqorm"]
+[ext_resource type="Texture2D" uid="uid://d0row1r3ymgk8" path="res://recursos/sprites/hud/life-option2/heart0.png" id="2_606ks"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+script = ExtResource("1_kqorm")
+
+[node name="Coracao1" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_606ks")
+
+[node name="Coracao3" type="Sprite2D" parent="."]
+position = Vector2(159, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_606ks")
+
+[node name="Coracao2" type="Sprite2D" parent="."]
+position = Vector2(79, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_606ks")

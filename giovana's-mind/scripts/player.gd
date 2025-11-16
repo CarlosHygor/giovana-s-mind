@@ -40,14 +40,13 @@ func take_damage(amount: int = 1) -> void:
 		return
 
 	current_health -= amount
+	
 
-	if current_health < 0:
+	if current_health <= 0:
 		current_health = 0
+		die()
 
 	print("Vida:", current_health, "/", max_health)
-
-	if current_health == 0:
-		die()
 
 
 func heal(amount: int = 1) -> void:
