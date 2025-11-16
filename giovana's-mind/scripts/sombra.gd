@@ -7,13 +7,20 @@ extends CharacterBody2D
 @export var tempo_recarga_ataque: float = 1.0 
 
 # --- NOMES DAS ANIMAÇÕES (Ajuste no Inspector) ---
-@export_group("Animações")
-@export var anim_intro: String = "intro" 
-@export var anim_ataque: String = "ataque" 
+@export_group("Animações Padrão")
+@export var anim_intro: String = "intro"
 @export var anim_morte: String = "morte" 
 @export var anim_andar_cima: String = "andar_cima"
 @export var anim_andar_baixo: String = "andar_baixo"
-@export var anim_andar_esquerda: String = "andar_esquerda"
+@export var anim_andar_esquerda: String = "andar_esquerda" # Usado para andar_direita com flip
+
+@export_group("Animações de Ataque")
+@export var anim_ataque_esquerda: String = "ataque_esquerda" # Usado para ataque_direita com flip
+@export var anim_ataque_cima_left: String = "ataque_cima_left"
+@export var anim_ataque_cima_right: String = "ataque_cima_right"
+@export var anim_ataque_baixo_left: String = "ataque_baixo_left"
+@export var anim_ataque_baixo_rigth: String = "ataque_baixo_rigth" # Mantive seu "rigth"
+
 
 # --- REFERÊNCIAS INTERNAS (Nós da Cena) ---
 # Lembre-se de renomear os nós na cena para bater com os nomes abaixo!
@@ -27,6 +34,7 @@ var esta_perseguindo: bool = false
 var esta_atacando: bool = false 
 var esta_morto: bool = false
 var jogador_na_area_ataque: bool = false
+var proximo_ataque_alternado_sera_left: bool = true
 
 
 func _ready():
@@ -50,6 +58,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Se morto, atacando ou sem Jogador, para o movimento
+	print(vida_atual)
 	if esta_morto or esta_atacando or not is_instance_valid(jogador):
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -61,8 +70,8 @@ func _physics_process(delta):
 	# 2. LÓGICA DE ATAQUE ATUALIZADA
 	# Verifica se o jogador está na área E se o timer de recarga parou
 	if jogador_na_area_ataque and timer_recarga_ataque.is_stopped():
-		# Ataca!
-		atacar()
+		# Ataca! Passando a direção para a função
+		atacar(direcao_normalizada) # <-- MUDANÇA AQUI
 	else:
 		# Se não, persegue o jogador
 		perseguir_jogador(direcao_normalizada)
@@ -105,22 +114,63 @@ func perseguir_jogador(direcao: Vector2):
 			sprite_animado.play(anim_andar_cima)
 
 
-func atacar():
+func atacar(direcao: Vector2):
 	# 1. Entra no estado de ataque
 	esta_atacando = true
 	
 	# 2. Para o movimento imediatamente
 	velocity = Vector2.ZERO
 	
-	# 3. Toca a animação de ataque
-	sprite_animado.play(anim_ataque)
+	# 3. LÓGICA DE ATAQUE DIRECIONAL
+	var anim_name = ""
 	
-	# 4. Chama a função de dano
+	# Converte o vetor de direção em um ângulo (em graus)
+	# 0 = direita, 90 = baixo, 180/-180 = esquerda, -90 = cima
+	var angulo = rad_to_deg(direcao.angle())
+	
+	if angulo > 45 and angulo < 135:
+		# ----- ZONA: BAIXO -----
+		
+		# --- NOVA LÓGICA DE ALTERNÂNCIA ---
+		if proximo_ataque_alternado_sera_left:
+			anim_name = anim_ataque_baixo_left
+			proximo_ataque_alternado_sera_left = false # O próximo será right
+		else:
+			anim_name = anim_ataque_baixo_rigth
+			proximo_ataque_alternado_sera_left = true # O próximo será left
+			
+		sprite_animado.flip_h = false # Ataques de cima/baixo nunca usam flip
+			
+	elif angulo < -45 and angulo > -135:
+		# ----- ZONA: CIMA -----
+		
+		# --- NOVA LÓGICA DE ALTERNÂNCIA ---
+		if proximo_ataque_alternado_sera_left:
+			anim_name = anim_ataque_cima_left
+			proximo_ataque_alternado_sera_left = false # O próximo será right
+		else:
+			anim_name = anim_ataque_cima_right
+			proximo_ataque_alternado_sera_left = true # O próximo será left
+			
+		sprite_animado.flip_h = false # Ataques de cima/baixo nunca usam flip
+			
+	else:
+		# ----- ZONA: HORIZONTAL (LÓGICA ANTIGA MANTIDA) -----
+		# Esta zona não alterna, apenas usa a direção
+		anim_name = anim_ataque_esquerda # Animação base
+		if direcao.x < 0:
+			sprite_animado.flip_h = false # Atacando para a esquerda
+		else:
+			sprite_animado.flip_h = true # Atacando para a direita (flip)
+
+	# 4. Toca a animação de ataque decidida
+	sprite_animado.play(anim_name)
+	
+	# 5. Chama a função de dano
 	aplicar_dano_no_jogador() 
 	
-	# 5. Inicia o cooldown
+	# 6. Inicia o cooldown
 	timer_recarga_ataque.start()
-
 
 func aplicar_dano_no_jogador():
 	# Esta função aplica o dano no jogador.
@@ -168,15 +218,17 @@ func ao_terminar_intro():
 	esta_perseguindo = true
 
 
-# Conecte o sinal "animation_finished" do nó SpriteAnimado a esta função
 func _on_sprite_animado_animation_finished():
 	# Chamado após QUALQUER animação terminar
-	if sprite_animado.animation == anim_ataque:
+	var anim_atual = sprite_animado.animation
+	
+	# MUDANÇA: Verifica se a animação que terminou é QUALQUER animação de ataque
+	if anim_atual.begins_with("ataque_"):
 		# Se a animação de ataque terminou, voltamos ao estado "normal"
 		esta_atacando = false
 		
 	#Verificamos se a animação de morte terminou
-	elif sprite_animado.animation == anim_morte:
+	elif anim_atual == anim_morte:
 		# Remove o inimigo da cena
 		queue_free()
 
