@@ -416,16 +416,16 @@ rotation = 1.5707964
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="SpawnPoint_South" type="Marker2D" parent="."]
-position = Vector2(384, 502)
+position = Vector2(385, 432)
 
 [node name="SpawnPoint_West" type="Marker2D" parent="."]
-position = Vector2(74, 288)
+position = Vector2(144, 288)
 
 [node name="SpawnPoint_East" type="Marker2D" parent="."]
-position = Vector2(698, 288)
+position = Vector2(625, 289)
 
 [node name="SpawnPoint_North" type="Marker2D" parent="."]
-position = Vector2(385, 70)
+position = Vector2(387, 143)
 
 [connection signal="player_triggered" from="Doors/DoorNorth" to="." method="_on_door_north_player_triggered"]
 [connection signal="player_triggered" from="Doors/DoorSouth" to="." method="_on_door_south_player_triggered"]

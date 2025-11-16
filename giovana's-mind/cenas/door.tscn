@@ -6,7 +6,7 @@
 size = Vector2(130, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucut5"]
-size = Vector2(133, 34)
+size = Vector2(158, 52)
 
 [node name="Door" type="Area2D"]
 collision_layer = 0
@@ -19,9 +19,10 @@ script = ExtResource("1_t126w")
 shape = SubResource("RectangleShape2D_sprnh")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 0
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="Blocker"]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ucut5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

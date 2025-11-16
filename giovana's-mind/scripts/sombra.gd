@@ -58,6 +58,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Se morto, atacando ou sem Jogador, para o movimento
+	print(vida_atual)
 	if esta_morto or esta_atacando or not is_instance_valid(jogador):
 		velocity = Vector2.ZERO
 		move_and_slide()

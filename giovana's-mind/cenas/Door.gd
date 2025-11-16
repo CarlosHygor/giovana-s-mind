@@ -15,6 +15,7 @@ func _on_body_entered(body):
 
 func close_door():
 	$Blocker/PhysicalCollision.disabled = false
+	$Blocker.collision_layer = 1
 
 func open_door():
 	$Blocker/PhysicalCollision.disabled = true
