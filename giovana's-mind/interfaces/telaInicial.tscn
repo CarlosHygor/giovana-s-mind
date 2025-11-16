@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://biu7ycgtvui4m"]
+[gd_scene load_steps=10 format=3 uid="uid://biu7ycgtvui4m"]
 
 [ext_resource type="Texture2D" uid="uid://bkmo1ur2y7l2x" path="res://recursos/assets/Pinturas/pinturaVariant2.png" id="1_j0s4j"]
+[ext_resource type="Script" uid="uid://jphaf7ebqxyw" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
 [ext_resource type="FontFile" uid="uid://dddispwcg35tb" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_vbxk6"]
 [ext_resource type="Texture2D" uid="uid://d1ihyfbca0uky" path="res://recursos/assets/botoes1.png" id="3_811d3"]
+[ext_resource type="Script" uid="uid://bpwkrry3swpt0" path="res://scripts/animcaoBotoes.gd" id="4_811d3"]
+[ext_resource type="Script" uid="uid://dhpnwgjh5retl" path="res://scripts/animcaoBotoesMenu.gd" id="5_aa7wk"]
+[ext_resource type="Script" uid="uid://dxsd6572try0h" path="res://scripts/animcaoBotoesSair.gd" id="6_3cxuk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa7wk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cxuk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="TelaInicial" type="Control"]
@@ -14,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vbxk6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -5
@@ -45,13 +53,18 @@ size_flags_vertical = 4
 theme_override_constants/separation = 45
 
 [node name="Jogar" type="Button" parent="BoxContainer/VBoxContainer"]
-texture_filter = 3
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_vbxk6")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cxuk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Jogar"
+script = ExtResource("4_811d3")
 
 [node name="TextureRect" type="TextureRect" parent="BoxContainer/VBoxContainer/Jogar"]
 z_index = -1
@@ -71,12 +84,17 @@ mouse_filter = 2
 texture = ExtResource("3_811d3")
 
 [node name="Menu" type="Button" parent="BoxContainer/VBoxContainer"]
-texture_filter = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vbxk6")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Menu"
+script = ExtResource("5_aa7wk")
 
 [node name="TextureRect2" type="TextureRect" parent="BoxContainer/VBoxContainer/Menu"]
 z_index = -1
@@ -96,12 +114,17 @@ mouse_filter = 2
 texture = ExtResource("3_811d3")
 
 [node name="Sair" type="Button" parent="BoxContainer/VBoxContainer"]
-texture_filter = 3
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vbxk6")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aa7wk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Sair"
+script = ExtResource("6_3cxuk")
 
 [node name="TextureRect3" type="TextureRect" parent="BoxContainer/VBoxContainer/Sair"]
 z_index = -1
@@ -119,3 +142,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_811d3")
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
