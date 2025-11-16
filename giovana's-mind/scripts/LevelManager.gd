@@ -5,13 +5,13 @@ const NUM_ROOMS = 10
 var current_floor = 1
 
 var floor_1_scenes = {
-	RoomType.START : preload("res://cenas/room.tscn"),
+	RoomType.START : preload("res://cenas/Room.tscn"),
 	RoomType.NORMAL: preload("res://cenas/roomTeste.tscn"),
 	RoomType.BOSS: preload("res://cenas/boss_room.tscn")
 }
 
 var floor_2_scenes = {
-	RoomType.START : preload("res://cenas/room.tscn"),
+	RoomType.START : preload("res://cenas/Room.tscn"),
 	RoomType.NORMAL: preload("res://cenas/roomTeste.tscn")
 }
 
@@ -98,11 +98,13 @@ func _on_player_entered_door(direction: Vector2i):
 
 func go_to_next_floor():
 	current_floor += 1
+	
 	match current_floor:
 		1:
 			current_room_scene_map = floor_1_scenes
 		2:
 			current_room_scene_map = floor_2_scenes
+	
 	generate_floor()
 	current_room_coord = Vector2i.ZERO
 	load_room(current_room_coord)
@@ -119,4 +121,4 @@ func get_opposite_direction_name(dir: Vector2i):
 	if dir == Vector2i.LEFT:
 		return "East"
 	if dir == Vector2i.RIGHT:
-		return "South"
+		return "West"

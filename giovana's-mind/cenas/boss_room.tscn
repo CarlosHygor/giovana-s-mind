@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1k23jj5u47vt"]
 
-[ext_resource type="PackedScene" uid="uid://d3v8iwe2y4s03" path="res://cenas/room.tscn" id="1_l2nfx"]
+[ext_resource type="PackedScene" uid="uid://d3v8iwe2y4s03" path="res://cenas/Room.tscn" id="1_l2nfx"]
 
 [sub_resource type="GDScript" id="GDScript_da65f"]
-script/source = "extends \"res://Room.gd\"
+script/source = "extends \"res://scripts/Room.gd\"
 
 const EXIT_SCENE = preload(\"res://cenas/exit.tscn\")
 

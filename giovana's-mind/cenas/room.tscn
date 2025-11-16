@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c72yq6mxk8uve" path="res://scripts/Room.gd" id="1_dfvbp"]
 [ext_resource type="Texture2D" uid="uid://bxsjmeqtltcd3" path="res://recursos/assets/InteriorTilesLITE.png" id="2_i6b2i"]
-[ext_resource type="Texture2D" path="res://recursos/assets/piso madeira.png" id="3_mtey2"]
-[ext_resource type="Texture2D" path="res://recursos/assets/piso azulejo 100x100.png" id="4_32b5u"]
+[ext_resource type="Texture2D" uid="uid://grinwpd5xefl" path="res://recursos/assets/parede-psio/piso madeira.png" id="3_mtey2"]
+[ext_resource type="Texture2D" uid="uid://25mfhakrevr5" path="res://recursos/assets/parede-psio/piso azulejo 100x100.png" id="4_32b5u"]
 [ext_resource type="PackedScene" uid="uid://t8qdmgd824st" path="res://cenas/door.tscn" id="5_eq784"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_to7kj"]
