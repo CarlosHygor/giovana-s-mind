@@ -1,9 +1,8 @@
 extends Area2D
 
 signal player_triggered
-
-
 @onready var sprite = $Sprite
+@onready var enemies_node = $Enemies
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)

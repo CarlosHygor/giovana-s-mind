@@ -317,7 +317,6 @@ one_shot = true
 [node name="AreaAtaque" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
-visible = false
 position = Vector2(1, 22)
 shape = SubResource("CircleShape2D_xsrvg")
 metadata/_edit_lock_ = true

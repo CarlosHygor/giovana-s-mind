@@ -191,6 +191,9 @@ func receber_dano(quantidade_dano: int):
 	vida_atual -= quantidade_dano
 	
 	if vida_atual <= 0:
+		$AreaHitbox/CollisionShape2D.disabled = true
+		$CollisionShape2D.disabled = true
+		$AreaHitbox/CollisionShape2D.disabled=true
 		morrer()
 
 

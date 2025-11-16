@@ -1,12 +1,28 @@
 extends Node2D
 
+var is_cleared = false
 var enemy_count = 0
+
 signal player_entered_door(direction)
+signal room_cleared
+
+@onready var enemies_node = $Enemies
 
 func _ready() -> void:
-	enemy_count = $Enemies.get_child_count()
-	if enemy_count > 0:
-		lock_all_doors()
+	if is_cleared:
+		enemy_count = 0
+		for enemy in enemies_node.get_children():
+			enemy.queue_free()
+	else:
+		enemy_count = enemies_node.get_child_count()
+		if enemy_count > 0:
+			lock_all_doors()
+		else:
+			is_cleared = true
+			unlock_all_doors()
+
+func set_cleared_state(cleared_status:bool):
+	self.is_cleared = cleared_status
 
 func setup_doors(neighbors: Dictionary):
 	if neighbors.north:
@@ -55,3 +71,5 @@ func _on_enemies_child_exiting_tree(node: Node) -> void:
 	if enemy_count <= 0:
 		print("sala limpa")
 		unlock_all_doors()
+		is_cleared = true
+		room_cleared.emit

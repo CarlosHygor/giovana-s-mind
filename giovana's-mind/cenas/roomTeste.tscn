@@ -6,7 +6,19 @@
 [node name="Room" instance=ExtResource("1_582ht")]
 
 [node name="CharacterBody2D" parent="Enemies" index="0" instance=ExtResource("2_vupj6")]
-position = Vector2(660, 118)
+position = Vector2(1157, 152)
+scale = Vector2(0.4, 0.4)
+
+[node name="CharacterBody2D2" parent="Enemies" index="1" instance=ExtResource("2_vupj6")]
+position = Vector2(204, 138)
+scale = Vector2(0.4, 0.4)
+
+[node name="CharacterBody2D3" parent="Enemies" index="2" instance=ExtResource("2_vupj6")]
+position = Vector2(220, 593)
+scale = Vector2(0.4, 0.4)
+
+[node name="CharacterBody2D4" parent="Enemies" index="3" instance=ExtResource("2_vupj6")]
+position = Vector2(1148, 597.99994)
 scale = Vector2(0.4, 0.4)
 
 [connection signal="child_exiting_tree" from="Enemies" to="." method="_on_enemies_child_exiting_tree"]
