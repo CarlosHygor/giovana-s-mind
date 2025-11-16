@@ -22,6 +22,20 @@ var can_swap_arma: bool = true
 # Controla a cor da arma atual: "azul" ou "roxo"
 var estado_arma: String = "azul"
 
+# --- ATRIBUTOS DAS ARMAS ---
+@export_group("Arma Azul")
+@export var azul_dano: int = 1
+@export var azul_speed: float = 600.0
+@export var azul_range: float = 9999.0 # Alcance "infinito"
+@export var azul_fire_rate: float = 0.6
+
+@export_group("Arma Roxa")
+@export var roxo_dano: int = 3
+@export var roxo_speed: float = 450.0 # Mesma velocidade
+@export var roxo_range: float = 350.0 # Alcance curto
+@export var roxo_fire_rate: float = 1.2 # Cooldown maior
+@export var roxo_scale: Vector2 = Vector2(1.5, 1.5) # 50% maior
+
 # Guarda a última direção para a animação "parado"
 var direcao_parado: String = "_baixo" # Começa olhando para baixo
 var direcao_animacao_atual: String = "_baixo"
@@ -212,42 +226,45 @@ func shoot(direction: Vector2):
 	var bullet = bullet_scene.instantiate()
 	var spawn_position: Vector2
 	
-	# Lemos a direção da ANIMAÇÃO que o _physics_process salvou
+	# --- Lógica do Muzzle (sem alterações) ---
 	match direcao_animacao_atual:
 		"_cima":
 			spawn_position = muzzle_cima.global_position
 		"_baixo":
 			spawn_position = muzzle_baixo.global_position
-			
 		"_direita":
-			# --- ESTA É A CORREÇÃO ---
-			# Verifica se o sprite está virado para a esquerda
 			if sprite_animado.flip_h:
-				# Se sim, pega a posição LOCAL do muzzle
 				var local_pos = muzzle_direita.position
-				# Inverte o X dela manualmente
 				local_pos.x *= -1
-				# Converte essa nova posição local para a posição global
 				spawn_position = sprite_animado.to_global(local_pos)
 			else:
-				# Se não, (olhando para a direita), usa a posição global normal
 				spawn_position = muzzle_direita.global_position
-			# -------------------------
-			
 		_:
-			# Caso de segurança
 			spawn_position = muzzle_direita.global_position
 
-	# Define a posição da bala para o ponto de spawn calculado
+	# --- CONFIGURAÇÃO DA BALA (AQUI ESTÁ A MÁGICA) ---
 	bullet.global_position = spawn_position
-	
-	# O resto do seu código
 	bullet.direction = direction
 	bullet.cor_arma = estado_arma 
 	
+	var current_fire_rate: float
+	
+	if estado_arma == "azul":
+		bullet.dano = azul_dano
+		bullet.speed = azul_speed
+		bullet.range = azul_range # Passa o alcance para a bala
+		current_fire_rate = azul_fire_rate
+	else: # Roxo
+		bullet.dano = roxo_dano
+		bullet.speed = roxo_speed
+		bullet.range = roxo_range # Passa o alcance para a bala
+		bullet.scale = roxo_scale # Define o tamanho
+		current_fire_rate = roxo_fire_rate
+	
 	get_tree().current_scene.add_child(bullet)
 
-	await get_tree().create_timer(fire_rate).timeout
+	# Usa o cooldown correto
+	await get_tree().create_timer(current_fire_rate).timeout
 	can_shoot = true
 
 func _on_sprite_2d_animation_finished() -> void:

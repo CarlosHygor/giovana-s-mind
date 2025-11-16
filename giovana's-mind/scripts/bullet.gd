@@ -4,6 +4,9 @@ extends Area2D
 @export var dano: int = 1 
 var direction: Vector2
 
+var range: float = 9999.0 # Padrão "infinito", o Player vai sobrescrever
+var distance_traveled: float = 0.0
+
 var cor_arma: String = "azul" 
 @onready var sprite_animado: AnimatedSprite2D = $SpriteAnimado
 
@@ -12,14 +15,23 @@ var acertou: bool = false
 func _ready():
 	sprite_animado.play("disparo_" + cor_arma)
 
+
 func _physics_process(delta):
 	if acertou:
 		return
 		
-	position += direction * speed * delta
+	# Calcula o movimento deste frame
+	var move_vec = direction * speed * delta
+	position += move_vec
+	
+	# Adiciona à distância percorrida
+	distance_traveled += move_vec.length()
+	
+	# Verifica se atingiu o alcance
+	if distance_traveled >= range:
+		explodir() # Explode quando atinge o alcance
 
 # --- LÓGICA DE EXPLOSÃO CENTRALIZADA ---
-
 func explodir():
 	# Se já chamamos explodir(), não faça de novo
 	if acertou:
