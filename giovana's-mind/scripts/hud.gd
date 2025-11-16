@@ -15,10 +15,9 @@ var heart_textures: Array[Texture2D] = [
 	preload("res://recursos/sprites/hud/life-option2/heart0.png")  # Cheio (Índice 4)
 ]
 
-func _ready():
-	# Vamos testar o HUD com 7 de vida (de 12)
-	# Isso deve mostrar: Coração 1 cheio, Coração 2 3/4, Coração 3 vazio.
-	atualizar_vida_ui(7)
+func _ready() -> void:
+	atualizar_vida_ui(12)
+	
 # 3. A mesma função de antes, que o Player pode chamar
 func atualizar_vida_ui(current_health: int):
 	
