@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_nj58g"]
 
 [node name="CooldownPlushie" instance=ExtResource("1_eh6vk")]
+collision_mask = 3
 tipo_de_buff = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]

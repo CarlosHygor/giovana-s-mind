@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg5lyqlj1ta4i"
-path="res://.godot/imported/clawMachine11.png-2530f6bdfed94201da5531d43cda5e28.ctex"
+uid="uid://dxvuuqiaraluu"
+path="res://.godot/imported/mob olho lado3.png-862f2dea8b6188cffef5dc373db9f958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/clawMachine11.png"
-dest_files=["res://.godot/imported/clawMachine11.png-2530f6bdfed94201da5531d43cda5e28.ctex"]
+source_file="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado3.png"
+dest_files=["res://.godot/imported/mob olho lado3.png-862f2dea8b6188cffef5dc373db9f958.ctex"]
 
 [params]
 

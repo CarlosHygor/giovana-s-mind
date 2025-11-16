@@ -1,7 +1,6 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://b78l2ail5cdx3"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b78l2ail5cdx3"]
 
 [ext_resource type="Texture2D" uid="uid://bxsjmeqtltcd3" path="res://recursos/assets/InteriorTilesLITE.png" id="1_6lbgj"]
-[ext_resource type="Texture2D" uid="uid://bypl3mxcoho6l" path="res://recursos/assets/piso madeira.png" id="2_3qi3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7jwy"]
 texture = ExtResource("1_6lbgj")
@@ -1040,7 +1039,6 @@ texture = ExtResource("1_6lbgj")
 31:27/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qi3b"]
-texture = ExtResource("2_3qi3b")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 1:0/0 = 0

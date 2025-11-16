@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3eavfi3whhk4"
-path="res://.godot/imported/clawMachine1.png-a746a9550451a7031c97d6a7a2a04ffb.ctex"
+uid="uid://dkicsnbi68b5e"
+path="res://.godot/imported/disparo lagrima7.png-6b74b8afe0d40a51eb62bef48d9c8563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/clawMachine1.png"
-dest_files=["res://.godot/imported/clawMachine1.png-a746a9550451a7031c97d6a7a2a04ffb.ctex"]
+source_file="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima7.png"
+dest_files=["res://.godot/imported/disparo lagrima7.png-6b74b8afe0d40a51eb62bef48d9c8563.ctex"]
 
 [params]
 

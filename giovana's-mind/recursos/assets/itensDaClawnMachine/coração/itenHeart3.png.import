@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1onorwvenrnq"
-path="res://.godot/imported/clawMachine7.png-641dc4cee3c549a1322f37995eaa19e4.ctex"
+uid="uid://b1b0616hmcojr"
+path="res://.godot/imported/itenHeart3.png-ed5ea9851ac440772a7dd9e33336b682.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/clawMachine7.png"
-dest_files=["res://.godot/imported/clawMachine7.png-641dc4cee3c549a1322f37995eaa19e4.ctex"]
+source_file="res://recursos/assets/itensDaClawnMachine/coração/itenHeart3.png"
+dest_files=["res://.godot/imported/itenHeart3.png-ed5ea9851ac440772a7dd9e33336b682.ctex"]
 
 [params]
 

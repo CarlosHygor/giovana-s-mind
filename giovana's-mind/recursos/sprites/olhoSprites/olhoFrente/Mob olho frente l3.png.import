@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yybgghy1125d"
-path="res://.godot/imported/clawMachine4.png-4cffe00c1823a5154195abee50a9f4ce.ctex"
+uid="uid://br20fup1emh6g"
+path="res://.godot/imported/Mob olho frente l3.png-6ae41d7add4d9a6695f8c16a1df5c474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/clawMachine4.png"
-dest_files=["res://.godot/imported/clawMachine4.png-4cffe00c1823a5154195abee50a9f4ce.ctex"]
+source_file="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l3.png"
+dest_files=["res://.godot/imported/Mob olho frente l3.png-6ae41d7add4d9a6695f8c16a1df5c474.ctex"]
 
 [params]
 

@@ -56,6 +56,8 @@ func usar_maquina():
 	var heal_plushie = heal_plushie_scene.instantiate()
 	heal_plushie.global_position = drop_heal_pos.global_position
 	get_parent().add_child(heal_plushie)
+	
+	heal_plushie.z_index = 10
 
 	# 5. Dropa o Buff Aleatório (no local 2)
 	var buff_list = [damage_plushie_scene, speed_plushie_scene, cooldown_plushie_scene]
@@ -65,8 +67,10 @@ func usar_maquina():
 	buff_plushie.global_position = drop_buff_pos.global_position
 	get_parent().add_child(buff_plushie)
 	
+	buff_plushie.z_index = 10
+	
 	# 6. Volta para a animação "default"
-	anim_sprite.play("default")
+	anim_sprite.play("inicio")
 	
 	# 7. Inicia o cooldown
 	await get_tree().create_timer(cooldown_time).timeout

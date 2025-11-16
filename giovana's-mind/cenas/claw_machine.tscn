@@ -1,26 +1,27 @@
-[gd_scene load_steps=17 format=3 uid="uid://beilujwdvgdxi"]
+[gd_scene load_steps=22 format=3 uid="uid://beilujwdvgdxi"]
 
 [ext_resource type="Script" uid="uid://ccmrbvg4nmp1v" path="res://scripts/claw_machine.gd" id="1_ruogf"]
-[ext_resource type="Texture2D" uid="uid://d3eavfi3whhk4" path="res://recursos/assets/clawMachine1.png" id="2_fehfg"]
-[ext_resource type="Texture2D" uid="uid://ct11qmmwfkc52" path="res://recursos/assets/clawMachine2.png" id="3_qcsjy"]
-[ext_resource type="Texture2D" uid="uid://fwaah7uhhqt2" path="res://recursos/assets/clawMachine3.png" id="4_d441d"]
-[ext_resource type="Texture2D" uid="uid://yybgghy1125d" path="res://recursos/assets/clawMachine4.png" id="5_0lum0"]
-[ext_resource type="Texture2D" uid="uid://bx53y3ixjipyn" path="res://recursos/assets/clawMachine5.png" id="6_fhrpx"]
-[ext_resource type="Texture2D" uid="uid://doyhxjxk2upkf" path="res://recursos/assets/clawMachine6.png" id="7_2xrg4"]
-[ext_resource type="Texture2D" uid="uid://d1onorwvenrnq" path="res://recursos/assets/clawMachine7.png" id="8_xwle5"]
-[ext_resource type="Texture2D" uid="uid://bfasidxvgtnvb" path="res://recursos/assets/clawMachine8.png" id="9_18i1h"]
-[ext_resource type="Texture2D" uid="uid://d18q6v2yv64ij" path="res://recursos/assets/clawMachine9.png" id="10_grgqw"]
-[ext_resource type="Texture2D" uid="uid://nbg42778nghd" path="res://recursos/assets/clawMachine10.png" id="11_py7bk"]
-[ext_resource type="Texture2D" uid="uid://cg5lyqlj1ta4i" path="res://recursos/assets/clawMachine11.png" id="12_8ymeh"]
-[ext_resource type="Texture2D" uid="uid://bswgo5vgwe3p3" path="res://recursos/assets/clawMachine12.png" id="13_icd0a"]
-[ext_resource type="Texture2D" uid="uid://duaugprwdlgtw" path="res://recursos/assets/clawMachine13.png" id="14_c02hh"]
+[ext_resource type="Texture2D" uid="uid://dyj8daw86qbr0" path="res://recursos/assets/clawMachine/clawMachine1.png" id="2_fehfg"]
+[ext_resource type="PackedScene" uid="uid://dal5k7eqpb0nm" path="res://cenas/Plushies/heal_plushie.tscn" id="2_fhrpx"]
+[ext_resource type="PackedScene" uid="uid://dqm5kw7a6exlp" path="res://cenas/Plushies/damage_plushie.tscn" id="3_2xrg4"]
+[ext_resource type="Texture2D" uid="uid://r6qrs4dk8of4" path="res://recursos/assets/clawMachine/clawMachine2.png" id="3_qcsjy"]
+[ext_resource type="Texture2D" uid="uid://dto3xjft2aiky" path="res://recursos/assets/clawMachine/clawMachine3.png" id="4_d441d"]
+[ext_resource type="PackedScene" uid="uid://dy1c7rqwpk68a" path="res://cenas/Plushies/speed_plushie.tscn" id="4_xwle5"]
+[ext_resource type="Texture2D" uid="uid://8frlklkr0wjb" path="res://recursos/assets/clawMachine/clawMachine4.png" id="5_0lum0"]
+[ext_resource type="PackedScene" uid="uid://cmw167v721io7" path="res://cenas/Plushies/cooldown_plushie.tscn" id="5_18i1h"]
+[ext_resource type="Texture2D" uid="uid://ioipo0sg4bga" path="res://recursos/assets/clawMachine/clawMachine5.png" id="6_fhrpx"]
+[ext_resource type="Texture2D" uid="uid://oa4qae85np4b" path="res://recursos/assets/clawMachine/clawMachine6.png" id="7_2xrg4"]
+[ext_resource type="Texture2D" uid="uid://ola5ysfwkpf5" path="res://recursos/assets/clawMachine/clawMachine7.png" id="8_xwle5"]
+[ext_resource type="Texture2D" uid="uid://b7x0hemkkvv4f" path="res://recursos/assets/clawMachine/clawMachine8.png" id="9_18i1h"]
+[ext_resource type="Texture2D" uid="uid://yv0ai5l585mk" path="res://recursos/assets/clawMachine/clawMachine9.png" id="10_grgqw"]
+[ext_resource type="Texture2D" uid="uid://obafl3ubcdcp" path="res://recursos/assets/clawMachine/clawMachine10.png" id="11_py7bk"]
+[ext_resource type="Texture2D" uid="uid://dhkc7nfsbxgoi" path="res://recursos/assets/clawMachine/clawMachine11.png" id="12_8ymeh"]
+[ext_resource type="Texture2D" uid="uid://rylp6jf2c85b" path="res://recursos/assets/clawMachine/clawMachine12.png" id="13_icd0a"]
+[ext_resource type="Texture2D" uid="uid://io6mkx74ow41" path="res://recursos/assets/clawMachine/clawMachine13.png" id="14_c02hh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ncqey"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_fehfg")
-}, {
 "duration": 1.0,
 "texture": ExtResource("2_fehfg")
 }],
@@ -29,6 +30,9 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fehfg")
+}, {
 "duration": 1.0,
 "texture": ExtResource("3_qcsjy")
 }, {
@@ -74,9 +78,17 @@ animations = [{
 radius = 343.0
 height = 840.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fehfg"]
+radius = 134.99255
+height = 412.50986
+
 [node name="ClawMachine" type="Area2D"]
 collision_mask = 3
 script = ExtResource("1_ruogf")
+heal_plushie_scene = ExtResource("2_fhrpx")
+damage_plushie_scene = ExtResource("3_2xrg4")
+speed_plushie_scene = ExtResource("4_xwle5")
+cooldown_plushie_scene = ExtResource("5_18i1h")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ncqey")
@@ -88,9 +100,16 @@ position = Vector2(3, 126)
 shape = SubResource("CapsuleShape2D_yoyh8")
 
 [node name="DropLocationHeal" type="Marker2D" parent="."]
-position = Vector2(-92, 258)
+position = Vector2(-90, 313)
 
 [node name="DropLocationBuff" type="Marker2D" parent="."]
-position = Vector2(40, 266)
+position = Vector2(80, 323)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.000001, -11.999996)
+shape = SubResource("CapsuleShape2D_fehfg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nbg42778nghd"
-path="res://.godot/imported/clawMachine10.png-92156346d6a032599d7e3c39bfad55a8.ctex"
+uid="uid://drm0tq61qakvi"
+path="res://.godot/imported/Mob olho fechado.png-6b5b8a890ace2bd232cb41c47afe6334.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/clawMachine10.png"
-dest_files=["res://.godot/imported/clawMachine10.png-92156346d6a032599d7e3c39bfad55a8.ctex"]
+source_file="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho fechado.png"
+dest_files=["res://.godot/imported/Mob olho fechado.png-6b5b8a890ace2bd232cb41c47afe6334.ctex"]
 
 [params]
 

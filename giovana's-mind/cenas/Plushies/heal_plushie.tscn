@@ -1,9 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dal5k7eqpb0nm"]
+[gd_scene load_steps=9 format=3 uid="uid://dal5k7eqpb0nm"]
 
 [ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_hy37d"]
-[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_voe7u"]
+[ext_resource type="Texture2D" uid="uid://dij5xtssdj4fl" path="res://recursos/assets/itensDaClawnMachine/coração/itenHeart1.png" id="2_4oehu"]
+[ext_resource type="Texture2D" uid="uid://chapbkvugjhlo" path="res://recursos/assets/itensDaClawnMachine/coração/itenHeart2.png" id="3_jv7dv"]
+[ext_resource type="Texture2D" uid="uid://b1b0616hmcojr" path="res://recursos/assets/itensDaClawnMachine/coração/itenHeart3.png" id="4_oe22s"]
+[ext_resource type="Texture2D" uid="uid://dq0ivsicty7oh" path="res://recursos/assets/itensDaClawnMachine/coração/itenHeart4.png" id="5_qlflq"]
+[ext_resource type="Texture2D" uid="uid://bqj5txrbxhppx" path="res://recursos/assets/itensDaClawnMachine/coração/itenHeart5.png" id="6_mdlv8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsxwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4oehu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jv7dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oe22s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qlflq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mdlv8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4oehu"]
+radius = 96.666664
+height = 193.33333
 
 [node name="HealPlushie" instance=ExtResource("1_hy37d")]
+scale = Vector2(0.3, 0.3)
+collision_layer = 3
+collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_voe7u")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_lsxwu")
+autoplay = "default"
+frame_progress = 0.4361145
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_4oehu")
