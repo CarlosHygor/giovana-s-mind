@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://82mjpmuu6vpo"
-path="res://.godot/imported/6.svg-ec28794c71b4c33074c2e240769250a2.ctex"
+uid="uid://bo3jp8wso4tuc"
+path="res://.godot/imported/piso madeira.png-8e3bee1983f6ef06dae1a05393a94481.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/6.svg"
-dest_files=["res://.godot/imported/6.svg-ec28794c71b4c33074c2e240769250a2.ctex"]
+source_file="res://recursos/assets/piso madeira.png"
+dest_files=["res://.godot/imported/piso madeira.png-8e3bee1983f6ef06dae1a05393a94481.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

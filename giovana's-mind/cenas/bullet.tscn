@@ -76,6 +76,7 @@ animations = [{
 radius = 30.016663
 
 [node name="Bullet" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_u5170")
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]

@@ -51,10 +51,20 @@ func _on_body_entered(body):
 	if acertou:
 		return
 
-	# 1. Verifica se o corpo NÃO é o player
-	# (para a bala não explodir ao ser criada)
-	if not body.is_in_group("player"):
-		# 2. Explode (em qualquer parede ou obstáculo)
+	# 1. Verifica se o corpo é um inimigo
+	if body.is_in_group("inimigo"):
+		
+		# 2. Causa dano
+		# (O script está no próprio CharacterBody2D, então chamamos direto)
+		body.receber_dano(dano)
+		
+		# 3. Explode
+		explodir()
+
+	# 4. Se não for inimigo, verifica se é o player
+	elif not body.is_in_group("player"):
+		
+		# 5. Explode (em qualquer parede ou obstáculo)
 		explodir()
 
 # --- SINAIS DE CONTROLE ---

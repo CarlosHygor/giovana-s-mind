@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dxca7fbkjtnx7"]
+[gd_scene load_steps=7 format=4 uid="uid://dxca7fbkjtnx7"]
 
 [ext_resource type="Script" uid="uid://c3gw2aprtvejj" path="res://Fase1.gd" id="1_b30p5"]
 [ext_resource type="TileSet" uid="uid://b78l2ail5cdx3" path="res://recursos/assets/tile set Base.tres" id="2_5wwvk"]
-[ext_resource type="Script" path="res://scripts/CameraZone.gd" id="3_bhvw8"]
+[ext_resource type="Script" uid="uid://pfkahrplrkpq" path="res://scripts/CameraZone.gd" id="3_bhvw8"]
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="4_l8342"]
+[ext_resource type="PackedScene" uid="uid://ccc2adpreni52" path="res://cenas/sombra.tscn" id="5_5wwvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1d1r"]
 size = Vector2(2998, 2305)
@@ -112,6 +113,9 @@ position = Vector2(234, 199)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1511, 1117)
 zoom = Vector2(0.25, 0.25)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_5wwvk")]
+position = Vector2(1212, 235)
 
 [connection signal="body_entered" from="Level/CameraZones/Zone_0_0" to="." method="_on_camera_zone_body_entered"]
 [connection signal="body_entered" from="Level/CameraZones/Zone_0_1" to="." method="_on_camera_zone_body_entered"]
