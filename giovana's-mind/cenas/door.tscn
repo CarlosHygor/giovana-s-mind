@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://t8qdmgd824st"]
+
+[ext_resource type="Script" uid="uid://c0qgcnbmhtqqm" path="res://cenas/Door.gd" id="1_t126w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sprnh"]
+size = Vector2(130, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucut5"]
+size = Vector2(133, 34)
+
+[node name="Door" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_t126w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="TriggerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sprnh")
+
+[node name="Blocker" type="StaticBody2D" parent="."]
+
+[node name="PhysicalCollision" type="CollisionShape2D" parent="Blocker"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ucut5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
