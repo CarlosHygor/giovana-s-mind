@@ -15,6 +15,10 @@ var can_shoot := true
 @onready var muzzle_baixo: Marker2D = $SpriteAnimado/MuzzleBaixo
 @onready var muzzle_direita: Marker2D = $SpriteAnimado/MuzzleDireita
 
+# Troca de urso
+@onready var swap_cooldown_timer: Timer = $SwapCooldownTimer
+var can_swap_arma: bool = true
+
 # Controla a cor da arma atual: "azul" ou "roxo"
 var estado_arma: String = "azul"
 
@@ -167,6 +171,24 @@ func _physics_process(delta: float) -> void:
 	# 'shoot_dir' já foi calculado lá em cima
 	if shoot_dir != Vector2.ZERO and can_shoot:
 		shoot(shoot_dir)
+		
+	# --- 8. LÓGICA DE TROCA DE ARMA ---
+	if Input.is_action_just_pressed("trocar_arma") and can_swap_arma:
+		can_swap_arma = false
+		swap_cooldown_timer.start()
+
+		# 2. Troca a arma
+		if estado_arma == "azul":
+			estado_arma = "roxo"
+		else:
+			estado_arma = "azul"
+
+	# 3. Força a atualização da animação (opcional, mas bom)
+	# Pega o nome da animação atual e troca a cor
+	var anim_atual = sprite_animado.animation.split("_")
+	if anim_atual.size() > 1: # Previne erro se a animação não tiver cor
+		anim_atual[anim_atual.size()-1] = estado_arma
+		sprite_animado.play(str(anim_atual).replace(" ", "").replace("[", "").replace("]", "").replace(",", "_"))
 
 
 func get_shoot_direction() -> Vector2:
@@ -230,3 +252,7 @@ func shoot(direction: Vector2):
 
 func _on_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
+
+
+func _on_swap_cooldown_timer_timeout():
+	can_swap_arma = true

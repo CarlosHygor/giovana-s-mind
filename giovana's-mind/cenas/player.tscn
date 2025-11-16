@@ -180,4 +180,8 @@ position = Vector2(74, 61)
 [node name="MuzzleCima" type="Marker2D" parent="SpriteAnimado"]
 position = Vector2(0, -162)
 
+[node name="SwapCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="timeout" from="SwapCooldownTimer" to="." method="_on_swap_cooldown_timer_timeout"]
