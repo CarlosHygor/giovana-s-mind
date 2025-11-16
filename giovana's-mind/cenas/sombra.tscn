@@ -302,7 +302,7 @@ dano_ataque = 2
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5qid6")
-animation = &"ataque_cima_left"
+animation = &"ataque_esquerda"
 autoplay = "intro"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

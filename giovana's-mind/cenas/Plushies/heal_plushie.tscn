@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dal5k7eqpb0nm"]
+
+[ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_hy37d"]
+[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_voe7u"]
+
+[node name="HealPlushie" instance=ExtResource("1_hy37d")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_voe7u")

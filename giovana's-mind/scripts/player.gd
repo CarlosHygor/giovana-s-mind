@@ -266,6 +266,23 @@ func shoot(direction: Vector2):
 	# Usa o cooldown correto
 	await get_tree().create_timer(current_fire_rate).timeout
 	can_shoot = true
+	
+func aplicar_buff_velocidade(multiplicador: float = 1.2):
+	# Aumenta a velocidade de movimento em 20%
+	move_speed *= multiplicador
+	print("Velocidade aumentada! Nova velocidade: ", move_speed)
+
+func aplicar_buff_dano(dano_extra: int = 1):
+	# Aumenta o dano das duas armas
+	azul_dano += dano_extra
+	roxo_dano += dano_extra
+	print("Dano aumentado! Novo dano azul: ", azul_dano)
+
+func aplicar_buff_cooldown(multiplicador: float = 0.8):
+	# Reduz o cooldown em 20% (multiplica por 0.8)
+	azul_fire_rate *= multiplicador
+	roxo_fire_rate *= multiplicador
+	print("Cooldown reduzido! Novo fire rate azul: ", azul_fire_rate)
 
 func _on_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.

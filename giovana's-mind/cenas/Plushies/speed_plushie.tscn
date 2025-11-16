@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy1c7rqwpk68a"]
+
+[ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_n81x1"]
+[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_hm8qb"]
+
+[node name="SpeedPlushie" instance=ExtResource("1_n81x1")]
+tipo_de_buff = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_hm8qb")
