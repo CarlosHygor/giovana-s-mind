@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27xfc6vq8g37"
-path="res://.godot/imported/windowVariant4.png-3aeca49a4454285b849db399e0bf0fda.ctex"
+uid="uid://dc6utkxaxf2s"
+path="res://.godot/imported/windowVariant4.png-8b04ff7b5cba149633ee19f74697f1cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/assets/windowVariant4.png"
-dest_files=["res://.godot/imported/windowVariant4.png-3aeca49a4454285b849db399e0bf0fda.ctex"]
+source_file="res://recursos/assets/Janelas/windowVariant4.png"
+dest_files=["res://.godot/imported/windowVariant4.png-8b04ff7b5cba149633ee19f74697f1cf.ctex"]
 
 [params]
 
