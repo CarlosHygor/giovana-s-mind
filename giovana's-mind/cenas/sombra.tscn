@@ -1,7 +1,8 @@
-[gd_scene load_steps=62 format=3 uid="uid://ccc2adpreni52"]
+[gd_scene load_steps=64 format=3 uid="uid://ccc2adpreni52"]
 
 [ext_resource type="Script" uid="uid://7fyshnd5o1hc" path="res://scripts/sombra.gd" id="1_0j110"]
 [ext_resource type="Texture2D" uid="uid://06qbyghokpjs" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn8.png" id="1_u32v7"]
+[ext_resource type="Shader" uid="uid://b8rkev470sbkr" path="res://recursos/shaderSombraDano.gdshader" id="2_21otr"]
 [ext_resource type="Texture2D" uid="uid://b1th15x5oyvnb" path="res://recursos/sprites/SombraSprites/SombraWalkDown2/SombraWalk2.png" id="2_xsrvg"]
 [ext_resource type="Texture2D" uid="uid://bdc14s280bosy" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn2.png" id="3_nkfog"]
 [ext_resource type="Texture2D" uid="uid://bvk63t0nc5faf" path="res://recursos/sprites/SombraSprites/SombraWalkDown2/SombraWalk3.png" id="3_r0krf"]
@@ -57,6 +58,10 @@
 [ext_resource type="Texture2D" uid="uid://b2w2svwks2onw" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath4.png" id="48_qeqqq"]
 [ext_resource type="Texture2D" uid="uid://jffps4xvrb8y" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath5.png" id="49_qv1va"]
 [ext_resource type="Texture2D" uid="uid://dcybkbjj6lc0s" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath6.png" id="50_7fyx4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ed6y"]
+shader = ExtResource("2_21otr")
+shader_parameter/flash_strength = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5qid6"]
 animations = [{
@@ -277,12 +282,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("49_qv1va")
 }, {
-"duration": 3.0,
+"duration": 1.0,
 "texture": ExtResource("50_7fyx4")
 }],
 "loop": false,
 "name": &"morte",
-"speed": 3.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsrvg"]
@@ -303,8 +308,9 @@ script = ExtResource("1_0j110")
 dano_ataque = 2
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_0ed6y")
 sprite_frames = SubResource("SpriteFrames_5qid6")
-animation = &"ataque_baixo_left"
+animation = &"morte"
 autoplay = "intro"
 frame = 5
 frame_progress = 1.0

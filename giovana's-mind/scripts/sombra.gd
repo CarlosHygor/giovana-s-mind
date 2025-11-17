@@ -28,6 +28,8 @@ extends CharacterBody2D
 @onready var timer_recarga_ataque: Timer = $TimerRecargaAtaque
 @onready var jogador: CharacterBody2D = null
 
+@onready var flash_material := sprite_animado.material
+
 # --- ESTADO DO INIMIGO ---
 var vida_atual: int = vida_maxima
 var esta_perseguindo: bool = false
@@ -187,8 +189,10 @@ func aplicar_dano_no_jogador():
 func receber_dano(quantidade_dano: int):
 	if esta_morto:
 		return
-
+	
 	vida_atual -= quantidade_dano
+	
+	piscar_vermelho()
 	
 	if vida_atual <= 0:
 		$AreaHitbox/CollisionShape2D.disabled = true
@@ -211,7 +215,11 @@ func morrer():
 	sprite_animado.play(anim_morte)
 	# Conecta o sinal para remover o inimigo quando a animação de morte terminar
 
-
+func piscar_vermelho():
+	var tween = create_tween()
+	flash_material.set("shader_parameter/flash_strength", 1.0)
+	tween.tween_property(flash_material, "shader_parameter/flash_strength", 0.0, 0.15)
+	
 # --- SINAIS (Callbacks) ---
 
 func ao_terminar_intro():
