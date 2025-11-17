@@ -28,7 +28,7 @@ extends CharacterBody2D
 @onready var timer_recarga_ataque: Timer = $TimerRecargaAtaque
 @onready var jogador: CharacterBody2D = null
 
-@onready var flash_material := sprite_animado.material
+var flash_material: ShaderMaterial
 
 # --- ESTADO DO INIMIGO ---
 var vida_atual: int = vida_maxima
@@ -40,6 +40,20 @@ var proximo_ataque_alternado_sera_left: bool = true
 
 
 func _ready():
+	# Aguarda um frame para garantir que o AnimatedSprite carregou o material da animação
+	await get_tree().process_frame
+
+	if sprite_animado.material is ShaderMaterial:
+		sprite_animado.material = sprite_animado.material.duplicate()
+	elif sprite_animado.material_override is ShaderMaterial:
+		sprite_animado.material_override = sprite_animado.material_override.duplicate()
+	else:
+		print("⚠ Nenhum ShaderMaterial encontrado no inimigo:", self.name)
+		
+	flash_material = sprite_animado.material
+
+		
+		
 	# 1. Encontra o Jogador (deve estar no grupo "player")
 	jogador = get_tree().get_first_node_in_group("player") 
 	
@@ -221,7 +235,6 @@ func piscar_vermelho():
 	tween.tween_property(flash_material, "shader_parameter/flash_strength", 0.0, 0.15)
 	
 # --- SINAIS (Callbacks) ---
-
 func ao_terminar_intro():
 	# Chamado quando a animação de intro termina
 	sprite_animado.animation_finished.disconnect(ao_terminar_intro)

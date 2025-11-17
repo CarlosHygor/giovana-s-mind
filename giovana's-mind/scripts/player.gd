@@ -8,6 +8,9 @@ extends CharacterBody2D
 
 var can_shoot := true
 
+var knockback_velocity: Vector2 = Vector2.ZERO
+@export var knockback_duration: float = 0.18 # duração do impulso (ajusta)
+
 # --- ESTADO DA ANIMAÇÃO ---
 @onready var sprite_animado: AnimatedSprite2D = $SpriteAnimado
 
@@ -53,13 +56,16 @@ var max_health: int = hearts * 4   # 4 unidades = 1 coração
 var current_health: int = max_health
 var is_dead: bool = false
 
+var is_invulnerable: bool = false
+@export var invulnerability_time: float = 1.3 # Duração da invencibilidade
 
 # ---------- VIDA ----------
-func take_damage(amount: int = 1) -> void:
+func take_damage(amount: int = 1, knockback_dir: Vector2 = Vector2.ZERO, knockback_force: float = 0.0) -> void:
+	if is_dead or is_invulnerable:
+		return
+
 	if damage_indicator:
 		damage_indicator.play_damage_effect()
-	if is_dead:
-		return
 
 	current_health -= amount
 
@@ -67,9 +73,11 @@ func take_damage(amount: int = 1) -> void:
 		current_health = 0
 		die()
 
-	
 	atualizar_hud()
+	start_invulnerability()
 
+	if knockback_dir != Vector2.ZERO and knockback_force > 0.0:
+		knockback_velocity = knockback_dir.normalized() * knockback_force
 
 func heal(amount: int = 1) -> void:
 	if is_dead:
@@ -192,7 +200,16 @@ func _physics_process(delta: float) -> void:
 
 	# --- 7. APLICA MOVIMENTO ---
 	input_vector = input_vector.normalized()
-	velocity = input_vector * move_speed
+
+	if knockback_velocity.length() > 0:
+		# Enquanto tiver knockback, aplica-o e decrementa o tempo
+		velocity = knockback_velocity
+		# reduz a intensidade do knockback (opcional: linear decay)
+		# aqui eu decaio a velocidade multiplicando por um fator por frame:
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, move_speed * delta * 6)
+	else:
+		# movimento normal controlado pelo jogador
+		velocity = input_vector * move_speed
 	move_and_slide()
 
 	# --- 8. LÓGICA DE TIRO ---
@@ -302,6 +319,21 @@ func aplicar_buff_cooldown(multiplicador: float = 0.8):
 	azul_fire_rate *= multiplicador
 	roxo_fire_rate *= multiplicador
 	print("Cooldown reduzido! Novo fire rate azul: ", azul_fire_rate)
+
+func start_invulnerability():
+	is_invulnerable = true
+
+	var tween = create_tween()
+	var sprite = sprite_animado
+
+	# Sequência de piscadas (transparente ↔ normal)
+	for i in range(4): # 4 piscadas
+		tween.tween_property(sprite, "modulate:a", 0.2, 0.1) # quase invisível
+		tween.tween_property(sprite, "modulate:a", 1.0, 0.1) # volta
+
+	# Ao terminar, desliga invencibilidade
+	await tween.finished
+	is_invulnerable = false
 
 func _on_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
