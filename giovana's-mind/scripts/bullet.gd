@@ -27,13 +27,12 @@ func _physics_process(delta):
 	# 1. ROTAÇÃO DA BALA
 	rotation = direction.angle()
 	
-	# --- CORREÇÃO VISUAL ---
-	# Em vez de mexer no 'scale' da bala inteira (que deforma ela),
-	# nós apenas flipamos o DESENHO (sprite) verticalmente.
-	
-	# Se a rotação for maior que 90 graus (olhando para esquerda), flipa V.
-	sprite_animado.flip_v = (abs(rotation) > PI / 2)
-	# -----------------------
+	# CORREÇÃO: Se a bala estiver indo para a esquerda (rotação > 90 graus),
+	# invertemos o eixo Y para o desenho não ficar de cabeça para baixo.
+	if abs(rotation) > PI / 2:
+		scale.y = -1
+	else:
+		scale.y = 1
 	
 	# 2. MOVIMENTO
 	var move_vec = direction * speed * delta
@@ -102,15 +101,30 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 	if acertou:
 		return
-		
-	# Mesma lógica acima, mas para Areas
+	
+	# Ignora a detection zone (para não explodir no "olho" do inimigo)
+	if area.name == "DetectionZone":
+		return
+
+	# Lógica de quem atirou
 	if sou_do_inimigo:
-		if area.is_in_group("player_hitbox"): # Caso use hitbox separada
+		# Bala do Inimigo acertando Hitbox do Player (se tiver)
+		if area.is_in_group("player_hitbox"):
 			area.get_parent().take_damage(dano)
 			explodir()
+			
 	else:
+		# --- AQUI ESTÁ O SEGREDO PARA O SEU CASO ---
+		# Bala do Player acertando Hitbox do Inimigo
 		if area.is_in_group("inimigo"):
-			area.get_parent().receber_dano(dano)
+			
+			# 1. Pega o PAI da hitbox (que é o Inimigo.gd)
+			var inimigo = area.get_parent()
+			
+			# 2. Chama a função no PAI
+			if inimigo.has_method("receber_dano"):
+				inimigo.receber_dano(dano)
+				
 			explodir()
 
 # --- SINAIS DE CONTROLE ---

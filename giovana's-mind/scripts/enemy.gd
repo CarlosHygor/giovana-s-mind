@@ -27,6 +27,8 @@ var muzzle_atual: Marker2D
 # Array com as 4 direções cardinais
 const MOVE_DIRECTIONS = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 
+var health: int = 3
+
 
 func _ready():
 	detection_zone.body_entered.connect(_on_detection_zone_body_entered)
@@ -150,3 +152,56 @@ func _on_patrol_timer_timeout():
 
 func _on_fire_rate_timer_timeout():
 	can_shoot = true
+	
+func receber_dano(quantidade: int):
+	print("Ai! Inimigo recebeu ", quantidade, " de dano.")
+	# 1. Aplica o dano
+	health -= quantidade
+	print("Inimigo tomou dano! Vida restante: ", health)
+	
+	# 2. Efeito visual (Piscar Vermelho)
+	piscar_vermelho()
+	
+	# 3. Verifica morte
+	if health <= 0:
+		die()
+
+func piscar_vermelho():
+	# Cria um Tween (animador via código)
+	var tween = create_tween()
+	
+	# Passo A: Muda a cor para VERMELHO instantaneamente
+	anim_sprite.modulate = Color(1, 0.3, 0.3) # Um vermelho levemente claro
+	
+	# Passo B: Faz a cor voltar para BRANCO (original) em 0.2 segundos
+	# "modulate" é a propriedade de cor do sprite
+	tween.tween_property(anim_sprite, "modulate", Color.WHITE, 0.2)
+
+func die():
+	# 1. PARA O CÉREBRO DO INIMIGO
+	# Impede que ele continue se movendo ou tentando atirar enquanto morre
+	set_physics_process(false)
+	patrol_timer.stop()
+	fire_rate_timer.stop()
+	
+	# 2. DESATIVA A COLISÃO
+	# Para que o player possa andar por cima do corpo e as balas não batam mais nele
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	# 3. ESCOLHE A ANIMAÇÃO CERTA
+	# Pega a animação atual (ex: "lado", "frente", "costas")
+	var anim_atual = anim_sprite.animation
+	
+	# Monta o nome da animação de morte (ex: "die_lado")
+	var anim_morte = "die_" + anim_atual
+	
+	# Verifica se essa animação existe para evitar crash (opcional, mas seguro)
+	if anim_sprite.sprite_frames.has_animation(anim_morte):
+		anim_sprite.play(anim_morte)
+	else:
+		# Fallback: se não achar a direção específica, toca a de frente
+		anim_sprite.play("die_frente")
+
+	# 4. ESPERA TERMINAR E TCHAU
+	await anim_sprite.animation_finished
+	queue_free()

@@ -1,27 +1,34 @@
-[gd_scene load_steps=26 format=3 uid="uid://dgy8xhnwriyla"]
+[gd_scene load_steps=34 format=3 uid="uid://dgy8xhnwriyla"]
 
 [ext_resource type="Script" uid="uid://dvl27wwichk1c" path="res://scripts/enemy.gd" id="1_mkrkd"]
-[ext_resource type="Texture2D" uid="uid://2rhulroi33uf" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho costas.png" id="2_141li"]
+[ext_resource type="Texture2D" uid="uid://bxcoupyorljwm" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho costas.png" id="2_141li"]
 [ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="2_rsp8d"]
-[ext_resource type="Texture2D" uid="uid://cwafq1bxkckk" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente3.png" id="3_fitdn"]
-[ext_resource type="Texture2D" uid="uid://ccuhnhfen0ikj" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente2.png" id="4_ijp5m"]
-[ext_resource type="Texture2D" uid="uid://cjr24b6xopeid" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente1.png" id="5_hdx2y"]
-[ext_resource type="Texture2D" uid="uid://drm0tq61qakvi" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho fechado.png" id="6_aoi1j"]
-[ext_resource type="Texture2D" uid="uid://ceuk7and2kfxr" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l1.png" id="7_2avix"]
-[ext_resource type="Texture2D" uid="uid://bpkrq4hbeuyyt" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l2.png" id="8_2f4mv"]
-[ext_resource type="Texture2D" uid="uid://br20fup1emh6g" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l3.png" id="9_43uhu"]
-[ext_resource type="Texture2D" uid="uid://bge14k67075tc" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l4.png" id="10_3iqqc"]
-[ext_resource type="Texture2D" uid="uid://cv8jaopbqhf7" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l5.png" id="11_n3xpk"]
-[ext_resource type="Texture2D" uid="uid://bmivrpufyf8kn" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l6.png" id="12_rsp8d"]
-[ext_resource type="Texture2D" uid="uid://b17fngwuvnxwq" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho  fechado - lado.png" id="13_x22jg"]
-[ext_resource type="Texture2D" uid="uid://dxvuuqiaraluu" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado3.png" id="14_hwimv"]
-[ext_resource type="Texture2D" uid="uid://bro76kkiovh0a" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado2.png" id="15_ab65d"]
-[ext_resource type="Texture2D" uid="uid://bg0lu5i1l2fih" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado1.png" id="16_ob7pn"]
-[ext_resource type="Texture2D" uid="uid://c8gy6oya42awf" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 2.png" id="17_ck4rq"]
-[ext_resource type="Texture2D" uid="uid://bwrkuitjcu2kc" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 3.png" id="18_tq4t7"]
-[ext_resource type="Texture2D" uid="uid://bi8fyaktb3klq" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 4.png" id="19_7ss3u"]
-[ext_resource type="Texture2D" uid="uid://c1yih86hiwsg5" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 5.png" id="20_vo15d"]
-[ext_resource type="Texture2D" uid="uid://dflwsgni6bgpw" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 6.png" id="21_6f3au"]
+[ext_resource type="Texture2D" uid="uid://ju1ro6mrr31g" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente3.png" id="3_fitdn"]
+[ext_resource type="Texture2D" uid="uid://b62udlucjc4hr" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente e1.png" id="4_7ss3u"]
+[ext_resource type="Texture2D" uid="uid://cx6xxbigqxy5t" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente2.png" id="4_ijp5m"]
+[ext_resource type="Texture2D" uid="uid://bspf2r5hxyyms" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado e1.png" id="4_ob7pn"]
+[ext_resource type="Texture2D" uid="uid://ccrmhq7joivqn" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado e2.png" id="5_ck4rq"]
+[ext_resource type="Texture2D" uid="uid://8tmksu58h1q3" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente1.png" id="5_hdx2y"]
+[ext_resource type="Texture2D" uid="uid://vq6ymh36fgxk" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente e2.png" id="5_vo15d"]
+[ext_resource type="Texture2D" uid="uid://c6frxcy6hroc1" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente e3.png" id="6_6f3au"]
+[ext_resource type="Texture2D" uid="uid://d1kpdynusxr0o" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho fechado.png" id="6_aoi1j"]
+[ext_resource type="Texture2D" uid="uid://bwy7mocgunsny" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado e3.png" id="6_tq4t7"]
+[ext_resource type="Texture2D" uid="uid://quiypf8r1ubb" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l1.png" id="7_2avix"]
+[ext_resource type="Texture2D" uid="uid://b2qle2k7fc8hp" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado e4.png" id="7_7ss3u"]
+[ext_resource type="Texture2D" uid="uid://ddqqor17my0fa" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l2.png" id="8_2f4mv"]
+[ext_resource type="Texture2D" uid="uid://106lad8nep8d" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l3.png" id="9_43uhu"]
+[ext_resource type="Texture2D" uid="uid://cd6oofm82gv4x" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l4.png" id="10_3iqqc"]
+[ext_resource type="Texture2D" uid="uid://co6077uk3cgai" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l5.png" id="11_n3xpk"]
+[ext_resource type="Texture2D" uid="uid://b51tcc0k4plmo" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l6.png" id="12_rsp8d"]
+[ext_resource type="Texture2D" uid="uid://c5lq412src7op" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho  fechado - lado.png" id="13_x22jg"]
+[ext_resource type="Texture2D" uid="uid://bwr4ch00juuq3" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado3.png" id="14_hwimv"]
+[ext_resource type="Texture2D" uid="uid://dbb285jcpyd2x" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado2.png" id="15_ab65d"]
+[ext_resource type="Texture2D" uid="uid://c6k8sgvd70eo" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado1.png" id="16_ob7pn"]
+[ext_resource type="Texture2D" uid="uid://bvpl6huiooupq" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 2.png" id="17_ck4rq"]
+[ext_resource type="Texture2D" uid="uid://q5a1s8o5iev8" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 3.png" id="18_tq4t7"]
+[ext_resource type="Texture2D" uid="uid://dyow0ckdnvg3l" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 4.png" id="19_7ss3u"]
+[ext_resource type="Texture2D" uid="uid://dlq2i44pbjb6l" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 5.png" id="20_vo15d"]
+[ext_resource type="Texture2D" uid="uid://c1wo74fs4sr8s" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 6.png" id="21_6f3au"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3xpk"]
 radius = 126.0
@@ -36,6 +43,51 @@ animations = [{
 "loop": true,
 "name": &"costas",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7ss3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vo15d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6f3au")
+}],
+"loop": false,
+"name": &"die_costas",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7ss3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vo15d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6f3au")
+}],
+"loop": false,
+"name": &"die_frente",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ob7pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ck4rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tq4t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ss3u")
+}],
+"loop": false,
+"name": &"die_lado",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -126,6 +178,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3xpk"]
 radius = 801.06244
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ss3u"]
+radius = 185.0
+height = 370.0
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 2
@@ -133,6 +189,7 @@ script = ExtResource("1_mkrkd")
 bullet_scene = ExtResource("2_rsp8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-9, -3)
 shape = SubResource("CapsuleShape2D_n3xpk")
 
@@ -143,12 +200,10 @@ one_shot = true
 [node name="PatrolTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["inimigo"]]
 sprite_frames = SubResource("SpriteFrames_c76ip")
-animation = &"lado"
+animation = &"die_lado"
 autoplay = "frente"
-frame = 6
-frame_progress = 0.25115204
 
 [node name="MuzzleBaixo" type="Marker2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 160)
@@ -167,3 +222,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
 position = Vector2(13, 3)
 shape = SubResource("CircleShape2D_n3xpk")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["inimigo"]]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_7ss3u")

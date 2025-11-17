@@ -67,7 +67,6 @@ func take_damage(amount: int = 1) -> void:
 		current_health = 0
 		die()
 
-	print("Vida:", current_health, "/", max_health)
 	
 	atualizar_hud()
 
@@ -92,10 +91,7 @@ func atualizar_hud():
 	
 	# 2. Se encontrou, manda atualizar a vida passando o valor atual
 	if hud:
-		print("✅ Player encontrou o HUD! Atualizando vida para: ", current_health)
 		hud.atualizar_vida_ui(current_health)
-	else:
-		print("❌ ERRO CRÍTICO: Player NÃO encontrou ninguém no grupo 'hud'!")
 
 func die() -> void:
 	is_dead = true
