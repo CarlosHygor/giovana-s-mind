@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://t8qdmgd824st"]
+[gd_scene load_steps=5 format=3 uid="uid://t8qdmgd824st"]
 
 [ext_resource type="Script" uid="uid://c0qgcnbmhtqqm" path="res://scripts/Door.gd" id="1_t126w"]
+[ext_resource type="Texture2D" uid="uid://b2n5lniou52k" path="res://recursos/assets/portas/portaCima.png" id="2_ucut5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sprnh"]
 size = Vector2(130, 30)
@@ -14,12 +15,15 @@ collision_mask = 2
 script = ExtResource("1_t126w")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-3.8146973e-06, 2.5000014)
+scale = Vector2(0.4, 0.44062498)
+texture = ExtResource("2_ucut5")
 
 [node name="TriggerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sprnh")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
-collision_layer = 4
+collision_layer = 5
 collision_mask = 0
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="Blocker"]

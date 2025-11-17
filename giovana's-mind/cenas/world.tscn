@@ -1,13 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://db83or1j6osua"]
+[gd_scene load_steps=6 format=3 uid="uid://db83or1j6osua"]
 
 [ext_resource type="Script" uid="uid://bqk7n6iekjvyj" path="res://scripts/world.gd" id="1_11jkn"]
+[ext_resource type="Shader" path="res://cenas/fog.gdshader" id="2_8mpgf"]
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="2_mjon1"]
+[ext_resource type="Texture2D" uid="uid://bgkdltjo1q68d" path="res://recursos/assets/stuff/fog.png" id="2_yb5ho"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnx65"]
+shader = ExtResource("2_8mpgf")
+shader_parameter/scroll_speed = Vector2(0.01, 0.005)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_11jkn")
 
+[node name="RoomHolder" type="Node2D" parent="."]
+
+[node name="FogOverlay" type="TextureRect" parent="."]
+modulate = Color(0.642951, 0.642951, 0.642951, 0.2)
+z_index = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xnx65")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1366.0
+offset_bottom = 775.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_yb5ho")
+
 [node name="player" parent="." instance=ExtResource("2_mjon1")]
-position = Vector2(153, 173)
+position = Vector2(703, 415)
 scale = Vector2(0.3, 0.3)
 roxo_range = 175.0
 roxo_fire_rate = 1.5
