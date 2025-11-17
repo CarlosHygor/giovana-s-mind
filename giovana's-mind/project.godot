@@ -98,3 +98,7 @@ interact={
 
 2d_physics/layer_1="Mundo"
 2d_physics/layer_2="Player"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

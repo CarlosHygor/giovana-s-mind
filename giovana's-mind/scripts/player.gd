@@ -73,6 +73,7 @@ func take_damage(amount: int = 1, knockback_dir: Vector2 = Vector2.ZERO, knockba
 	if current_health <= 0:
 		current_health = 0
 		die()
+		return
 
 	atualizar_hud()
 	start_invulnerability()
@@ -103,9 +104,13 @@ func atualizar_hud():
 		hud.atualizar_vida_ui(current_health)
 
 func die() -> void:
+	if is_dead:
+		return
 	is_dead = true
 	print("Player morreu!")
-	# Aqui você pode adicionar animação, game over, etc.
+	set_physics_process(false)
+	set_process(false)
+	get_tree().change_scene_to_file("res://cenas/world.tscn")
 
 
 # ---------- MOVIMENTO ----------
