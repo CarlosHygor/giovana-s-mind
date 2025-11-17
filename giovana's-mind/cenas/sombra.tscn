@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://ccc2adpreni52"]
+[gd_scene load_steps=74 format=3 uid="uid://ccc2adpreni52"]
 
 [ext_resource type="Script" uid="uid://7fyshnd5o1hc" path="res://scripts/sombra.gd" id="1_0j110"]
 [ext_resource type="Texture2D" uid="uid://06qbyghokpjs" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn8.png" id="1_u32v7"]
@@ -16,15 +16,23 @@
 [ext_resource type="Texture2D" uid="uid://ja4lhxs71pbj" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn6.png" id="7_ch7km"]
 [ext_resource type="Texture2D" uid="uid://rtkcnqmu0oui" path="res://recursos/sprites/SombraSprites/SombraWalkDown2/SombraWalk8.png" id="8_fud47"]
 [ext_resource type="Texture2D" uid="uid://b202jl7xb224x" path="res://recursos/sprites/SombraSprites/SombraWalkDown2/SombraWalk9.png" id="9_8xot5"]
+[ext_resource type="Texture2D" uid="uid://dmypcd1322guj" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp1.png" id="11_4c8i0"]
+[ext_resource type="Texture2D" uid="uid://c3m1fscdmpd2b" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp2.png" id="12_e2n38"]
 [ext_resource type="Texture2D" uid="uid://bbto5wupuhiws" path="res://recursos/sprites/SombraSprites/SombraWalkSideways/SombraWalkSideways1.png" id="12_fud47"]
 [ext_resource type="Texture2D" uid="uid://dcw7r5nts02sf" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn1.png" id="12_r0krf"]
 [ext_resource type="Texture2D" uid="uid://ktmorujl3h6j" path="res://recursos/sprites/SombraSprites/SombraWalkSideways/SombraWalkSideways2.png" id="13_8xot5"]
+[ext_resource type="Texture2D" uid="uid://drwuhj1c0so8d" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp3.png" id="13_v1iiq"]
 [ext_resource type="Texture2D" uid="uid://sg11agjylkan" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn7.png" id="13_wom5s"]
 [ext_resource type="Texture2D" uid="uid://cjivdo5fhkqdq" path="res://recursos/sprites/SombraSprites/SombraWalkSideways/SombraWalkSideways3.png" id="14_dkp2g"]
+[ext_resource type="Texture2D" uid="uid://dthw3qqsidmko" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp4.png" id="14_t7aae"]
 [ext_resource type="Texture2D" uid="uid://bxgg47cegvd64" path="res://recursos/sprites/SombraSprites/SombraWalkSideways/SombraWalkSideways4.png" id="15_22sd5"]
+[ext_resource type="Texture2D" uid="uid://baw7okfmqpfxw" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp5.png" id="15_u6elm"]
 [ext_resource type="Texture2D" uid="uid://geg1lwoqfubb" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown1.png" id="16_1u8we"]
+[ext_resource type="Texture2D" uid="uid://b62ep0cbehjqt" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp6.png" id="16_l141r"]
 [ext_resource type="Texture2D" uid="uid://bl0cawbmtpjsx" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown2.png" id="17_a006d"]
+[ext_resource type="Texture2D" uid="uid://bq58330hrggfb" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp7.png" id="17_xvpch"]
 [ext_resource type="Texture2D" uid="uid://dqdi2e2jlpro1" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown3.png" id="18_hjvt7"]
+[ext_resource type="Texture2D" uid="uid://bsywo60wqrnso" path="res://recursos/sprites/SombraSprites/SombraWalkUp/SombraWalkUp8.png" id="18_oheer"]
 [ext_resource type="Texture2D" uid="uid://d20hmwl7t4vql" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown4.png" id="19_hohaw"]
 [ext_resource type="Texture2D" uid="uid://bd4huiq3el5jx" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown5.png" id="20_7iwnj"]
 [ext_resource type="Texture2D" uid="uid://dch5xknf0rh4m" path="res://recursos/sprites/SombraSprites/SombraAttackDown/AttackLeft/sombraAttackDown6.png" id="21_d50gp"]
@@ -98,10 +106,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_r0krf")
+"texture": ExtResource("11_4c8i0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_u32v7")
+"texture": ExtResource("12_e2n38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v1iiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t7aae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_u6elm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_l141r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xvpch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oheer")
 }],
 "loop": true,
 "name": &"andar_cima",
@@ -313,10 +339,9 @@ tempo_recarga_ataque = 3.0
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_0ed6y")
 sprite_frames = SubResource("SpriteFrames_5qid6")
-animation = &"morte"
+animation = &"andar_cima"
 autoplay = "intro"
-frame = 5
-frame_progress = 1.0
+frame_progress = 0.38356093
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
