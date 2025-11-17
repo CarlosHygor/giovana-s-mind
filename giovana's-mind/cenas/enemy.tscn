@@ -1,8 +1,8 @@
 [gd_scene load_steps=34 format=3 uid="uid://dgy8xhnwriyla"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_mkrkd"]
+[ext_resource type="PackedScene" uid="uid://c4tc3cyutydxc" path="res://cenas/bullet_enemy.tscn" id="2_7ss3u"]
 [ext_resource type="Texture2D" uid="uid://bxcoupyorljwm" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho costas.png" id="2_141li"]
-[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="2_rsp8d"]
 [ext_resource type="Texture2D" uid="uid://ju1ro6mrr31g" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente3.png" id="3_fitdn"]
 [ext_resource type="Texture2D" uid="uid://b62udlucjc4hr" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente e1.png" id="4_7ss3u"]
 [ext_resource type="Texture2D" uid="uid://cx6xxbigqxy5t" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente2.png" id="4_ijp5m"]
@@ -186,7 +186,7 @@ height = 370.0
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_mkrkd")
-bullet_scene = ExtResource("2_rsp8d")
+bullet_scene = ExtResource("2_7ss3u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

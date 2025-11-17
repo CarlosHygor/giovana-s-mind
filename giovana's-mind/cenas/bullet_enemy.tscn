@@ -1,0 +1,174 @@
+[gd_scene load_steps=26 format=3 uid="uid://c4tc3cyutydxc"]
+
+[ext_resource type="Script" uid="uid://dphabdydrhxvp" path="res://scripts/bullet.gd" id="1_opxnf"]
+[ext_resource type="Texture2D" uid="uid://dkagcebmmpapm" path="res://recursos/sprites/disparoGiovana/disparo azul f4.png" id="2_ksnx2"]
+[ext_resource type="Texture2D" uid="uid://cbgxywxgoelpp" path="res://recursos/sprites/disparoGiovana/disparo azul f5.png" id="3_tnn5f"]
+[ext_resource type="Texture2D" uid="uid://dg8gras88nm7f" path="res://recursos/sprites/disparoGiovana/disparo azul f6.png" id="4_qlddt"]
+[ext_resource type="Texture2D" uid="uid://d00xiiukn5ak1" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima4.png" id="5_r3ugw"]
+[ext_resource type="Texture2D" uid="uid://bydblxye67xw1" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima5.png" id="6_mkese"]
+[ext_resource type="Texture2D" uid="uid://cgrv75qvo1smk" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima6.png" id="7_f3o4s"]
+[ext_resource type="Texture2D" uid="uid://ccgkb74n17vr0" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima7.png" id="8_3823f"]
+[ext_resource type="Texture2D" uid="uid://ci3c0w3jimn8q" path="res://recursos/sprites/disparoTriplo/disparo triplo7.png" id="9_skg7c"]
+[ext_resource type="Texture2D" uid="uid://c6bs332sl2xjw" path="res://recursos/sprites/disparoTriplo/disparo triplo8.png" id="10_b2gon"]
+[ext_resource type="Texture2D" uid="uid://dxkuos8vqqkql" path="res://recursos/sprites/disparoTriplo/disparo triplo9.png" id="11_udwfs"]
+[ext_resource type="Texture2D" uid="uid://4akyhpebqo1i" path="res://recursos/sprites/disparoGiovana/disparo azul f1.png" id="12_2ddhx"]
+[ext_resource type="Texture2D" uid="uid://cnayf3q06ocyu" path="res://recursos/sprites/disparoGiovana/disparo azul f2.png" id="13_bitdb"]
+[ext_resource type="Texture2D" uid="uid://cu7jes1lqwkbn" path="res://recursos/sprites/disparoGiovana/disparo azul f3.png" id="14_vhc25"]
+[ext_resource type="Texture2D" uid="uid://cwg7mif0pi84p" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima1.png" id="15_nukqf"]
+[ext_resource type="Texture2D" uid="uid://1oocy2d7ym0m" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima2.png" id="16_mrgg8"]
+[ext_resource type="Texture2D" uid="uid://jb4jwnibiru4" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima3.png" id="17_rbr4l"]
+[ext_resource type="Texture2D" uid="uid://b6xhlxvlidjfl" path="res://recursos/sprites/disparoTriplo/disparo triplo1.png" id="18_0jse2"]
+[ext_resource type="Texture2D" uid="uid://bjjfmcgcfxrpc" path="res://recursos/sprites/disparoTriplo/disparo triplo2.png" id="19_vxngd"]
+[ext_resource type="Texture2D" uid="uid://bfk3aqfr8q020" path="res://recursos/sprites/disparoTriplo/disparo triplo3.png" id="20_2min0"]
+[ext_resource type="Texture2D" uid="uid://dqt3hbxc6hhid" path="res://recursos/sprites/disparoTriplo/disparo triplo4.png" id="21_52xqc"]
+[ext_resource type="Texture2D" uid="uid://cp1jjsywodo5x" path="res://recursos/sprites/disparoTriplo/disparo triplo5.png" id="22_um3ie"]
+[ext_resource type="Texture2D" uid="uid://b5n6mdjcfutpm" path="res://recursos/sprites/disparoTriplo/disparo triplo6.png" id="23_oklrm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4se21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ksnx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tnn5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qlddt")
+}],
+"loop": false,
+"name": &"acertou_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r3ugw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mkese")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f3o4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3823f")
+}],
+"loop": false,
+"name": &"acertou_inimigo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_skg7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b2gon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_udwfs")
+}],
+"loop": false,
+"name": &"acertou_roxo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2ddhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bitdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vhc25")
+}],
+"loop": false,
+"name": &"disparo_azul",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_nukqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mrgg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rbr4l")
+}],
+"loop": false,
+"name": &"disparo_inimigo",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_0jse2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vxngd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2min0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_52xqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_um3ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_oklrm")
+}],
+"loop": false,
+"name": &"disparo_roxo",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_vhc25")
+}],
+"loop": true,
+"name": &"normal_azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rbr4l")
+}],
+"loop": true,
+"name": &"normal_inimigo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_oklrm")
+}],
+"loop": true,
+"name": &"normal_roxo",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tah1u"]
+radius = 30.016663
+
+[node name="Bullet" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_opxnf")
+
+[node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_4se21")
+animation = &"disparo_roxo"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tah1u")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_animado_animation_finished"]
