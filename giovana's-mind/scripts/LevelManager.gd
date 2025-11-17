@@ -8,7 +8,9 @@ var floor_1_scenes = {
 	RoomType.START : preload("res://cenas/room.tscn"),
 	RoomType.NORMAL: [
 		preload("res://cenas/roomTeste.tscn"),
+		preload("res://cenas/room_1.tscn")
 	],
+	RoomType.TREASURE : preload("res://cenas/tesouro.tscn"),
 	RoomType.BOSS: preload("res://cenas/boss_room.tscn")
 }
 
@@ -123,7 +125,8 @@ func _on_room_cleared():
 
 func go_to_next_floor():
 	if current_floor == FINAL_FLOOR:
-		get_tree().change_scene_to_file("res://cenas/EndCutscene.tscn")
+		print("Agora vai")
+		get_tree().change_scene_to_file("res://cenas/end_cutscene.tscn")
 		return
 	
 	current_floor += 1

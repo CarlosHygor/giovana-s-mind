@@ -15,7 +15,6 @@ var acertou: bool = false
 
 func _ready():
 	# 1. GARANTE QUE A BALA APAREÇA NA FRENTE DE TUDO (Player, Inimigos, Chão)
-	scale = Vector2(1, 1) # garante que a bala começa com o scale correto
 	z_index = 10
 	sprite_animado.play("disparo_" + cor_arma)
 
