@@ -153,16 +153,13 @@ radius = 30.016663
 [node name="Bullet" type="Area2D"]
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_u5170")
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_4se21")
-animation = &"disparo_roxo"
-frame = 5
-frame_progress = 1.0
+animation = &"normal_roxo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tah1u")

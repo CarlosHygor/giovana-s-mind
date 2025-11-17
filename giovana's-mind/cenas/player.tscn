@@ -147,6 +147,7 @@ motion_mode = 1
 slide_on_ceiling = false
 script = ExtResource("1_unwft")
 bullet_scene = ExtResource("3_kthid")
+roxo_scale = Vector2(0.35, 0.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -181,7 +182,7 @@ position = Vector2(7, 87)
 position = Vector2(74, 61)
 
 [node name="MuzzleCima" type="Marker2D" parent="SpriteAnimado"]
-position = Vector2(0, -162)
+position = Vector2(1, -139)
 
 [node name="SwapCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5

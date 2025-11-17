@@ -28,12 +28,9 @@ func _physics_process(delta):
 	# CORREÇÃO: Se a bala estiver indo para a esquerda (rotação > 90 graus),
 	# invertemos o eixo Y para o desenho não ficar de cabeça para baixo.
 	if abs(rotation) > PI / 2:
-		# ...Invertemos a escala Y APENAS DO SPRITE.
-		# Isso faz o desenho desvirar, mas mantendo a proporção original.
-		sprite_animado.scale.y = -1
+		sprite_animado.scale.y = -abs(sprite_animado.scale.y)
 	else:
-		# Se estiver para a direita, escala normal.
-		sprite_animado.scale.y = 1
+		sprite_animado.scale.y = abs(sprite_animado.scale.y)
 	
 	# 2. MOVIMENTO
 	var move_vec = direction * speed * delta
