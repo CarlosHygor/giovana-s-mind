@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db83or1j6osua"]
+[gd_scene load_steps=8 format=3 uid="uid://db83or1j6osua"]
 
 [ext_resource type="Script" uid="uid://bqk7n6iekjvyj" path="res://scripts/world.gd" id="1_11jkn"]
-[ext_resource type="Shader" uid="uid://deghd1udiqtrn" path="res://cenas/fog.gdshader" id="2_8mpgf"]
+[ext_resource type="Shader" path="res://cenas/Fog.gdshader" id="2_8mpgf"]
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="2_mjon1"]
 [ext_resource type="Texture2D" uid="uid://bgkdltjo1q68d" path="res://recursos/assets/stuff/fog.png" id="2_yb5ho"]
+[ext_resource type="PackedScene" uid="uid://c8qe2x7s1xx45" path="res://cenas/HUD.tscn" id="5_8mpgf"]
+[ext_resource type="AudioStream" uid="uid://dv8pwx4pxrtc1" path="res://recursos/sounds/power-hub-ost-337760.mp3" id="6_xnx65"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnx65"]
 shader = ExtResource("2_8mpgf")
@@ -37,3 +39,13 @@ position = Vector2(703, 415)
 scale = Vector2(0.3, 0.3)
 roxo_range = 175.0
 roxo_fire_rate = 1.5
+
+[node name="Hud" parent="." instance=ExtResource("5_8mpgf")]
+offset_left = -7.0
+offset_top = -11.0
+offset_right = -6.0
+offset_bottom = -11.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xnx65")
+autoplay = true

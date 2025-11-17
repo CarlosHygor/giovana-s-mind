@@ -23,7 +23,7 @@ texture = ExtResource("2_ucut5")
 shape = SubResource("RectangleShape2D_sprnh")
 
 [node name="Blocker" type="StaticBody2D" parent="."]
-collision_layer = 5
+collision_layer = 13
 collision_mask = 0
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="Blocker"]

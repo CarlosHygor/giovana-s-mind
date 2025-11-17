@@ -12,25 +12,27 @@ offset_left = -1.0
 script = ExtResource("1_kqorm")
 
 [node name="Coracao1" type="Sprite2D" parent="."]
+position = Vector2(89.5, 68)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_606ks")
 
 [node name="Coracao3" type="Sprite2D" parent="."]
-position = Vector2(159, 0)
+position = Vector2(248.5, 68)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_606ks")
 
 [node name="Coracao2" type="Sprite2D" parent="."]
-position = Vector2(79, 0)
+position = Vector2(168.5, 68)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_606ks")
 
 [node name="WeaponDisplay" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1114.0
-offset_top = 25.0
-offset_right = 1154.0
-offset_bottom = 65.0
+offset_left = 1213.0
+offset_top = 558.0
+offset_right = 1253.0
+offset_bottom = 598.0
+scale = Vector2(0.7, 0.7)
 
 [node name="IconeArma" type="TextureRect" parent="WeaponDisplay"]
 layout_mode = 0

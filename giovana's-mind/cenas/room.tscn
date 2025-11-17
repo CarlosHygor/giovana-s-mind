@@ -459,14 +459,14 @@ tile_set = SubResource("TileSet_3t2tq")
 position = Vector2(682, 52)
 
 [node name="DoorSouth" parent="Doors" instance=ExtResource("5_eq784")]
-position = Vector2(684, 703)
+position = Vector2(684, 713)
 
 [node name="DoorEast" parent="Doors" instance=ExtResource("5_eq784")]
-position = Vector2(1276, 396)
+position = Vector2(1287, 396)
 rotation = 1.5707964
 
 [node name="DoorWest" parent="Doors" instance=ExtResource("5_eq784")]
-position = Vector2(72, 378)
+position = Vector2(55, 392)
 rotation = 1.5707964
 
 [node name="Enemies" type="Node2D" parent="."]

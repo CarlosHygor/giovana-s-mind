@@ -1,6 +1,7 @@
 extends Node
 
 const NUM_ROOMS = 10
+const FINAL_FLOOR = 1 
 var current_floor = 1
 
 var floor_1_scenes = {
@@ -121,6 +122,10 @@ func _on_room_cleared():
 		print("LevelManager guardou o estado 'limpo' para ", current_room_coord)
 
 func go_to_next_floor():
+	if current_floor == FINAL_FLOOR:
+		get_tree().change_scene_to_file("res://cenas/EndCutscene.tscn")
+		return
+	
 	current_floor += 1
 	
 	match current_floor:
