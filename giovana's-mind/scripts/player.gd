@@ -39,6 +39,10 @@ var estado_arma: String = "azul"
 # Guarda a última direção para a animação "parado"
 var direcao_parado: String = "_baixo" # Começa olhando para baixo
 var direcao_animacao_atual: String = "_baixo"
+
+var shoot_memory_timer: float = 0.0
+const SHOOT_MEMORY_DURATION: float = 0.3 # Tempo que a mira "gruda" (0.2s é ideal)
+var last_valid_shoot_dir: Vector2 = Vector2.ZERO # Lembra a última direção válida
 	
 # Guarda se o sprite estava espelhado (para "parado_esquerda")
 var ultimo_flip_h: bool = false
@@ -90,35 +94,40 @@ func _physics_process(delta: float) -> void:
 	
 	# --- 1. LEITURA DE INPUT (MOVIMENTO) ---
 	var input_vector = Vector2.ZERO
-	if Input.is_action_pressed("move_up"):
-		input_vector.y -= 1
-	if Input.is_action_pressed("move_down"):
-		input_vector.y += 1
-	if Input.is_action_pressed("move_left"):
-		input_vector.x -= 1
-	if Input.is_action_pressed("move_right"):
-		input_vector.x += 1
+	if Input.is_action_pressed("move_up"): input_vector.y -= 1
+	if Input.is_action_pressed("move_down"): input_vector.y += 1
+	if Input.is_action_pressed("move_left"): input_vector.x -= 1
+	if Input.is_action_pressed("move_right"): input_vector.x += 1
 
 	# --- 2. LEITURA DE INPUT (TIRO) ---
-	# NOTA: Movemos isso para o início!
 	var shoot_dir = get_shoot_direction()
-
-	# --- 3. LÓGICA DE ANIMAÇÃO ---
-	var prefixo_movimento: String
-	var sufixo_direcao: String
 	
+	# --- LÓGICA DE MEMÓRIA DE MIRA (HYSTERESIS) ---
+	if shoot_dir.length() > 0:
+		# Se estamos apertando o botão AGORA:
+		shoot_memory_timer = SHOOT_MEMORY_DURATION # Reseta o timer
+		last_valid_shoot_dir = shoot_dir # Guarda essa direção
+	else:
+		# Se soltamos o botão, diminuímos o timer
+		shoot_memory_timer -= delta
+
+	# --- 3. LÓGICA DE PRIORIDADE DE OLHAR ---
 	# Esta variável decide PARA ONDE VAMOS OLHAR
 	var facing_vector: Vector2 = Vector2.ZERO
 
-	# PRIORIDADE 1: Se está atirando, olhe para a direção do tiro
-	if shoot_dir.length() > 0:
-		facing_vector = shoot_dir
-	# PRIORIDADE 2: Se não está atirando mas está andando, olhe para onde anda
+	# PRIORIDADE 1: Se o timer da memória ainda vale, usa a última mira!
+	if shoot_memory_timer > 0:
+		facing_vector = last_valid_shoot_dir
+		
+	# PRIORIDADE 2: Se a memória acabou, olha para onde anda
 	elif input_vector.length() > 0:
 		facing_vector = input_vector
+
+	# --- 4. LÓGICA DE ANIMAÇÃO ---
+	var prefixo_movimento: String
+	var sufixo_direcao: String
 	
 	# ----- ESTADO: ANDANDO ou PARADO? -----
-	# A animação é de "andar" se o 'input_vector' (movimento) for maior que 0
 	if input_vector.length() > 0:
 		prefixo_movimento = "andar"
 	else:
@@ -138,7 +147,7 @@ func _physics_process(delta: float) -> void:
 		elif facing_vector.y < 0:
 			sufixo_direcao = "_cima"
 			direcao_parado = "_cima"
-			sprite_animado.flip_h = false # Cima/Baixo não são espelhados
+			sprite_animado.flip_h = false 
 			
 		elif facing_vector.y > 0:
 			sufixo_direcao = "_baixo"
@@ -149,61 +158,59 @@ func _physics_process(delta: float) -> void:
 		ultimo_flip_h = sprite_animado.flip_h
 		
 	else:
-		# ----- ESTADO: PARADO (e sem atirar) -----
-		# (O prefixo_movimento já é "parada")
-		sufixo_direcao = direcao_parado # Usa a última direção que estávamos
+		# ----- ESTADO: PARADO (e sem memória de mira) -----
+		sufixo_direcao = direcao_parado 
 		
-		# Se a última direção foi "direita", aplica o último flip
 		if sufixo_direcao == "_direita":
 			sprite_animado.flip_h = ultimo_flip_h
 		else:
 			sprite_animado.flip_h = false
 	
 	direcao_animacao_atual = sufixo_direcao	
-	# --- 4. MONTAGEM DO NOME DA ANIMAÇÃO ---
+	
+	# --- 5. MONTAGEM DO NOME DA ANIMAÇÃO ---
 	var anim_name: String
 	
-	# Caso especial: Cima não tem cor (baseado na sua lista)
 	if sufixo_direcao == "_cima":
 		anim_name = prefixo_movimento + sufixo_direcao
 	else:
-		# Montagem padrão: ex: "andar" + "_direita" + "_azul"
 		anim_name = prefixo_movimento + sufixo_direcao + "_" + estado_arma
 		
-	# --- 5. TOCA A ANIMAÇÃO ---
-	# Só toca a animação se ela for diferente da atual
+	# --- 6. TOCA A ANIMAÇÃO ---
 	if sprite_animado.animation != anim_name:
 		sprite_animado.play(anim_name)
 
-	# --- 6. APLICA MOVIMENTO ---
-	# NOTA: O movimento AINDA USA 'input_vector' (isso é o correto)
+	# --- 7. APLICA MOVIMENTO ---
 	input_vector = input_vector.normalized()
 	velocity = input_vector * move_speed
 	move_and_slide()
 
-	# --- 7. LÓGICA DE TIRO ---
-	# 'shoot_dir' já foi calculado lá em cima
+	# --- 8. LÓGICA DE TIRO ---
 	if shoot_dir != Vector2.ZERO and can_shoot:
 		shoot(shoot_dir)
 		
-	# --- 8. LÓGICA DE TROCA DE ARMA ---
+	# --- 9. LÓGICA DE TROCA DE ARMA ---
 	if Input.is_action_just_pressed("trocar_arma") and can_swap_arma:
 		can_swap_arma = false
 		swap_cooldown_timer.start()
 
-		# 2. Troca a arma
+		# Troca a arma
 		if estado_arma == "azul":
 			estado_arma = "roxo"
 		else:
 			estado_arma = "azul"
 
-	# 3. Força a atualização da animação (opcional, mas bom)
-	# Pega o nome da animação atual e troca a cor
-	var anim_atual = sprite_animado.animation.split("_")
-	if anim_atual.size() > 1: # Previne erro se a animação não tiver cor
-		anim_atual[anim_atual.size()-1] = estado_arma
-		sprite_animado.play(str(anim_atual).replace(" ", "").replace("[", "").replace("]", "").replace(",", "_"))
-
+		# Força a atualização da animação IMEDIATAMENTE
+		# (Este código deve estar DENTRO do if de troca de arma)
+		var anim_atual_lista = sprite_animado.animation.split("_")
+		if anim_atual_lista.size() > 1: 
+			anim_atual_lista[anim_atual_lista.size()-1] = estado_arma
+			# Remonta a string da animação
+			var nova_anim = ""
+			for parte in anim_atual_lista:
+				if nova_anim != "": nova_anim += "_"
+				nova_anim += parte
+			sprite_animado.play(nova_anim)
 
 func get_shoot_direction() -> Vector2:
 	var dir = Vector2.ZERO
