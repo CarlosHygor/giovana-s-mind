@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var dano_ataque: int = 5            
 @export var tempo_recarga_ataque: float = 1.0 
 
+@onready var som_morte: AudioStreamPlayer2D = $SomMorte
+
 # --- NOMES DAS ANIMAÇÕES (Ajuste no Inspector) ---
 @export_group("Animações Padrão")
 @export var anim_intro: String = "intro"
@@ -38,6 +40,7 @@ var esta_morto: bool = false
 var jogador_na_area_ataque: bool = false
 var proximo_ataque_alternado_sera_left: bool = true
 
+@onready var som_ataque: AudioStreamPlayer2D = $SomAtaque
 
 func _ready():
 	# Aguarda um frame para garantir que o AnimatedSprite carregou o material da animação
@@ -130,6 +133,7 @@ func perseguir_jogador(direcao: Vector2):
 
 
 func atacar(direcao: Vector2):
+	som_ataque.play()
 	# 1. Entra no estado de ataque
 	esta_atacando = true
 	
@@ -216,6 +220,7 @@ func receber_dano(quantidade_dano: int):
 
 
 func morrer():
+	som_morte.play()
 	if esta_morto:
 		return
 		

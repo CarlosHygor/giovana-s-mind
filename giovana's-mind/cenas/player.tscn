@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dks882yywnm7n"]
+[gd_scene load_steps=20 format=3 uid="uid://dks882yywnm7n"]
 
 [ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://ua2e221xys3i" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul1.png" id="3_15dsx"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bvlynskn3uwys" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png" id="11_j4uu1"]
 [ext_resource type="Texture2D" uid="uid://o1tilfjpeqe7" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso azul.png" id="12_86n0t"]
 [ext_resource type="Texture2D" uid="uid://cu1unh0ipn5qs" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png" id="13_1vaqx"]
+[ext_resource type="AudioStream" uid="uid://cu7kapevpbphn" path="res://recursos/sounds/bubble-pop-406640.mp3" id="16_6ptbh"]
+[ext_resource type="AudioStream" uid="uid://dpxxkels4tbrw" path="res://recursos/sounds/juicy-bubble-pop-sfx-419513.mp3" id="17_uk4ck"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
 radius = 69.0
@@ -183,6 +185,14 @@ position = Vector2(0, -162)
 
 [node name="SwapCooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="SomTiroRoxo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_6ptbh")
+volume_db = -9.0
+
+[node name="SomTiroAzul" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_uk4ck")
+volume_db = -9.087
 
 [connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_2d_animation_finished"]
 [connection signal="timeout" from="SwapCooldownTimer" to="." method="_on_swap_cooldown_timer_timeout"]

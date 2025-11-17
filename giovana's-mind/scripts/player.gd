@@ -39,6 +39,7 @@ var estado_arma: String = "azul"
 @export var roxo_fire_rate: float = 1.2 # Cooldown maior
 @export var roxo_scale: Vector2 = Vector2(1, 1) # 50% maior
 
+
 # Guarda a última direção para a animação "parado"
 var direcao_parado: String = "_baixo" # Começa olhando para baixo
 var direcao_animacao_atual: String = "_baixo"
@@ -296,6 +297,9 @@ func shoot(direction: Vector2):
 		current_fire_rate = roxo_fire_rate
 	
 	get_tree().current_scene.add_child(bullet)
+	# --- SOM DO TIRO ---
+	tocar_som_tiro(estado_arma)
+
 
 	# Usa o cooldown correto
 	await get_tree().create_timer(current_fire_rate).timeout
@@ -341,3 +345,19 @@ func _on_sprite_2d_animation_finished() -> void:
 
 func _on_swap_cooldown_timer_timeout():
 	can_swap_arma = true
+
+@onready var som_tiro_azul: AudioStreamPlayer2D = $SomTiroAzul
+@onready var som_tiro_roxo: AudioStreamPlayer2D = $SomTiroRoxo
+
+func tocar_som_tiro(tipo: String):
+	# pitch varia um pouco para deixar o som mais natural
+	var variacao_pitch = randf_range(0.95, 1.05)
+
+	match tipo:
+		"azul":
+			som_tiro_azul.pitch_scale = variacao_pitch
+			som_tiro_azul.play()
+
+		"roxo":
+			som_tiro_roxo.pitch_scale = variacao_pitch
+			som_tiro_roxo.play()

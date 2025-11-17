@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://ccc2adpreni52"]
+[gd_scene load_steps=66 format=3 uid="uid://ccc2adpreni52"]
 
 [ext_resource type="Script" uid="uid://7fyshnd5o1hc" path="res://scripts/sombra.gd" id="1_0j110"]
 [ext_resource type="Texture2D" uid="uid://06qbyghokpjs" path="res://recursos/sprites/SombraSprites/SombraSpawn/sombraSpawn8.png" id="1_u32v7"]
@@ -58,6 +58,8 @@
 [ext_resource type="Texture2D" uid="uid://b2w2svwks2onw" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath4.png" id="48_qeqqq"]
 [ext_resource type="Texture2D" uid="uid://jffps4xvrb8y" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath5.png" id="49_qv1va"]
 [ext_resource type="Texture2D" uid="uid://dcybkbjj6lc0s" path="res://recursos/sprites/SombraSprites/SombraDeath/sombraDeath6.png" id="50_7fyx4"]
+[ext_resource type="AudioStream" uid="uid://bnl8vp658pnv7" path="res://recursos/sounds/power-punch-192118.mp3" id="59_0ed6y"]
+[ext_resource type="AudioStream" uid="uid://vt5k082bwefl" path="res://recursos/sounds/zombie-pain-1-95166.mp3" id="60_1jsjn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0ed6y"]
 shader = ExtResource("2_21otr")
@@ -342,6 +344,13 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
 position = Vector2(-1, 18.5)
 shape = SubResource("CapsuleShape2D_7ogsx")
+
+[node name="SomAtaque" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("59_0ed6y")
+
+[node name="SomMorte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("60_1jsjn")
+volume_db = -10.0
 
 [connection signal="animation_finished" from="SpriteAnimado" to="." method="_on_sprite_animado_animation_finished"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
