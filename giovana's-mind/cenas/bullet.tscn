@@ -1,15 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://qfskedtb8h77"]
+[gd_scene load_steps=26 format=3 uid="uid://qfskedtb8h77"]
 
 [ext_resource type="Script" uid="uid://dphabdydrhxvp" path="res://scripts/bullet.gd" id="1_u5170"]
 [ext_resource type="Texture2D" uid="uid://c2e1i5xubqtfr" path="res://recursos/sprites/disparoGiovana/disparo azul f1.png" id="2_5ve1n"]
 [ext_resource type="Texture2D" uid="uid://cq5qiqbntt2n5" path="res://recursos/sprites/disparoGiovana/disparo azul f2.png" id="3_odle7"]
 [ext_resource type="Texture2D" uid="uid://bthfw5wd81nlf" path="res://recursos/sprites/disparoGiovana/disparo azul f3.png" id="4_phyqm"]
-[ext_resource type="Texture2D" uid="uid://ylih0k542t1f" path="res://recursos/sprites/disparoGiovana/disparo rosa f1.png" id="5_3i2dk"]
+[ext_resource type="Texture2D" uid="uid://ci3c0w3jimn8q" path="res://recursos/sprites/disparoTriplo/disparo triplo7.png" id="5_0w6kr"]
 [ext_resource type="Texture2D" uid="uid://bup4fx855hk60" path="res://recursos/sprites/disparoGiovana/disparo azul f4.png" id="5_erk3i"]
-[ext_resource type="Texture2D" uid="uid://o3xny8juei02" path="res://recursos/sprites/disparoGiovana/disparo rosa f2.png" id="6_0ohw2"]
+[ext_resource type="Texture2D" uid="uid://ih60n7i0nq0d" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima4.png" id="5_pfcqi"]
 [ext_resource type="Texture2D" uid="uid://c5wqr3cus42ic" path="res://recursos/sprites/disparoGiovana/disparo azul f5.png" id="6_3i2dk"]
+[ext_resource type="Texture2D" uid="uid://c6bs332sl2xjw" path="res://recursos/sprites/disparoTriplo/disparo triplo8.png" id="6_6fw1v"]
+[ext_resource type="Texture2D" uid="uid://bff0h6bbsv3o8" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima5.png" id="6_gc2w6"]
 [ext_resource type="Texture2D" uid="uid://bnorkobhtpkg7" path="res://recursos/sprites/disparoGiovana/disparo azul f6.png" id="7_0ohw2"]
-[ext_resource type="Texture2D" uid="uid://c7ba4yjgoborw" path="res://recursos/sprites/disparoGiovana/disparo rosa f3.png" id="7_4se21"]
+[ext_resource type="Texture2D" uid="uid://dxkuos8vqqkql" path="res://recursos/sprites/disparoTriplo/disparo triplo9.png" id="7_sg78y"]
+[ext_resource type="Texture2D" uid="uid://bj5tjddokhnw0" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima6.png" id="7_u1exb"]
+[ext_resource type="Texture2D" uid="uid://dkicsnbi68b5e" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima7.png" id="8_tn157"]
+[ext_resource type="Texture2D" uid="uid://b6xhlxvlidjfl" path="res://recursos/sprites/disparoTriplo/disparo triplo1.png" id="11_wr4q5"]
+[ext_resource type="Texture2D" uid="uid://bjjfmcgcfxrpc" path="res://recursos/sprites/disparoTriplo/disparo triplo2.png" id="12_xw3ya"]
+[ext_resource type="Texture2D" uid="uid://bfk3aqfr8q020" path="res://recursos/sprites/disparoTriplo/disparo triplo3.png" id="13_6vgui"]
+[ext_resource type="Texture2D" uid="uid://dqt3hbxc6hhid" path="res://recursos/sprites/disparoTriplo/disparo triplo4.png" id="14_vtrq5"]
+[ext_resource type="Texture2D" uid="uid://cp1jjsywodo5x" path="res://recursos/sprites/disparoTriplo/disparo triplo5.png" id="15_pfcqi"]
+[ext_resource type="Texture2D" uid="uid://djk0bw8tay804" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima1.png" id="15_vrk64"]
+[ext_resource type="Texture2D" uid="uid://cyh2dwgqanel4" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima2.png" id="16_7xpgi"]
+[ext_resource type="Texture2D" uid="uid://b5n6mdjcfutpm" path="res://recursos/sprites/disparoTriplo/disparo triplo6.png" id="16_gc2w6"]
+[ext_resource type="Texture2D" uid="uid://b2bpdt406d3rv" path="res://recursos/sprites/olhoSprites/disparoLagrima/disparo lagrima3.png" id="17_g0ew6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4se21"]
 animations = [{
@@ -29,13 +42,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_3i2dk")
+"texture": ExtResource("5_pfcqi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_0ohw2")
+"texture": ExtResource("6_gc2w6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_4se21")
+"texture": ExtResource("7_u1exb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tn157")
+}],
+"loop": false,
+"name": &"acertou_inimigo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0w6kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6fw1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sg78y")
 }],
 "loop": false,
 "name": &"acertou_roxo",
@@ -57,6 +87,43 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_vrk64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7xpgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g0ew6")
+}],
+"loop": false,
+"name": &"disparo_inimigo",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wr4q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xw3ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6vgui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vtrq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pfcqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gc2w6")
+}],
+"loop": false,
+"name": &"disparo_roxo",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_phyqm")
 }],
 "loop": true,
@@ -65,7 +132,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4se21")
+"texture": ExtResource("17_g0ew6")
+}],
+"loop": true,
+"name": &"normal_inimigo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_gc2w6")
 }],
 "loop": true,
 "name": &"normal_roxo",
@@ -78,14 +153,16 @@ radius = 30.016663
 [node name="Bullet" type="Area2D"]
 scale = Vector2(0.3, 0.3)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_u5170")
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(0.3160156, 0.31093746)
 sprite_frames = SubResource("SpriteFrames_4se21")
-animation = &"normal_roxo"
+animation = &"acertou_inimigo"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

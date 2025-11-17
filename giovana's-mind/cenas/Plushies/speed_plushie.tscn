@@ -1,11 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy1c7rqwpk68a"]
+[gd_scene load_steps=9 format=3 uid="uid://dy1c7rqwpk68a"]
 
 [ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_n81x1"]
-[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_hm8qb"]
+[ext_resource type="Texture2D" uid="uid://b48ivhr8wmfd1" path="res://recursos/assets/itensDaClawnMachine/botasDeHermes/bota1.png" id="2_wvtaa"]
+[ext_resource type="Texture2D" uid="uid://d316peeq64wxv" path="res://recursos/assets/itensDaClawnMachine/botasDeHermes/bota2.png" id="3_s2fqa"]
+[ext_resource type="Texture2D" uid="uid://dphkie0fxwdla" path="res://recursos/assets/itensDaClawnMachine/botasDeHermes/bota3.png" id="4_p2y2x"]
+[ext_resource type="Texture2D" uid="uid://cc8i0mn4hkt6s" path="res://recursos/assets/itensDaClawnMachine/botasDeHermes/bota4.png" id="5_5600d"]
+[ext_resource type="Texture2D" uid="uid://cli3pk43hgmai" path="res://recursos/assets/itensDaClawnMachine/botasDeHermes/bota5.png" id="6_feeys"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tkfb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvtaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s2fqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p2y2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5600d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_feeys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvtaa"]
+radius = 97.0
+height = 194.0
 
 [node name="SpeedPlushie" instance=ExtResource("1_n81x1")]
+scale = Vector2(0.3, 0.3)
 collision_mask = 3
 tipo_de_buff = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_hm8qb")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_1tkfb")
+autoplay = "default"
+frame_progress = 0.98876035
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_wvtaa")

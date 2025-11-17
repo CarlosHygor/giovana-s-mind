@@ -270,6 +270,8 @@ func shoot(direction: Vector2):
 func aplicar_buff_velocidade(multiplicador: float = 1.2):
 	# Aumenta a velocidade de movimento em 20%
 	move_speed *= multiplicador
+	azul_speed *= multiplicador
+	roxo_speed *= multiplicador
 	print("Velocidade aumentada! Nova velocidade: ", move_speed)
 
 func aplicar_buff_dano(dano_extra: int = 1):

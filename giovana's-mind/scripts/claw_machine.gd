@@ -7,7 +7,6 @@ extends Area2D
 @export var cooldown_plushie_scene: PackedScene
 
 # --- Variáveis de Controle ---
-@export var cooldown_time: float = 10.0
 var can_use: bool = true
 var player_in_area: Node2D = null
 
@@ -71,7 +70,3 @@ func usar_maquina():
 	
 	# 6. Volta para a animação "default"
 	anim_sprite.play("inicio")
-	
-	# 7. Inicia o cooldown
-	await get_tree().create_timer(cooldown_time).timeout
-	can_use = true

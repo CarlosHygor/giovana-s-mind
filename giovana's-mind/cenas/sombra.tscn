@@ -304,8 +304,10 @@ dano_ataque = 2
 
 [node name="SpriteAnimado" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5qid6")
-animation = &"ataque_esquerda"
+animation = &"ataque_baixo_left"
 autoplay = "intro"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -318,6 +320,8 @@ one_shot = true
 
 [node name="AreaAtaque" type="Area2D" parent="."]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
 position = Vector2(1, 22)

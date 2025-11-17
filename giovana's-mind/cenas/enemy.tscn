@@ -1,0 +1,169 @@
+[gd_scene load_steps=26 format=3 uid="uid://dgy8xhnwriyla"]
+
+[ext_resource type="Script" uid="uid://dvl27wwichk1c" path="res://scripts/enemy.gd" id="1_mkrkd"]
+[ext_resource type="Texture2D" uid="uid://2rhulroi33uf" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho costas.png" id="2_141li"]
+[ext_resource type="PackedScene" uid="uid://qfskedtb8h77" path="res://cenas/bullet.tscn" id="2_rsp8d"]
+[ext_resource type="Texture2D" uid="uid://cwafq1bxkckk" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente3.png" id="3_fitdn"]
+[ext_resource type="Texture2D" uid="uid://ccuhnhfen0ikj" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente2.png" id="4_ijp5m"]
+[ext_resource type="Texture2D" uid="uid://cjr24b6xopeid" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente1.png" id="5_hdx2y"]
+[ext_resource type="Texture2D" uid="uid://drm0tq61qakvi" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho fechado.png" id="6_aoi1j"]
+[ext_resource type="Texture2D" uid="uid://ceuk7and2kfxr" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l1.png" id="7_2avix"]
+[ext_resource type="Texture2D" uid="uid://bpkrq4hbeuyyt" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l2.png" id="8_2f4mv"]
+[ext_resource type="Texture2D" uid="uid://br20fup1emh6g" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l3.png" id="9_43uhu"]
+[ext_resource type="Texture2D" uid="uid://bge14k67075tc" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l4.png" id="10_3iqqc"]
+[ext_resource type="Texture2D" uid="uid://cv8jaopbqhf7" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l5.png" id="11_n3xpk"]
+[ext_resource type="Texture2D" uid="uid://bmivrpufyf8kn" path="res://recursos/sprites/olhoSprites/olhoFrente/Mob olho frente l6.png" id="12_rsp8d"]
+[ext_resource type="Texture2D" uid="uid://b17fngwuvnxwq" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho  fechado - lado.png" id="13_x22jg"]
+[ext_resource type="Texture2D" uid="uid://dxvuuqiaraluu" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado3.png" id="14_hwimv"]
+[ext_resource type="Texture2D" uid="uid://bro76kkiovh0a" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado2.png" id="15_ab65d"]
+[ext_resource type="Texture2D" uid="uid://bg0lu5i1l2fih" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lado1.png" id="16_ob7pn"]
+[ext_resource type="Texture2D" uid="uid://c8gy6oya42awf" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 2.png" id="17_ck4rq"]
+[ext_resource type="Texture2D" uid="uid://bwrkuitjcu2kc" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 3.png" id="18_tq4t7"]
+[ext_resource type="Texture2D" uid="uid://bi8fyaktb3klq" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 4.png" id="19_7ss3u"]
+[ext_resource type="Texture2D" uid="uid://c1yih86hiwsg5" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 5.png" id="20_vo15d"]
+[ext_resource type="Texture2D" uid="uid://dflwsgni6bgpw" path="res://recursos/sprites/olhoSprites/olhoLado/mob olho lagrima - lado 6.png" id="21_6f3au"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3xpk"]
+radius = 126.0
+height = 252.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c76ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_141li")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_aoi1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fitdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ijp5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hdx2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2avix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2f4mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_43uhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3iqqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n3xpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rsp8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ijp5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fitdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aoi1j")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_x22jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hwimv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ab65d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ob7pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ck4rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tq4t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7ss3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vo15d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6f3au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ab65d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hwimv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x22jg")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 3.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3xpk"]
+radius = 801.06244
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_mkrkd")
+bullet_scene = ExtResource("2_rsp8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -3)
+shape = SubResource("CapsuleShape2D_n3xpk")
+
+[node name="FireRateTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="PatrolTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c76ip")
+animation = &"lado"
+autoplay = "frente"
+frame = 6
+frame_progress = 0.25115204
+
+[node name="MuzzleBaixo" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 160)
+
+[node name="MuzzleCima" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -160)
+
+[node name="MuzzleDireita" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(139, 71)
+
+[node name="DetectionZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+position = Vector2(13, 3)
+shape = SubResource("CircleShape2D_n3xpk")

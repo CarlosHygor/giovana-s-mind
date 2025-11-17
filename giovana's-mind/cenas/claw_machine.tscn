@@ -78,9 +78,8 @@ animations = [{
 radius = 343.0
 height = 840.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fehfg"]
-radius = 134.99255
-height = 412.50986
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrpx"]
+size = Vector2(212, 202)
 
 [node name="ClawMachine" type="Area2D"]
 collision_mask = 3
@@ -103,13 +102,13 @@ shape = SubResource("CapsuleShape2D_yoyh8")
 position = Vector2(-90, 313)
 
 [node name="DropLocationBuff" type="Marker2D" parent="."]
-position = Vector2(80, 323)
+position = Vector2(80, 313)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(5.000001, -11.999996)
-shape = SubResource("CapsuleShape2D_fehfg")
+position = Vector2(-14, -49)
+shape = SubResource("RectangleShape2D_fhrpx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

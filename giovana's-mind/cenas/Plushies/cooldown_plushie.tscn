@@ -1,11 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmw167v721io7"]
+[gd_scene load_steps=9 format=3 uid="uid://cmw167v721io7"]
 
 [ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_eh6vk"]
-[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_nj58g"]
+[ext_resource type="Texture2D" uid="uid://cpsptg2wtr4fl" path="res://recursos/assets/itensDaClawnMachine/relogio/relogio1.png" id="2_n00xn"]
+[ext_resource type="Texture2D" uid="uid://bwmh7dk0h14eq" path="res://recursos/assets/itensDaClawnMachine/relogio/relogio2.png" id="3_p5ets"]
+[ext_resource type="Texture2D" uid="uid://byt0p2c4nmmuh" path="res://recursos/assets/itensDaClawnMachine/relogio/relogio3.png" id="4_ii72o"]
+[ext_resource type="Texture2D" uid="uid://bvn15ukkl8gb6" path="res://recursos/assets/itensDaClawnMachine/relogio/relogio4.png" id="5_v3twa"]
+[ext_resource type="Texture2D" uid="uid://txrdk5hajl71" path="res://recursos/assets/itensDaClawnMachine/relogio/relogio5.png" id="6_tnjcu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iixq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n00xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p5ets")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ii72o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v3twa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tnjcu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n00xn"]
+radius = 88.0
+height = 176.0
 
 [node name="CooldownPlushie" instance=ExtResource("1_eh6vk")]
+scale = Vector2(0.3, 0.3)
+collision_layer = 3
 collision_mask = 3
 tipo_de_buff = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_nj58g")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_iixq5")
+autoplay = "default"
+frame_progress = 0.84757537
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_n00xn")

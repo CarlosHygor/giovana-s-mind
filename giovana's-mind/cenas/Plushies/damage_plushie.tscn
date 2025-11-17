@@ -1,11 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqm5kw7a6exlp"]
+[gd_scene load_steps=9 format=3 uid="uid://dqm5kw7a6exlp"]
 
 [ext_resource type="PackedScene" uid="uid://dh4f8lt06eu8j" path="res://cenas/Plushies/BasePlushie.tscn" id="1_l0wiq"]
-[ext_resource type="Texture2D" uid="uid://cv2jto7q3lhwk" path="res://icon.svg" id="2_626s5"]
+[ext_resource type="Texture2D" uid="uid://b4edsuxk5jfpc" path="res://recursos/assets/itensDaClawnMachine/luvasDeBoxe/itenHeart5.png" id="2_t4xdi"]
+[ext_resource type="Texture2D" uid="uid://crenln2cwas6p" path="res://recursos/assets/itensDaClawnMachine/luvasDeBoxe/itenHeart6.png" id="3_o5dnr"]
+[ext_resource type="Texture2D" uid="uid://c00dhbudqogxi" path="res://recursos/assets/itensDaClawnMachine/luvasDeBoxe/itenHeart7.png" id="4_6r77o"]
+[ext_resource type="Texture2D" uid="uid://do3vj7iqr8yao" path="res://recursos/assets/itensDaClawnMachine/luvasDeBoxe/itenHeart8.png" id="5_h05lf"]
+[ext_resource type="Texture2D" uid="uid://bd7ef55p06jnk" path="res://recursos/assets/itensDaClawnMachine/luvasDeBoxe/itenHeart9.png" id="6_sq0um"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eohob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t4xdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o5dnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6r77o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h05lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sq0um")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4xdi"]
+radius = 95.0
+height = 190.0
 
 [node name="DamagePlushie" instance=ExtResource("1_l0wiq")]
+scale = Vector2(0.3, 0.3)
 collision_mask = 3
 tipo_de_buff = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_626s5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_eohob")
+autoplay = "default"
+frame = 3
+frame_progress = 0.44185174
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 5)
+shape = SubResource("CapsuleShape2D_t4xdi")
