@@ -1,29 +1,29 @@
-[gd_scene load_steps=32 format=3 uid="uid://be0hflnpt513k"]
+[gd_scene load_steps=32 format=3 uid="uid://cj8urgqw5wcsd"]
 
-[ext_resource type="Script" uid="uid://bw2cok77qcwx5" path="res://scripts/telaMenu.gd" id="1_kwc0x"]
-[ext_resource type="Texture2D" uid="uid://l4ya8objv7rv" path="res://recursos/assets/Elementos menus/capa - giovanna's mind.png" id="2_6bqwu"]
-[ext_resource type="Texture2D" uid="uid://b6suwvmaqjggw" path="res://recursos/assets/Elementos menus/quadradoMenu.png" id="3_i8d8s"]
-[ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="4_r2wmg"]
-[ext_resource type="Texture2D" uid="uid://bmnbwnjipb73j" path="res://recursos/assets/Elementos menus/selectSelect.png" id="5_r2wmg"]
-[ext_resource type="Texture2D" uid="uid://bt7n5ahffhya" path="res://recursos/assets/Elementos menus/icone ursinho azul.png" id="5_u8swm"]
-[ext_resource type="Texture2D" uid="uid://j3iegy3k3e7j" path="res://recursos/assets/Elementos menus/select2.png" id="6_8x8tg"]
-[ext_resource type="Texture2D" uid="uid://cxfrv1r0byfdf" path="res://recursos/assets/Elementos menus/setinha1.png" id="7_i8d8s"]
-[ext_resource type="Texture2D" uid="uid://cv6e1366oies1" path="res://recursos/assets/Elementos menus/setinha2.png" id="8_1mm41"]
-[ext_resource type="Texture2D" uid="uid://bp5dw84yp0ukn" path="res://recursos/assets/Elementos menus/q.png" id="9_w814p"]
-[ext_resource type="Texture2D" uid="uid://c5eb0dks52ot6" path="res://recursos/assets/Elementos menus/back.png" id="10_1mm41"]
-[ext_resource type="Script" uid="uid://drkao45mtt2yi" path="res://scripts/botaoMenu.gd" id="10_w814p"]
+[ext_resource type="Script" uid="uid://bc4sflwyc0cu1" path="res://scripts/tela_menu_pause.gd" id="1_mq18h"]
+[ext_resource type="Texture2D" uid="uid://l4ya8objv7rv" path="res://recursos/assets/Elementos menus/capa - giovanna's mind.png" id="2_3k6uy"]
+[ext_resource type="Texture2D" uid="uid://b6suwvmaqjggw" path="res://recursos/assets/Elementos menus/quadradoMenu.png" id="3_uxs32"]
+[ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="4_oibba"]
+[ext_resource type="Texture2D" uid="uid://bt7n5ahffhya" path="res://recursos/assets/Elementos menus/icone ursinho azul.png" id="5_oa7vq"]
+[ext_resource type="Texture2D" uid="uid://bmnbwnjipb73j" path="res://recursos/assets/Elementos menus/selectSelect.png" id="6_qlrf6"]
+[ext_resource type="Texture2D" uid="uid://j3iegy3k3e7j" path="res://recursos/assets/Elementos menus/select2.png" id="7_x8kka"]
+[ext_resource type="Texture2D" uid="uid://cxfrv1r0byfdf" path="res://recursos/assets/Elementos menus/setinha1.png" id="8_o3n0s"]
+[ext_resource type="Texture2D" uid="uid://cv6e1366oies1" path="res://recursos/assets/Elementos menus/setinha2.png" id="9_ky3dy"]
+[ext_resource type="Texture2D" uid="uid://bp5dw84yp0ukn" path="res://recursos/assets/Elementos menus/q.png" id="10_21t4c"]
+[ext_resource type="Script" uid="uid://drkao45mtt2yi" path="res://scripts/botaoMenu.gd" id="11_klfws"]
+[ext_resource type="Texture2D" uid="uid://c5eb0dks52ot6" path="res://recursos/assets/Elementos menus/back.png" id="12_0pav2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bqwu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfe88"]
-atlas = ExtResource("5_u8swm")
+atlas = ExtResource("5_oa7vq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pk8ip"]
-atlas = ExtResource("5_u8swm")
+atlas = ExtResource("5_oa7vq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcawv"]
-atlas = ExtResource("5_u8swm")
+atlas = ExtResource("5_oa7vq")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_u8swm"]
 color = Color(0.69411767, 0.6117647, 0.8509804, 1)
@@ -76,7 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kwc0x")
+script = ExtResource("1_mq18h")
 
 [node name="capa" type="TextureRect" parent="."]
 visible = false
@@ -88,7 +88,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_6bqwu")
+texture = ExtResource("2_3k6uy")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -97,12 +97,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 292.0
 offset_top = -413.0
-offset_right = 826.0
+offset_right = 1118.0
 offset_bottom = 413.0
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_i8d8s")
+texture = ExtResource("3_uxs32")
 
 [node name="Menu" type="Label" parent="."]
 process_mode = 2
@@ -110,12 +111,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -601.0
+offset_left = -309.0
 offset_top = 48.0
-offset_right = 63.0
+offset_right = 355.0
 offset_bottom = 210.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 40
 text = "Configurações"
 horizontal_alignment = 1
@@ -123,9 +124,9 @@ vertical_alignment = 1
 
 [node name="volume" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 373.0
 offset_top = 205.0
-offset_right = 402.0
+offset_right = 694.0
 offset_bottom = 326.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bqwu")
@@ -139,7 +140,7 @@ offset_left = -136.5
 offset_right = 28.5
 offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 35
 text = "Volume"
 
@@ -149,7 +150,7 @@ offset_left = 280.0
 offset_top = 78.0
 offset_right = 320.0
 offset_bottom = 148.0
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 20
 
 [node name="HSlider" type="HSlider" parent="volume"]
@@ -165,9 +166,9 @@ theme_override_styles/slider = SubResource("StyleBoxLine_u8swm")
 
 [node name="tela cheia" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 426.0
+offset_left = 718.0
 offset_top = 205.0
-offset_right = 748.0
+offset_right = 1040.0
 offset_bottom = 326.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bqwu")
@@ -181,7 +182,7 @@ offset_left = -122.5
 offset_right = 122.5
 offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 35
 text = "Tela cheia"
 
@@ -201,7 +202,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("5_r2wmg")
+texture = ExtResource("6_qlrf6")
 
 [node name="nao selecionado" type="TextureRect" parent="tela cheia"]
 texture_filter = 1
@@ -218,7 +219,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("6_8x8tg")
+texture = ExtResource("7_x8kka")
 
 [node name="Button2" type="CheckButton" parent="tela cheia"]
 layout_mode = 1
@@ -257,9 +258,9 @@ icon = SubResource("AtlasTexture_i8d8s")
 
 [node name="controles" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 79.0
+offset_left = 371.0
 offset_top = 369.0
-offset_right = 748.0
+offset_right = 1040.0
 offset_bottom = 613.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6bqwu")
@@ -274,7 +275,7 @@ offset_top = -10.0
 offset_right = 122.5
 offset_bottom = 60.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 40
 text = "Controles"
 
@@ -288,7 +289,7 @@ offset_top = 62.0
 offset_right = 1.5
 offset_bottom = 132.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 30
 text = "Movimentação"
 horizontal_alignment = 1
@@ -304,7 +305,7 @@ offset_top = -165.0
 offset_right = 250.0
 offset_bottom = 22.0
 grow_vertical = 0
-texture = ExtResource("7_i8d8s")
+texture = ExtResource("8_o3n0s")
 
 [node name="controles3" type="Label" parent="controles"]
 layout_mode = 1
@@ -316,7 +317,7 @@ offset_top = 62.0
 offset_right = 333.5
 offset_bottom = 132.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 30
 text = "Atirar"
 horizontal_alignment = 1
@@ -332,7 +333,7 @@ offset_top = -165.0
 offset_right = 590.0
 offset_bottom = 22.0
 grow_vertical = 0
-texture = ExtResource("8_1mm41")
+texture = ExtResource("9_ky3dy")
 
 [node name="controles4" type="Label" parent="controles"]
 layout_mode = 1
@@ -345,7 +346,7 @@ offset_right = 28.5
 offset_bottom = 369.0
 grow_horizontal = 2
 theme_override_constants/line_spacing = -20
-theme_override_fonts/font = ExtResource("4_r2wmg")
+theme_override_fonts/font = ExtResource("4_oibba")
 theme_override_font_sizes/font_size = 30
 text = "Troca de
 Ursos"
@@ -362,9 +363,9 @@ offset_top = -53.0
 offset_right = 492.0
 offset_bottom = 134.0
 grow_vertical = 0
-texture = ExtResource("9_w814p")
+texture = ExtResource("10_21t4c")
 
-[node name="Button" type="Button" parent="."]
+[node name="Buttonvolta" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1257.0
 offset_top = 84.0
@@ -381,15 +382,15 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_poq6u")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_poq6u")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_poq6u")
 theme_override_styles/focus = SubResource("StyleBoxFlat_poq6u")
-script = ExtResource("10_w814p")
+script = ExtResource("11_klfws")
 
-[node name="TextureRect2" type="TextureRect" parent="Button"]
+[node name="TextureRect2" type="TextureRect" parent="Buttonvolta"]
 texture_filter = 1
 layout_mode = 0
 offset_top = 7.0
 offset_right = 54.0
 offset_bottom = 61.0
-texture = ExtResource("10_1mm41")
+texture = ExtResource("12_0pav2")
 
 [connection signal="toggled" from="tela cheia/Button2" to="." method="_on_button_2_toggled"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttonvolta" to="." method="_on_buttonvolta_pressed"]

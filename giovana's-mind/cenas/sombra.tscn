@@ -298,7 +298,7 @@ height = 287.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["inimigo"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_0j110")
 dano_ataque = 2
 

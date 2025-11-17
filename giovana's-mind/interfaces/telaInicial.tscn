@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://biu7ycgtvui4m"]
 
-[ext_resource type="Script" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
+[ext_resource type="Script" uid="uid://jphaf7ebqxyw" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
 [ext_resource type="Texture2D" uid="uid://l4ya8objv7rv" path="res://recursos/assets/Elementos menus/capa - giovanna's mind.png" id="2_1pdgw"]
 [ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_vbxk6"]
-[ext_resource type="Texture2D" uid="uid://byk67kkpbxitp" path="res://recursos/assets/Giovanna's Mind - Logo.png" id="3_6b6kd"]
-[ext_resource type="Script" path="res://interfaces/jogar.gd" id="5_6b6kd"]
+[ext_resource type="Texture2D" uid="uid://c56b0kftvaimv" path="res://recursos/assets/Giovanna's Mind - Logo.png" id="3_6b6kd"]
+[ext_resource type="Script" uid="uid://gf0pmarx35is" path="res://interfaces/jogar.gd" id="5_6b6kd"]
 [ext_resource type="Script" uid="uid://b0msurj8dw5bi" path="res://scripts/animcaoBotoesMenu.gd" id="5_aa7wk"]
 [ext_resource type="Script" uid="uid://t0exn41508sn" path="res://scripts/animcaoBotoesSair.gd" id="6_3cxuk"]
-[ext_resource type="Texture2D" uid="uid://d1xme2wgctply" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="6_ravxt"]
-[ext_resource type="Texture2D" uid="uid://cnrixm1kxp0nf" path="res://recursos/assets/Elementos menus/botaoMenu1.png" id="7_i8iln"]
+[ext_resource type="Texture2D" uid="uid://cqjm5d80mvbap" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="6_ravxt"]
+[ext_resource type="Texture2D" uid="uid://dynea3a072nwj" path="res://recursos/assets/Elementos menus/botaoMenu1.png" id="7_i8iln"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa7wk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
