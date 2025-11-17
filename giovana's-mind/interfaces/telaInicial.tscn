@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://biu7ycgtvui4m"]
+[gd_scene load_steps=12 format=3 uid="uid://biu7ycgtvui4m"]
 
-[ext_resource type="Texture2D" uid="uid://bkmo1ur2y7l2x" path="res://recursos/assets/Pinturas/pinturaVariant2.png" id="1_j0s4j"]
 [ext_resource type="Script" uid="uid://jphaf7ebqxyw" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
+[ext_resource type="Texture2D" uid="uid://y6np8fnl25tu" path="res://recursos/assets/Elementos menus/capa - giovanna's mind.png" id="2_1pdgw"]
 [ext_resource type="FontFile" uid="uid://dddispwcg35tb" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_vbxk6"]
-[ext_resource type="Texture2D" uid="uid://d1ihyfbca0uky" path="res://recursos/assets/botoes1.png" id="3_811d3"]
-[ext_resource type="Script" uid="uid://bpwkrry3swpt0" path="res://scripts/animcaoBotoes.gd" id="4_811d3"]
-[ext_resource type="Script" uid="uid://dhpnwgjh5retl" path="res://scripts/animcaoBotoesMenu.gd" id="5_aa7wk"]
-[ext_resource type="Script" uid="uid://dxsd6572try0h" path="res://scripts/animcaoBotoesSair.gd" id="6_3cxuk"]
+[ext_resource type="Texture2D" uid="uid://byk67kkpbxitp" path="res://recursos/assets/Giovanna's Mind - Logo.png" id="3_6b6kd"]
+[ext_resource type="Script" uid="uid://gf0pmarx35is" path="res://interfaces/jogar.gd" id="5_6b6kd"]
+[ext_resource type="Script" uid="uid://b0msurj8dw5bi" path="res://scripts/animcaoBotoesMenu.gd" id="5_aa7wk"]
+[ext_resource type="Script" uid="uid://t0exn41508sn" path="res://scripts/animcaoBotoesSair.gd" id="6_3cxuk"]
+[ext_resource type="Texture2D" uid="uid://d1xme2wgctply" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="6_ravxt"]
+[ext_resource type="Texture2D" uid="uid://cnrixm1kxp0nf" path="res://recursos/assets/Elementos menus/botaoMenu1.png" id="7_i8iln"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa7wk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vbxk6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="capa" type="TextureRect" parent="."]
 z_index = -5
 layout_mode = 1
 anchors_preset = 15
@@ -31,18 +33,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_j0s4j")
+texture = ExtResource("2_1pdgw")
+expand_mode = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -606.0
+offset_top = 83.0
+offset_right = -182.88892
+offset_bottom = 321.0
+grow_horizontal = 2
+texture = ExtResource("3_6b6kd")
+expand_mode = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 410.0
-offset_right = -2.0
-offset_bottom = -197.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 212.0
+offset_top = 20.0
+offset_right = 362.00024
+offset_bottom = 320.0
 grow_vertical = 2
 alignment = 1
 
@@ -64,9 +79,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3cxuk")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aa7wk")
 theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Jogar"
-script = ExtResource("4_811d3")
+script = ExtResource("5_6b6kd")
 
-[node name="TextureRect" type="TextureRect" parent="BoxContainer/VBoxContainer/Jogar"]
+[node name="hover" type="TextureRect" parent="BoxContainer/VBoxContainer/Jogar"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -75,13 +90,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -208.0
-offset_top = -169.5
+offset_top = -168.0
 offset_right = 192.0
-offset_bottom = 150.5
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_811d3")
+texture = ExtResource("6_ravxt")
+
+[node name="normal" type="TextureRect" parent="BoxContainer/VBoxContainer/Jogar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_i8iln")
 
 [node name="Menu" type="Button" parent="BoxContainer/VBoxContainer"]
 texture_filter = 1
@@ -96,7 +128,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Menu"
 script = ExtResource("5_aa7wk")
 
-[node name="TextureRect2" type="TextureRect" parent="BoxContainer/VBoxContainer/Menu"]
+[node name="hover" type="TextureRect" parent="BoxContainer/VBoxContainer/Menu"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -105,13 +137,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -208.0
-offset_top = -170.5
+offset_top = -171.0
 offset_right = 192.0
-offset_bottom = 149.5
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_811d3")
+texture = ExtResource("6_ravxt")
+
+[node name="normal" type="TextureRect" parent="BoxContainer/VBoxContainer/Menu"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -171.0
+offset_right = 192.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_i8iln")
 
 [node name="Sair" type="Button" parent="BoxContainer/VBoxContainer"]
 texture_filter = 1
@@ -126,7 +175,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_aa7wk")
 text = "Sair"
 script = ExtResource("6_3cxuk")
 
-[node name="TextureRect3" type="TextureRect" parent="BoxContainer/VBoxContainer/Sair"]
+[node name="hover" type="TextureRect" parent="BoxContainer/VBoxContainer/Sair"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -135,13 +184,42 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -208.0
-offset_top = -172.5
+offset_top = -170.0
 offset_right = 192.0
-offset_bottom = 147.5
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_811d3")
+texture = ExtResource("6_ravxt")
+
+[node name="normal" type="TextureRect" parent="BoxContainer/VBoxContainer/Sair"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -170.0
+offset_right = 192.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_i8iln")
+
+[node name="Moonlight" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 725.0
+offset_right = 1366.0
+offset_bottom = 769.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vbxk6")
+theme_override_font_sizes/font_size = 25
+text = "Moonlight Games"
 
 [connection signal="pressed" from="BoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="BoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
