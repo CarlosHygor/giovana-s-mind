@@ -1,0 +1,257 @@
+[gd_scene load_steps=13 format=3 uid="uid://kxuy0caidehq"]
+
+[ext_resource type="Texture2D" uid="uid://bab81ma7eftn5" path="res://recursos/assets/Elementos menus/quadradoPausa.png" id="1_b58hp"]
+[ext_resource type="Script" uid="uid://5un0lj4jpkpa" path="res://scripts/menu_pausa.gd" id="1_pjj8k"]
+[ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_pjj8k"]
+[ext_resource type="Script" uid="uid://gf0pmarx35is" path="res://interfaces/jogar.gd" id="3_glusa"]
+[ext_resource type="Texture2D" uid="uid://cqjm5d80mvbap" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="4_kwcr3"]
+[ext_resource type="Texture2D" uid="uid://dynea3a072nwj" path="res://recursos/assets/Elementos menus/botaoMenu1.png" id="5_hmdab"]
+[ext_resource type="Script" uid="uid://b0msurj8dw5bi" path="res://scripts/animcaoBotoesMenu.gd" id="6_ysw3l"]
+[ext_resource type="Script" uid="uid://t0exn41508sn" path="res://scripts/animcaoBotoesSair.gd" id="7_q6hdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glusa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg0oh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcaey"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8by2"]
+bg_color = Color(0, 0, 0, 0.25882354)
+
+[node name="MenuPausa" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_pjj8k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+visible = false
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -413.0
+offset_right = 446.0
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_b58hp")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 59.0
+offset_right = 1054.0
+offset_bottom = 695.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_glusa")
+
+[node name="Menu" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -332.0
+offset_right = 332.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_pjj8k")
+theme_override_font_sizes/font_size = 40
+text = "Pausa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.00012
+offset_top = -112.0
+offset_right = 75.00012
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 79
+
+[node name="Jogar" type="Button" parent="Control/Panel/BoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_pjj8k")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dcaey")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bg0oh")
+text = "Voltar"
+script = ExtResource("3_glusa")
+
+[node name="hover" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Jogar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_kwcr3")
+
+[node name="normal" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Jogar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_hmdab")
+
+[node name="Menu" type="Button" parent="Control/Panel/BoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pjj8k")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bg0oh")
+text = "Menu"
+script = ExtResource("6_ysw3l")
+
+[node name="hover" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Menu"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -171.0
+offset_right = 192.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_kwcr3")
+
+[node name="normal" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Menu"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -171.0
+offset_right = 192.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_hmdab")
+
+[node name="Sair" type="Button" parent="Control/Panel/BoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pjj8k")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bg0oh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bg0oh")
+text = "Tela Inicial"
+script = ExtResource("7_q6hdq")
+
+[node name="hover" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Sair"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -170.0
+offset_right = 192.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_kwcr3")
+
+[node name="normal" type="TextureRect" parent="Control/Panel/BoxContainer/VBoxContainer/Sair"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -170.0
+offset_right = 192.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_hmdab")
+
+[node name="Panel2" type="Panel" parent="Control"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8by2")
+
+[connection signal="pressed" from="Control/Panel/BoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Control/Panel/BoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/Panel/BoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

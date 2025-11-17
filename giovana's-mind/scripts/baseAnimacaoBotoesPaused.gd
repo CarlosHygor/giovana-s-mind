@@ -10,15 +10,8 @@ func _ready():
 	volume_slider.max_value = 100.0
 	volume_slider.step = 1.0
 	
-	var current_linear = Globais.volume_master
-	
-	var db
-	if current_linear == 0.0:
-		db = -80.0
-	else:
-		db = linear_to_db(current_linear)
-	
-	AudioServer.set_bus_volume_db(master_bus_index, db)
+	var current_db = AudioServer.get_bus_volume_db(master_bus_index)
+	var current_linear = db_to_linear(current_db)
 	
 	volume_slider.value = current_linear * 100.0
 	
@@ -28,7 +21,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		_on_button_pressed()
+		_on_voltar_pressed()
 
 func _on_volume_slider_value_changed(slider_value: float):
 	var linear_value = slider_value / 100.0
@@ -40,8 +33,6 @@ func _on_volume_slider_value_changed(slider_value: float):
 		db = linear_to_db(linear_value)
 	
 	AudioServer.set_bus_volume_db(master_bus_index, db)
-	
-	Globais.volume_master = linear_value
 	
 	_update_percentage_label(slider_value)
 
@@ -56,5 +47,7 @@ func _on_button_2_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		$"tela cheia/selecionado".visible = false
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://interfaces/telaInicial.tscn")
+func _on_voltar_pressed():
+	if get_parent() and get_parent().has_method("show_pause_buttons"):
+		get_parent().show_pause_buttons()
+	queue_free()
