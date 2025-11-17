@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8qe2x7s1xx45"]
+[gd_scene load_steps=5 format=3 uid="uid://c8qe2x7s1xx45"]
 
 [ext_resource type="Script" uid="uid://424ajou34taa" path="res://scripts/hud.gd" id="1_kqorm"]
-[ext_resource type="Texture2D" uid="uid://d0row1r3ymgk8" path="res://recursos/sprites/hud/life-option2/heart0.png" id="2_606ks"]
+[ext_resource type="Texture2D" uid="uid://cic4d3x1h8jrj" path="res://recursos/sprites/hud/life-option2/heart0.png" id="2_606ks"]
+[ext_resource type="Texture2D" uid="uid://cqq1vvm4dtykg" path="res://recursos/assets/teclaQ/icone tecla Q.png" id="3_qox3g"]
+[ext_resource type="Texture2D" uid="uid://c7ilhx2okrp3j" path="res://recursos/assets/iconeUrsinhos/icone ursinho azul.png" id="3_t3rg4"]
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" groups=["hud"]]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1.0
@@ -22,3 +24,26 @@ texture = ExtResource("2_606ks")
 position = Vector2(79, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_606ks")
+
+[node name="WeaponDisplay" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1114.0
+offset_top = 25.0
+offset_right = 1154.0
+offset_bottom = 65.0
+
+[node name="IconeArma" type="TextureRect" parent="WeaponDisplay"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("3_t3rg4")
+
+[node name="IconeTecla" type="TextureRect" parent="WeaponDisplay"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 168.0
+offset_right = 130.0
+offset_bottom = 263.0
+texture = ExtResource("3_qox3g")
+expand_mode = 1
+stretch_mode = 5

@@ -62,13 +62,14 @@ func take_damage(amount: int = 1) -> void:
 		return
 
 	current_health -= amount
-	
 
 	if current_health <= 0:
 		current_health = 0
 		die()
 
 	print("Vida:", current_health, "/", max_health)
+	
+	atualizar_hud()
 
 
 func heal(amount: int = 1) -> void:
@@ -81,7 +82,20 @@ func heal(amount: int = 1) -> void:
 		current_health = max_health
 
 	print("Vida:", current_health, "/", max_health)
+	
+	atualizar_hud()
 
+# --- FUNÇÃO AUXILIAR PARA FALAR COM O HUD ---
+func atualizar_hud():
+	# 1. Procura o nó que está no grupo "hud"
+	var hud = get_tree().get_first_node_in_group("hud")
+	
+	# 2. Se encontrou, manda atualizar a vida passando o valor atual
+	if hud:
+		print("✅ Player encontrou o HUD! Atualizando vida para: ", current_health)
+		hud.atualizar_vida_ui(current_health)
+	else:
+		print("❌ ERRO CRÍTICO: Player NÃO encontrou ninguém no grupo 'hud'!")
 
 func die() -> void:
 	is_dead = true
