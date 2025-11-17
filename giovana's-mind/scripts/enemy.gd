@@ -171,7 +171,7 @@ func piscar_vermelho():
 	var tween = create_tween()
 	
 	# Passo A: Muda a cor para VERMELHO instantaneamente
-	anim_sprite.modulate = Color(1, 0.3, 0.3) # Um vermelho levemente claro
+	anim_sprite.modulate = Color(0.9, 0.3, 0.3) # Um vermelho levemente claro
 	
 	# Passo B: Faz a cor voltar para BRANCO (original) em 0.2 segundos
 	# "modulate" é a propriedade de cor do sprite

@@ -15,9 +15,8 @@ var acertou: bool = false
 
 func _ready():
 	# 1. GARANTE QUE A BALA APAREÇA NA FRENTE DE TUDO (Player, Inimigos, Chão)
-	z_index = 10 
-	
-	# Toca a animação de disparo correta
+	scale = Vector2(1, 1) # garante que a bala começa com o scale correto
+	z_index = 10
 	sprite_animado.play("disparo_" + cor_arma)
 
 func _physics_process(delta):
@@ -30,9 +29,12 @@ func _physics_process(delta):
 	# CORREÇÃO: Se a bala estiver indo para a esquerda (rotação > 90 graus),
 	# invertemos o eixo Y para o desenho não ficar de cabeça para baixo.
 	if abs(rotation) > PI / 2:
-		scale.y = -1
+		# ...Invertemos a escala Y APENAS DO SPRITE.
+		# Isso faz o desenho desvirar, mas mantendo a proporção original.
+		sprite_animado.scale.y = -1
 	else:
-		scale.y = 1
+		# Se estiver para a direita, escala normal.
+		sprite_animado.scale.y = 1
 	
 	# 2. MOVIMENTO
 	var move_vec = direction * speed * delta
