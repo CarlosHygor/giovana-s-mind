@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bvlynskn3uwys" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png" id="11_j4uu1"]
 [ext_resource type="Texture2D" uid="uid://o1tilfjpeqe7" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso azul.png" id="12_86n0t"]
 [ext_resource type="Texture2D" uid="uid://cu1unh0ipn5qs" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png" id="13_1vaqx"]
-[ext_resource type="AudioStream" uid="uid://c0ixgi1oirvb5" path="res://recursos/sounds/bubble-pop-406640.mp3" id="16_6ptbh"]
+[ext_resource type="AudioStream" uid="uid://cu7kapevpbphn" path="res://recursos/sounds/bubble-pop-406640.mp3" id="16_6ptbh"]
 [ext_resource type="Texture2D" uid="uid://chdvt8qa8tu5c" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso roxo2.png" id="16_j4uu1"]
 [ext_resource type="Texture2D" uid="uid://bktrnousfjxnw" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso roxo1.png" id="17_86n0t"]
-[ext_resource type="AudioStream" uid="uid://8l87a42wj02b" path="res://recursos/sounds/juicy-bubble-pop-sfx-419513.mp3" id="17_uk4ck"]
+[ext_resource type="AudioStream" uid="uid://dpxxkels4tbrw" path="res://recursos/sounds/juicy-bubble-pop-sfx-419513.mp3" id="17_uk4ck"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
 radius = 69.0
@@ -169,7 +169,6 @@ bullet_scene = ExtResource("3_kthid")
 roxo_scale = Vector2(0.35, 0.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_kthid")
 

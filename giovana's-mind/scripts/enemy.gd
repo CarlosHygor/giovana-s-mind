@@ -128,6 +128,8 @@ func shoot_at_player(shoot_dir: Vector2):
 	bullet.speed = 250.0             
 	bullet.range = 9999.9 
 	
+	bullet.scale = Vector2(0.8, 0.8)
+	
 	get_parent().add_child(bullet)
 
 
