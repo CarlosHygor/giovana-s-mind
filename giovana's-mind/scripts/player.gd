@@ -110,7 +110,7 @@ func die() -> void:
 	print("Player morreu!")
 	set_physics_process(false)
 	set_process(false)
-	get_tree().change_scene_to_file("res://cenas/world.tscn")
+	get_tree().change_scene_to_file("res://interfaces/telaMorte.tscn")
 
 
 # ---------- MOVIMENTO ----------

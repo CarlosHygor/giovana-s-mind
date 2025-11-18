@@ -1,0 +1,221 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwuygs45sb7rm"]
+
+[ext_resource type="Script" uid="uid://8x1ywr46qd8j" path="res://scripts/tela_morte.gd" id="1_ubqy0"]
+[ext_resource type="Texture2D" uid="uid://1wk7j810xgbu" path="res://recursos/assets/Elementos menus/quadradoMenu.png" id="1_uh22a"]
+[ext_resource type="Texture2D" uid="uid://ct5pofamu4o1k" path="res://recursos/assets/Elementos menus/giovana 4.png" id="1_uxtcf"]
+[ext_resource type="FontFile" uid="uid://dddispwcg35tb" path="res://recursos/assets/Minecraftia-Regular.ttf" id="3_js1rb"]
+[ext_resource type="Script" uid="uid://gf0pmarx35is" path="res://interfaces/jogar.gd" id="4_2615v"]
+[ext_resource type="Texture2D" uid="uid://d1xme2wgctply" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="5_ubqy0"]
+[ext_resource type="Texture2D" uid="uid://cnrixm1kxp0nf" path="res://recursos/assets/Elementos menus/botaoMenu1.png" id="6_j75ks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28t2s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnjia"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="TelaMorte" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ubqy0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -634.0
+offset_top = -354.0
+offset_right = 631.3335
+offset_bottom = 357.75
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_uxtcf")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.5
+offset_top = -268.5
+offset_right = 271.5
+offset_bottom = 268.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_uh22a")
+
+[node name="Menu" type="Label" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.0
+offset_top = 167.0
+offset_right = 219.0
+offset_bottom = 319.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_js1rb")
+theme_override_font_sizes/font_size = 30
+text = "Você perdeu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu2" type="Label" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -76.0
+offset_right = 217.5
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_js1rb")
+theme_override_font_sizes/font_size = 20
+text = "Giovana foi derrotada
+pelos seus medos."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jogar3" type="Button" parent="."]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 529.0
+offset_top = 481.0
+offset_right = 692.0
+offset_bottom = 569.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_js1rb")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dnjia")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_28t2s")
+text = "Jogar
+novamente"
+script = ExtResource("4_2615v")
+
+[node name="hover" type="TextureRect" parent="Jogar3"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_ubqy0")
+
+[node name="normal" type="TextureRect" parent="Jogar3"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_j75ks")
+
+[node name="Jogar4" type="Button" parent="."]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 732.0
+offset_top = 481.0
+offset_right = 895.0
+offset_bottom = 569.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_js1rb")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dnjia")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_28t2s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_28t2s")
+text = "Voltar para
+o menu"
+script = ExtResource("4_2615v")
+
+[node name="hover" type="TextureRect" parent="Jogar4"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_ubqy0")
+
+[node name="normal" type="TextureRect" parent="Jogar4"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_j75ks")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11065938, 0.008224069, 0.016450025, 0.54509807)
+
+[connection signal="pressed" from="Jogar3" to="." method="_on_jogar_3_pressed"]
+[connection signal="pressed" from="Jogar4" to="." method="_on_jogar_4_pressed"]
