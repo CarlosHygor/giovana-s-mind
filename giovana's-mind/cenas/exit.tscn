@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmnumwbflhcyl"]
+[gd_scene load_steps=4 format=3 uid="uid://cmnumwbflhcyl"]
 
 [ext_resource type="Script" uid="uid://pgfxfmrjojmb" path="res://scripts/exit.gd" id="1_a7ka4"]
+[ext_resource type="Texture2D" uid="uid://bve45gtb4kkyr" path="res://recursos/assets/portas/porta1.png" id="2_fxvuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxvuy"]
-size = Vector2(72, 20)
+size = Vector2(36, 56)
 
 [node name="Exit" type="Area2D" groups=["exit"]]
+scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_a7ka4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fxvuy")
 
 [node name="ColisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fxvuy")

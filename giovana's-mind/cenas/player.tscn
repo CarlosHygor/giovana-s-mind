@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dks882yywnm7n"]
+[gd_scene load_steps=22 format=3 uid="uid://dks882yywnm7n"]
 
 [ext_resource type="Script" uid="uid://cv1w06nrcemis" path="res://scripts/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://ua2e221xys3i" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente andando - urso azul1.png" id="3_15dsx"]
@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bvlynskn3uwys" path="res://recursos/sprites/GeovannaSprites/geovannaCostas/geovana costas-1.png" id="11_j4uu1"]
 [ext_resource type="Texture2D" uid="uid://o1tilfjpeqe7" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso azul.png" id="12_86n0t"]
 [ext_resource type="Texture2D" uid="uid://cu1unh0ipn5qs" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana lado - urso roxo.png" id="13_1vaqx"]
-[ext_resource type="AudioStream" uid="uid://cu7kapevpbphn" path="res://recursos/sounds/bubble-pop-406640.mp3" id="16_6ptbh"]
-[ext_resource type="AudioStream" uid="uid://dpxxkels4tbrw" path="res://recursos/sounds/juicy-bubble-pop-sfx-419513.mp3" id="17_uk4ck"]
+[ext_resource type="AudioStream" uid="uid://c0ixgi1oirvb5" path="res://recursos/sounds/bubble-pop-406640.mp3" id="16_6ptbh"]
+[ext_resource type="Texture2D" uid="uid://chdvt8qa8tu5c" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso roxo2.png" id="16_j4uu1"]
+[ext_resource type="Texture2D" uid="uid://bktrnousfjxnw" path="res://recursos/sprites/GeovannaSprites/geovannaLado/geovana andando - urso roxo1.png" id="17_86n0t"]
+[ext_resource type="AudioStream" uid="uid://8l87a42wj02b" path="res://recursos/sounds/juicy-bubble-pop-sfx-419513.mp3" id="17_uk4ck"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kthid"]
 radius = 69.0
@@ -90,6 +92,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"andar_direita_azul",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1vaqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j4uu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1vaqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_86n0t")
+}],
+"loop": true,
+"name": &"andar_direita_roxo",
 "speed": 3.0
 }, {
 "frames": [{
@@ -173,7 +192,8 @@ one_shot = true
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_ogt8j")
-animation = &"andar_baixo_roxo"
+animation = &"andar_direita_roxo"
+frame_progress = 0.58403355
 
 [node name="MuzzleBaixo" type="Marker2D" parent="SpriteAnimado"]
 position = Vector2(7, 87)
