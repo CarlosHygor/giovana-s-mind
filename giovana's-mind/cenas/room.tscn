@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://cpmqknpctqkxs"]
 
-[ext_resource type="Script" uid="uid://c72yq6mxk8uve" path="res://scripts/Room.gd" id="1_dfvbp"]
+[ext_resource type="Script" uid="uid://c72yq6mxk8uve" path="res://scripts/room.gd" id="1_dfvbp"]
 [ext_resource type="Texture2D" uid="uid://mxbhhgcltil4" path="res://recursos/assets/InteriorTilesLITE.png" id="2_i6b2i"]
 [ext_resource type="Texture2D" uid="uid://cyyybf7bhhlsv" path="res://recursos/assets/parede-psio/piso madeira.png" id="3_mtey2"]
 [ext_resource type="Texture2D" uid="uid://crluid2gt8r0i" path="res://recursos/assets/parede-psio/piso azulejo 100x100.png" id="4_32b5u"]
@@ -489,26 +489,26 @@ position = Vector2(683, 149)
 [node name="BlockerNorth" type="StaticBody2D" parent="."]
 position = Vector2(684, 55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockerNorth"]
+[node name="Collision" type="CollisionShape2D" parent="BlockerNorth"]
 position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_p4wru")
 
 [node name="BlockerSouth" type="StaticBody2D" parent="."]
 position = Vector2(684, 714)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockerSouth"]
+[node name="Collision" type="CollisionShape2D" parent="BlockerSouth"]
 position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_p4wru")
 
 [node name="BlockerEast" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockerEast"]
+[node name="Collision" type="CollisionShape2D" parent="BlockerEast"]
 position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_p4wru")
 
 [node name="BlockerWest" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockerWest"]
+[node name="Collision" type="CollisionShape2D" parent="BlockerWest"]
 position = Vector2(55, 393)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_p4wru")
@@ -517,3 +517,4 @@ shape = SubResource("RectangleShape2D_p4wru")
 [connection signal="player_triggered" from="Doors/DoorSouth" to="." method="_on_door_south_player_triggered"]
 [connection signal="player_triggered" from="Doors/DoorEast" to="." method="_on_door_east_player_triggered"]
 [connection signal="player_triggered" from="Doors/DoorWest" to="." method="_on_door_west_player_triggered"]
+[connection signal="child_exiting_tree" from="Enemies" to="." method="_on_enemies_child_exiting_tree"]

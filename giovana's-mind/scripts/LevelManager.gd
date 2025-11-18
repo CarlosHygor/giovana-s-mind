@@ -5,7 +5,7 @@ const FINAL_FLOOR = 1
 var current_floor = 1
 
 var floor_1_scenes = {
-	RoomType.START : preload("res://cenas/room.tscn"),
+	RoomType.START : preload("res://cenas/Room.tscn"),
 	RoomType.NORMAL: [
 		preload("res://cenas/roomTeste.tscn"),
 		preload("res://cenas/room_1.tscn")
@@ -15,12 +15,16 @@ var floor_1_scenes = {
 }
 
 var floor_2_scenes = {
-	RoomType.START : preload("res://cenas/room.tscn"),
+	RoomType.START : preload("res://cenas/Room.tscn"),
 	RoomType.NORMAL: [
 		preload("res://cenas/roomTeste.tscn"),
+		preload("res://cenas/room_1.tscn")
 	],
+	RoomType.TREASURE : preload("res://cenas/tesouro.tscn"),
 	RoomType.BOSS: preload("res://cenas/boss_room.tscn")
 }
+
+
 
 var current_room_scene_map = {}
 var map_grid = {}

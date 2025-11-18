@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://db83or1j6osua"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_11jkn"]
-[ext_resource type="Shader" uid="uid://deghd1udiqtrn" path="res://cenas/Fog.gdshader" id="2_8mpgf"]
+[ext_resource type="Script" uid="uid://bqk7n6iekjvyj" path="res://scripts/world.gd" id="1_11jkn"]
 [ext_resource type="PackedScene" uid="uid://dks882yywnm7n" path="res://cenas/player.tscn" id="2_mjon1"]
+[ext_resource type="Shader" path="res://cenas/fog.gdshader" id="2_xnx65"]
 [ext_resource type="Texture2D" uid="uid://bgkdltjo1q68d" path="res://recursos/assets/stuff/fog.png" id="2_yb5ho"]
 [ext_resource type="PackedScene" uid="uid://c8qe2x7s1xx45" path="res://cenas/HUD.tscn" id="5_8mpgf"]
 [ext_resource type="AudioStream" uid="uid://dv8pwx4pxrtc1" path="res://recursos/sounds/power-hub-ost-337760.mp3" id="6_xnx65"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnx65"]
-shader = ExtResource("2_8mpgf")
+shader = ExtResource("2_xnx65")
 shader_parameter/scroll_speed = Vector2(0.01, 0.005)
 
 [node name="World" type="Node2D"]

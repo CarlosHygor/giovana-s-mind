@@ -17,5 +17,6 @@ texture = ExtResource("2_ucut5")
 
 [node name="TriggerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sprnh")
+disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

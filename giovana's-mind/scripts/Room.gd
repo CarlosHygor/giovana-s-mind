@@ -10,10 +10,6 @@ signal room_cleared
 
 func _ready() -> void:
 	print("Sala Carregou")
-	$BlockerNorth/CollisionShape2D.disabled = true
-	$BlockerSouth/CollisionShape2D.disabled = true
-	$BlockerEast/CollisionShape2D.disabled = true
-	$BlockerWest/CollisionShape2D.disabled = true
 
 	if is_cleared:
 		enemy_count = 0
@@ -42,10 +38,10 @@ func setup_doors(neighbors: Dictionary):
 
 func lock_all_doors():
 	print("DEBUG: A trancar portas (MÉTODO BLOCKER).")
-	$BlockerNorth/CollisionShape2D.disabled = false
-	$BlockerSouth/CollisionShape2D.disabled = false
-	$BlockerEast/CollisionShape2D.disabled = false
-	$BlockerWest/CollisionShape2D.disabled = false
+	$BlockerNorth.get_node("Collision").disabled = false
+	$BlockerSouth.get_node("Collision").disabled = false
+	$BlockerEast.get_node("Collision").disabled = false
+	$BlockerWest.get_node("Collision").disabled = false
 	
 	for door in $Doors.get_children():
 		if door is Area2D:
@@ -53,10 +49,10 @@ func lock_all_doors():
 
 func unlock_all_doors():
 	print("DEBUG: A destrancar portas (MÉTODO BLOCKER).")
-	$BlockerNorth/CollisionShape2D.disabled = true
-	$BlockerSouth/CollisionShape2D.disabled = true
-	$BlockerEast/CollisionShape2D.disabled = true
-	$BlockerWest/CollisionShape2D.disabled = true
+	$BlockerNorth.get_node("Collision").disabled = true
+	$BlockerSouth.get_node("Collision").disabled = true
+	$BlockerEast.get_node("Collision").disabled = true
+	$BlockerWest.get_node("Collision").disabled = true
 	
 	for door in $Doors.get_children():
 		if door is Area2D:

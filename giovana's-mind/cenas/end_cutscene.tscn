@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cjh3dkols63qi"]
+[gd_scene load_steps=16 format=4 uid="uid://cjh3dkols63qi"]
 
 [ext_resource type="Texture2D" uid="uid://cyyybf7bhhlsv" path="res://recursos/assets/parede-psio/piso madeira.png" id="1_3n638"]
 [ext_resource type="Script" uid="uid://c4r1mj0a8edrd" path="res://cenas/end_cutscene.gd" id="1_hx1li"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="4_0711m"]
 [ext_resource type="Texture2D" uid="uid://bhw3rp11lhcuq" path="res://recursos/assets/portas/portaFrontView1.png" id="5_tal3o"]
 [ext_resource type="Texture2D" uid="uid://cg2vxmxcy8gmn" path="res://recursos/sprites/GeovannaSprites/geovannaFrente/geovana frente - urso azul.png" id="6_xf5nr"]
+[ext_resource type="Texture2D" uid="uid://cc3wxglto8hf" path="res://recursos/sprites/psicologa/psicologa-stand.png" id="7_0711m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqhjk"]
 texture = ExtResource("1_3n638")
@@ -570,7 +571,7 @@ offset_top = 160.0
 offset_right = 484.0
 offset_bottom = 188.0
 theme_override_fonts/font = ExtResource("4_0711m")
-text = "Então e isso, 
+text = "Então é isso, 
 Essa foi nossa ultima sessão"
 horizontal_alignment = 1
 
@@ -599,3 +600,8 @@ offset_left = -13.0
 offset_right = 582.0
 offset_bottom = 350.0
 color = Color(0, 0, 0, 1)
+
+[node name="PsicologaStand" type="Sprite2D" parent="."]
+position = Vector2(273, 234)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_0711m")
