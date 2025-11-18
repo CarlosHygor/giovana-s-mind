@@ -1,3 +1,3 @@
 extends Node
 
-var volume_master = 5.0
+var volume_master = 0.5

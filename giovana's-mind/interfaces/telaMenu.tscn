@@ -1,9 +1,9 @@
 [gd_scene load_steps=32 format=3 uid="uid://be0hflnpt513k"]
 
 [ext_resource type="Script" uid="uid://bw2cok77qcwx5" path="res://scripts/telaMenu.gd" id="1_kwc0x"]
-[ext_resource type="Texture2D" uid="uid://l4ya8objv7rv" path="res://recursos/assets/Elementos menus/capa - giovanna's mind.png" id="2_6bqwu"]
+[ext_resource type="Texture2D" uid="uid://3apsmdkp6b6i" path="res://recursos/assets/capaGiovana'sMind/giovanna's mind - capa-menu-fundo 3.png" id="2_u8swm"]
 [ext_resource type="Texture2D" uid="uid://1wk7j810xgbu" path="res://recursos/assets/Elementos menus/quadradoMenu.png" id="3_i8d8s"]
-[ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="4_r2wmg"]
+[ext_resource type="FontFile" uid="uid://dddispwcg35tb" path="res://recursos/assets/Minecraftia-Regular.ttf" id="4_r2wmg"]
 [ext_resource type="Texture2D" uid="uid://br3pelfbqukrp" path="res://recursos/assets/Elementos menus/selectSelect.png" id="5_r2wmg"]
 [ext_resource type="Texture2D" uid="uid://bxj40yrfpoaqn" path="res://recursos/assets/Elementos menus/icone ursinho azul.png" id="5_u8swm"]
 [ext_resource type="Texture2D" uid="uid://dpqsh0y84suef" path="res://recursos/assets/Elementos menus/select2.png" id="6_8x8tg"]
@@ -79,7 +79,6 @@ grow_vertical = 2
 script = ExtResource("1_kwc0x")
 
 [node name="capa" type="TextureRect" parent="."]
-visible = false
 z_index = -5
 layout_mode = 1
 anchors_preset = 15
@@ -88,7 +87,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_6bqwu")
+texture = ExtResource("2_u8swm")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]

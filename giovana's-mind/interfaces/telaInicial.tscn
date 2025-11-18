@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://biu7ycgtvui4m"]
+[gd_scene load_steps=13 format=3 uid="uid://biu7ycgtvui4m"]
 
-[ext_resource type="Script" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
-[ext_resource type="Texture2D" uid="uid://dn1nfivkdlk5x" path="res://recursos/assets/capaGiovana'sMind/giovanna's mind - capa-menu - fundo 1.png" id="2_1pdgw"]
-[ext_resource type="FontFile" uid="uid://c83bopkgh7scr" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_vbxk6"]
+[ext_resource type="Script" uid="uid://jphaf7ebqxyw" path="res://scripts/telaInicial.gd" id="1_vbxk6"]
+[ext_resource type="Texture2D" uid="uid://3apsmdkp6b6i" path="res://recursos/assets/capaGiovana'sMind/giovanna's mind - capa-menu-fundo 3.png" id="2_1pdgw"]
+[ext_resource type="VideoStream" uid="uid://yejqkuavu7u5" path="res://recursos/assets/Elementos menus/intro.ogv" id="2_ravxt"]
+[ext_resource type="FontFile" uid="uid://dddispwcg35tb" path="res://recursos/assets/Minecraftia-Regular.ttf" id="2_vbxk6"]
 [ext_resource type="Texture2D" uid="uid://byk67kkpbxitp" path="res://recursos/assets/Giovanna's Mind - Logo.png" id="3_6b6kd"]
-[ext_resource type="Script" path="res://interfaces/jogar.gd" id="5_6b6kd"]
+[ext_resource type="Script" uid="uid://gf0pmarx35is" path="res://interfaces/jogar.gd" id="5_6b6kd"]
 [ext_resource type="Script" uid="uid://b0msurj8dw5bi" path="res://scripts/animcaoBotoesMenu.gd" id="5_aa7wk"]
 [ext_resource type="Script" uid="uid://t0exn41508sn" path="res://scripts/animcaoBotoesSair.gd" id="6_3cxuk"]
 [ext_resource type="Texture2D" uid="uid://d1xme2wgctply" path="res://recursos/assets/Elementos menus/botaoMenu2.png" id="6_ravxt"]
@@ -24,6 +25,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vbxk6")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 17
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 554.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.715, 0.715)
+stream = ExtResource("2_ravxt")
+autoplay = true
 
 [node name="capa" type="TextureRect" parent="."]
 z_index = -5
@@ -216,7 +231,7 @@ offset_left = 1125.0
 offset_top = 725.0
 offset_right = 1366.0
 offset_bottom = 769.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_vbxk6")
 theme_override_font_sizes/font_size = 25
 text = "Moonlight Games"
